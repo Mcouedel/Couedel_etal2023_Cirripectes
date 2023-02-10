@@ -1,0 +1,257 @@
+---
+title: "Sliding window analyses"
+author: "M. Couëdel"
+date: "01/04/2022"
+output: 
+  html_document:
+    toc: true
+    theme: united
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, include =FALSE)
+```
+
+```{r}
+library(ape)
+library(spider)
+library(here)
+library(ggplot2)
+```
+
+```{r}
+data<-read.dna(here("data/SWA","Algnt_for_SWA_cirripectes.fasta"), format="fasta")
+data
+dist <- ape::dist.dna(data)
+spp <- substr(dimnames(data)[[1]], 1, 50)
+spp
+swa<-slideAnalyses(data, spp, width=160, interval=1, treeMeasures=F)
+swa.tree<-slideAnalyses(data, spp, 160, interval=1, treeMeasures=T)
+length(swa)
+swa[[1]]
+str(swa.tree)
+
+dev.new()
+plot(swa)
+plot(swa.tree) # All plot
+```
+
+# Sliding window of 160 bp
+
+## *C.castaneu*s VS *C.stigmaticus*
+
+```{r}
+data<-read.dna(here("data/SWA","SWA_Castaneus_Stigmaticus.fasta"), format="fasta")
+data
+dist <- ape::dist.dna(data)
+spp <- substr(dimnames(data)[[1]], 1, 50)
+spp
+swa<-slideAnalyses(data, spp, 160, interval=1, treeMeasures=F)
+length(swa)
+swa[[1]]
+str(swa.tree)
+
+dev.new()
+#plot(swa) # All plot
+length<-length(swa$pos_out)
+graph<-as.data.frame(1:length)
+graph$x<-swa$pos_out
+graph$y<-swa$dist_mean_out
+
+p<-ggplot(graph,aes(x,y))+
+  geom_line()+
+  scale_x_continuous(name = "Position", limits = c(0, max(graph$x)),expand=c(0,5))+
+  scale_y_continuous(name = "Divergence", limits = c(0, max(0.5)),expand=c(0,0))+
+  theme_classic()+ #theme(plot.margin =  unit(c(0,1,0,0),"cm"))+
+  ggtitle("C. castaneus VS C. stigmaticus") +
+  geom_hline(yintercept=0.03)+
+  #annotate("text", x =max(graph$x), y= 0.03,label="3%") +
+  geom_hline(yintercept=0.01,linetype="dashed")+
+  annotate("rect", xmin = 70, xmax = 1018, ymin = 0, ymax = 0.5,
+           alpha = .4, fill = "grey") +#12S
+  #annotate("text", x = 500, y= 0.29,label="12S") +
+  annotate("rect", xmin = 5461, xmax = 7020, ymin = 0, ymax = 0.5,
+           alpha = .4, fill = "grey")+ #COI
+ #annotate("text", x = 6200, y= 0.29,label="COI")+
+        annotate("segment", x =70 , xend = 1018, y = 0.5, yend = 0.5, colour = "black", size=2,   alpha=0.6)+#12S
+  annotate("segment", x =1090 , xend = 2768, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#16S
+  annotate("segment", x =2874 , xend = 3821, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND1
+  annotate("segment", x =4033 , xend = 5080, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND1
+  annotate("segment", x =5461 , xend = 7020, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COI
+    annotate("segment", x =7188 , xend = 7878, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COII
+    annotate("segment", x =8796 , xend = 9579, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COIII
+    annotate("segment", x =9653 , xend = 10001, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND3
+      annotate("segment", x =10360 , xend = 11739, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND4
+      annotate("segment", x = 11953, xend = 13791, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND5
+      annotate("segment", x =13782 , xend = 14037, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND6
+        annotate("segment", x =14380 , xend = 15520, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)
+p
+
+#ggsave(p,file=here("figures","SWA_casta_stigma_160pb.pdf"), device ="pdf", width=13, height=6, units = "cm")
+```
+
+```{r, include =TRUE}
+p
+```
+
+
+## *C.stigmaticus* VS *C. randalli*
+
+```{r}
+data<-read.dna(here("data/SWA","SWA_Stigmaticus_Randalli.fasta"), format="fasta")
+data
+dist <- ape::dist.dna(data)
+spp <- substr(dimnames(data)[[1]], 1, 50)
+spp
+swa<-slideAnalyses(data, spp, 160, interval=1, treeMeasures=F)
+
+length<-length(swa$pos_out)
+graph<-as.data.frame(1:length)
+graph$x<-swa$pos_out
+graph$y<-swa$dist_mean_out
+
+p<-ggplot(graph,aes(x,y))+
+  geom_line()+
+  scale_x_continuous(name = "Position", limits = c(0, max(graph$x)),expand=c(0,5))+
+  scale_y_continuous(name = "Divergence", limits = c(0, 0.5),expand=c(0,0))+
+  theme_classic()+ #theme(plot.margin =  unit(c(0,1,0,0),"cm"))+
+  ggtitle("C. stigmaticus VS C. randalli") +
+  geom_hline(yintercept=0.03)+
+  #annotate("text", x =max(graph$x), y= 0.03,label="3%") +
+  geom_hline(yintercept=0.01,linetype="dashed")+
+  annotate("rect", xmin = 70, xmax = 1018, ymin = 0, ymax = 0.5,
+           alpha = .4, fill = "grey") +#12S
+ # annotate("text", x = 500, y= 0.29,label="12S") +
+  annotate("rect", xmin = 5461, xmax = 7020, ymin = 0, ymax = 0.5,
+           alpha = .4, fill = "grey")+ #COI
+ #annotate("text", x = 6200, y= 0.29,label="COI")+
+      annotate("segment", x =70 , xend = 1018, y = 0.5, yend = 0.5, colour = "black", size=2,   alpha=0.6)+#12S
+  annotate("segment", x =1090 , xend = 2768, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#16S
+  annotate("segment", x =2874 , xend = 3821, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND1
+  annotate("segment", x =4033 , xend = 5080, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND1
+  annotate("segment", x =5461 , xend = 7020, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COI
+    annotate("segment", x =7188 , xend = 7878, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COII
+    annotate("segment", x =8796 , xend = 9579, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COIII
+    annotate("segment", x =9653 , xend = 10001, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND3
+      annotate("segment", x =10360 , xend = 11739, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND4
+      annotate("segment", x = 11953, xend = 13791, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND5
+      annotate("segment", x =13782 , xend = 14037, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND6
+        annotate("segment", x =14380 , xend = 15520, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)
+p
+#ggsave(p,file=here("figures","SWA_stigma_randa_160pb.pdf"), device ="pdf", width=13, height=6, units = "cm")
+```
+```{r, include =TRUE}
+p
+```
+
+# Sliding window of 65 bp
+
+## *C.castaneus* VS *C.stigmaticus* 
+
+```{r}
+data<-read.dna(here("data/SWA","SWA_Castaneus_Stigmaticus.fasta"), format="fasta")
+data
+dist <- ape::dist.dna(data)
+spp <- substr(dimnames(data)[[1]], 1, 50)
+spp
+swa<-slideAnalyses(data, spp, 65, interval=1, treeMeasures=F)
+length(swa)
+swa[[1]]
+str(swa.tree)
+
+dev.new()
+#plot(swa) # All plot
+length<-length(swa$pos_out)
+graph<-as.data.frame(1:length)
+graph$x<-swa$pos_out
+graph$y<-swa$dist_mean_out
+
+p<-ggplot(graph,aes(x,y))+
+  geom_line()+
+  scale_x_continuous(name = "Position", limits = c(0, max(graph$x)),expand=c(0,5))+
+  scale_y_continuous(name = "Divergence", limits = c(0,max(graph$y)),expand=c(0,0))+
+  coord_cartesian(ylim = c(0,0.5), xlim = c(0, max(graph$x)))+
+  theme_classic()+ #theme(plot.margin =  unit(c(0,1,0,0),"cm"))+
+  ggtitle("C. castaneus VS C. stigmaticus") +
+  geom_hline(yintercept=0.03)+
+  #annotate("text", x =max(graph$x), y= 0.03,label="3%") +
+  geom_hline(yintercept=0.01,linetype="dashed")+
+  annotate("rect", xmin = 70, xmax = 1018, ymin = 0, ymax = 0.5,
+           alpha = .4, fill = "grey") +#12S
+  #annotate("text", x = 500, y= 0.29,label="12S") +
+  annotate("rect", xmin = 5461, xmax = 7020, ymin = 0, ymax = 0.5,
+           alpha = .4, fill = "grey")+ #COI
+ #annotate("text", x = 6200, y= 0.29,label="COI")+
+    annotate("segment", x =70 , xend = 1018, y = 0.5, yend = 0.5, colour = "black", size=2,   alpha=0.6)+#12S
+  annotate("segment", x =1090 , xend = 2768, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#16S
+  annotate("segment", x =2874 , xend = 3821, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND1
+  annotate("segment", x =4033 , xend = 5080, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND1
+  annotate("segment", x =5461 , xend = 7020, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COI
+    annotate("segment", x =7188 , xend = 7878, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COII
+    annotate("segment", x =8796 , xend = 9579, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COIII
+    annotate("segment", x =9653 , xend = 10001, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND3
+      annotate("segment", x =10360 , xend = 11739, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND4
+      annotate("segment", x = 11953, xend = 13791, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND5
+      annotate("segment", x =13782 , xend = 14037, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND6
+        annotate("segment", x =14380 , xend = 15520, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)
+p
+#ggsave(p,file=here("figures","SWA_casta_stigma_65pb.pdf"), device ="pdf", width=13, height=6, units = "cm")
+```
+```{r, include =TRUE}
+p
+```
+
+## *C.stigmaticus* VS *C. randalli*
+
+```{r}
+data<-read.dna(here("data/SWA","SWA_Stigmaticus_Randalli.fasta"), format="fasta")
+data
+dist <- ape::dist.dna(data)
+spp <- substr(dimnames(data)[[1]], 1, 50)
+spp
+swa<-slideAnalyses(data, spp,65, interval=1, treeMeasures=F)
+
+sw<-slidingWindow(data,65, interval=1)
+sw.titv<-sapply(sw,titv)
+titv(data)
+length<-length(swa$pos_out)
+graph<-as.data.frame(1:length)
+graph$x<-swa$pos_out
+graph$y<-swa$dist_mean_out
+
+p<-ggplot(graph,aes(x,y))+
+  geom_line()+
+  scale_x_continuous(name = "Position", limits = c(0, max(graph$x)),expand=c(0,5))+
+  scale_y_continuous(name = "Divergence", limits = c(0, max(graph$y)),expand=c(0,0))+
+  coord_cartesian(ylim = c(0,0.5), xlim = c(0, max(graph$x)))+
+  theme_classic()+ #theme(plot.margin =  unit(c(0,1,0,0),"cm"))+
+  ggtitle("C. stigmaticus VS C. randalli") +
+  geom_hline(yintercept=0.03)+
+  #annotate("text", x =max(graph$x), y= 0.03,label="3%") +
+  geom_hline(yintercept=0.01,linetype="dashed")+
+  annotate("rect", xmin = 70, xmax = 1018, ymin = 0, ymax = 0.5,
+           alpha = .4,fill = "grey") +#12S
+  #annotate("text", x = 500, y= 0.29,label="12S") +
+  annotate("rect", xmin = 5461, xmax = 7020, ymin = 0, ymax = 0.5,
+           alpha = .4, fill = "grey")+ #COI
+  #annotate("text", x = 6200, y= 0.29,label="COI")+
+  annotate("segment", x =70 , xend = 1018, y = 0.5, yend = 0.5, colour = "black", size=2,   alpha=0.6)+#12S
+  annotate("segment", x =1090 , xend = 2768, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#16S
+  annotate("segment", x =2874 , xend = 3821, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND1
+  annotate("segment", x =4033 , xend = 5080, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND2
+  annotate("segment", x =5461 , xend = 7020, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COI
+    annotate("segment", x =7188 , xend = 7878, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COII
+    annotate("segment", x =8796 , xend = 9579, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#COIII
+    annotate("segment", x =9653 , xend = 10001, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND3
+      annotate("segment", x =10360 , xend = 11739, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND4
+      annotate("segment", x = 11953, xend = 13791, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND5
+      annotate("segment", x =13782 , xend = 14037, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)+#ND6
+        annotate("segment", x =14380 , xend = 15520, y = 0.5, yend = 0.5, colour = "black", size=2, alpha=0.6)#CytB
+        #annotate("segment", x =13782 , xend = 14037, y = 1.1, yend = 1.1, colour = "black", size=2, alpha=0.6)+#ND6
+p
+#ggsave(p,file=here("figures","SWA_stigma_randa_65bp.pdf"), device ="pdf", width=13, height=6, units = "cm")
+```
+
+```{r, include =TRUE}
+p
+```

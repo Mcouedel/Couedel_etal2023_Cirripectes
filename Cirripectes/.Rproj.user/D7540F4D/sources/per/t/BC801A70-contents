@@ -1,0 +1,999 @@
+---
+title: "Script for phylogenetic trees after review"
+author: "M. Couëdel"
+date: "06-12-2022"
+output: 
+  html_document:
+    toc: true
+    theme: united
+---
+```{r}
+renv::activate()
+renv::snapshot()
+renv::status()
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, include =FALSE)
+```
+
+#setup
+```{r package setup}
+library(ape)
+library(phyloseq)
+library(ggtree)
+library(treeio)
+library(scales)
+library(ggplot2)
+library(tidytree)
+library(here)
+library(dplyr)
+library(adegenet)
+library(tidyverse)
+library(poppr)
+library(pegas)
+library(ips)
+library(cowplot)
+library(zoom)
+library(maptree)
+library(plotly)
+library(ggvis)
+library(phangorn)
+library(phytools)
+library(gridtext)
+library(seqinr)
+library(paran)
+library(rncl)
+library(treeio)
+library(splits)
+library(cowplot)
+library(svglite)
+library(ggrepel)
+```
+
+
+```{r color setup}
+# Color palette ####
+col17<-c("#0073C2FF","#EFC000FF","#276419","#BF812D","#800080","#CD534CFF","#7FBC41","#7AA6DCFF","#003C67FF","#C51B7D","#8F7700FF","#543005","#A73030FF","#8C510A","#4A6990FF","#2E8B57","#868686FF")
+col18<-c("#0073C2FF","#EFC000FF","#276419","#BF812D","#800080","#CD534CFF","#7FBC41","#7AA6DCFF","#003C67FF","#C51B7D","#8F7700FF","#543005","#A73030FF","#8C510A","#4A6990FF","#2E8B57","#868686FF","#01BBB7")
+col19<-c("#0073C2FF","#EFC000FF","#276419","#BF812D","#800080","#CD534CFF","#7AA6DCFF","#003C67FF","#FF9900","#01BBB7","#C51B7D","#8F7700FF","#543005","#A73030FF","#8C510A","#4A6990FF","#2E8B57","#868686FF","#000000")
+col20<-c("#0073C2FF","#EFC000FF","#276419","#BF812D","#800080","#CD534CFF","#7FBC41","#7AA6DCFF","#003C67FF","#FF9900","#01BBB7","#C51B7D","#8F7700FF","#543005","#A73030FF","#8C510A","#4A6990FF","#2E8B57","#868686FF","#000000")
+col17scale <- scale_colour_manual(name = "col18",values = col17) #point
+col17scale <- scale_colour_manual(name = "Country",values = col17)
+col18scale <- scale_colour_manual(name = "col18",values = col18) #point
+col18scale <- scale_colour_manual(name = "Country",values = col18)
+col19scale <- scale_colour_manual(name = "col19",values = col19,na.value="#000000") #point
+col19scale <- scale_colour_manual(name = "Country",values = col19,na.value="#000000")
+col20scale <- scale_colour_manual(name = "col20",values = col20,na.value="#000000") #point
+col20scale <- scale_colour_manual(name = "Country",values = col20,na.value="#000000")
+```
+
+# COI analyses
+
+#Data import
+```{r "Importation des metadata}
+sampledata<-read.csv(here("data","Cirripectes_R_sampledata.csv"), header = T,sep =",",quote="\"")
+table(duplicated(sampledata$ID_tree))["FALSE"]
+sampledata<-subset(sampledata,sampledata$Sample!="")
+
+#Mise en forme du sampledata
+samplename<-sampledata[,1]
+rownames(sampledata)<-samplename
+sampledata<-sampledata[,-1]
+sampledata$Country[sampledata$Country==""]<-NA
+sampledata<-subset(sampledata,sampledata$ID!=is.na(sampledata$ID))
+data<-sample_data(sampledata)
+```
+
+
+```{r "Importation des metadata}
+# Rho
+rho_sampledata<-read.csv(here("data","Cirripectes_R_Rho_sampledata.csv"), header = T,sep =";",quote="\"")
+table(duplicated(rho_sampledata$ID_tree))["FALSE"]
+rho_sampledata<-subset(rho_sampledata,rho_sampledata$Sample!="")
+
+#Mise en forme du sampledata
+rho_samplename<-rho_sampledata[,1]
+rownames(rho_sampledata)<-rho_samplename
+rho_sampledata<-rho_sampledata[,-1]
+rho_sampledata$Country[rho_sampledata$Country==""]<-NA
+rho_sampledata<-subset(rho_sampledata,rho_sampledata$ID!=is.na(rho_sampledata$ID))
+rho_data<-sample_data(rho_sampledata)
+```
+
+# Baysien tree
+
+Selectionned tree : 2022-06-04 Cirripectes COI with 5 outgroups, strict molecular clock, yule tree and no localities priors
+
+```{r "Import BEAST tree"}
+BEAST.tree<-read.nexus(here("data/2022-12_REVIEW/MCC_tree.tree"))
+
+#Mise en forme arbre beast
+BEAST.tree.new <- BEAST.tree
+BEAST.tree.new$tip.label <-sampledata$ID[match(BEAST.tree$tip.label,sampledata$ID_Geneious_tree)]
+BEAST.tree<- BEAST.tree.new ; rm(BEAST.tree.new)
+```
+
+```{r Import ML Tree}
+ML.tree<-read.nexus(here("data/2022-12_REVIEW/IQtree","2022-12-06_Algt_Cirripectes_N301_504bp.tree"))
+
+ML.tree$tip.label
+ML.tree$tip.label<-str_replace_all(ML.tree$tip.label,pattern ="-", replacement="_")
+sampledata$ID_Geneious_tree
+
+#Mise en forme arbre beast
+ML.tree.new <- ML.tree
+ML.tree.new$tip.label <-sampledata$ID[match(ML.tree$tip.label,sampledata$ID_Geneious_tree)]
+ML.tree<- ML.tree.new ; rm(ML.tree.new)
+```
+
+
+```{r "Import taxonomy"}
+#Mise en forme de la taxonomie
+tax<-read.csv(here("data","Cirripectes_R_taxtable.csv"), header = T,sep =",")
+nameotu<-tax[,1]
+rownames(tax)<-nameotu
+tax<-tax[,-1]
+tax<-tax[,-7]
+tax<-as.matrix(tax)
+tax<-tax_table(tax)
+```
+
+
+```{r "Creation phyloseq"}
+#Création du tableau OTU fictif
+nbotu<-length(tax[,1])
+otu<-diag(nbotu)
+rownames(otu)<-nameotu
+colnames(otu)<-samplename
+otu<-as.matrix(otu)
+otu<-otu_table(otu,taxa_are_rows =TRUE)
+class(otu)
+
+#Vérification des match taxa/OTU
+setdiff(taxa_names(otu), taxa_names(tax))
+setdiff(taxa_names(otu), Geneious.tree$tip.label)
+setdiff(taxa_names(otu), BEAST.tree$tip.label)
+setdiff(taxa_names(otu), ML.tree$tip.label)
+
+#Création des objects phyloseq
+phyloseq<-phyloseq(tax,otu,data)
+BEAST<-merge_phyloseq(phyloseq,BEAST.tree)
+ML<-merge_phyloseq(phyloseq,ML.tree)
+```
+
+# GMYC : Generated Mixed Yule Coalescent
+```{r}
+# Rhodopsin
+rho_MCC<-read.nexus(here("data/BEAST/2022-02-24_Rho","2022-02-24_Cirripectes_Rho_MCCTree_BOLD-GB-CALIBIOME_N37_737bp.nex"))
+rho_gmyc<-gmyc(rho_MCC)
+summary(rho_gmyc)
+plot(rho_gmyc)
+rho_MCC_list<-spec.list(rho_gmyc)
+#write.csv(rho_MCC_list,here("data","2022-02-24_Cirripectes_Rho_GMYC.csv"), row.names = FALSE)
+
+#COI BEAST
+tbl.coi_MCC_1<-as_tibble(BEAST.tree)#donne les info de l'arbre
+
+coi_gmyc_1<-gmyc(BEAST.tree)
+coi_gmyc_1<-gmyc(BEAST.tree,method = "multiple")
+summary(coi_gmyc_1)
+plot(coi_gmyc_1)
+COI_MCC_1_list<-spec.list(coi_gmyc_1)
+write.csv(COI_MCC_1_list,here("data/2022-12_REVIEW","Cirripectes_COI_GMYC_ultiple.csv"), row.names = FALSE)
+```
+
+# Ajout des infos de délimitation d'espèces sur l'arbre de BEAST
+```{r "Formatage des données de délimitation des espèces"}
+delimitation <- tax<-read.csv(here("data","Cirripectes_R_delimitation_V2.csv"), header = T,sep =",")
+delimitation$ASAP_COI<-as.character(delimitation$ASAP_COI)
+#info <-delimitation
+
+#Création des groupes pour ASAP
+#Créer des groupes en fonction d'une liste
+ASAP.label <- sapply(as.character(unique(delimitation$ASAP_COI)) , function(x){subset(delimitation,delimitation$ASAP_COI == x)$ID },USE.NAMES=TRUE, simplify = FALSE )  
+#Trouver le noeud commun
+ASAP.ancestor <- sapply(as.character(unique(delimitation$ASAP_COI)) , function(x){findMRCA(BEAST.tree,ASAP.label[[x]]) },USE.NAMES=TRUE,simplify=FALSE)
+#Specimen unique représentant de l'espèce
+ASAP.no.ancestor.label<-ASAP.label[sapply(ASAP.ancestor,is.null)] #garde ceux qui non pas de label pour les
+
+tbl.BEAST<-as_tibble(BEAST.tree)#donne les info de l'arbre
+ASAP.no.ancestor <- sapply(names(ASAP.no.ancestor.label), function(x){subset(tbl.BEAST,tbl.BEAST$label == ASAP.no.ancestor.label[[x]] )$node },USE.NAMES = TRUE, simplify = FALSE ) #reccupere le numéro de noeud à partir du label
+ASAP.ancestor<-replace(ASAP.ancestor,names(ASAP.ancestor) %in% names(ASAP.no.ancestor),ASAP.no.ancestor) #mets a jours le numéro de  noeud pour ceux qui n'ont pas d'ancêtre
+#Création du dataframe a ytilisé dans l'arbre
+ASAP<-as.data.frame(t(as.data.frame(ASAP.ancestor %>% purrr::list_modify("NA" = NULL))))
+ASAP$annote<-""
+
+#Création des groupes pour MPTP
+MPTP.label <- sapply(as.character(unique(delimitation$MPTP_COI)) , function(x){subset(delimitation,delimitation$MPTP_COI == x)$ID },USE.NAMES=TRUE, simplify = FALSE )  
+MPTP.ancestor <- sapply(as.character(unique(delimitation$MPTP_COI)) , function(x){findMRCA(BEAST.tree,MPTP.label[[x]]) },USE.NAMES=TRUE,simplify=FALSE)
+MPTP.no.ancestor.label<-MPTP.label[sapply(MPTP.ancestor,is.null)]
+MPTP.no.ancestor <- sapply(names(MPTP.no.ancestor.label), function(x){subset(tbl.BEAST,tbl.BEAST$label == MPTP.no.ancestor.label[[x]] )$node },USE.NAMES = TRUE, simplify = FALSE )
+MPTP.ancestor<-replace(MPTP.ancestor,names(MPTP.ancestor) %in% names(MPTP.no.ancestor),MPTP.no.ancestor) 
+MPTP<-as.data.frame(t(as.data.frame(MPTP.ancestor %>% purrr::list_modify("NA" = NULL))))
+MPTP$annote<-""
+
+#Création des groupes pour GMYC
+GMYC.label <- sapply(as.character(unique(delimitation$GMYC_COI)) , function(x){subset(delimitation,delimitation$GMYC_COI == x)$ID },USE.NAMES=TRUE, simplify = FALSE )  
+GMYC.ancestor <- sapply(as.character(unique(delimitation$GMYC_COI)) , function(x){findMRCA(BEAST.tree,GMYC.label[[x]]) },USE.NAMES=TRUE,simplify=FALSE)
+GMYC.no.ancestor.label<-GMYC.label[sapply(GMYC.ancestor,is.null)]
+GMYC.no.ancestor <- sapply(names(GMYC.no.ancestor.label), function(x){subset(tbl.BEAST,tbl.BEAST$label == GMYC.no.ancestor.label[[x]] )$node },USE.NAMES = TRUE, simplify = FALSE )
+GMYC.ancestor<-replace(GMYC.ancestor,names(GMYC.ancestor) %in% names(GMYC.no.ancestor),GMYC.no.ancestor) 
+GMYC<-as.data.frame(t(as.data.frame(GMYC.ancestor %>% purrr::list_modify("NA" = NULL))))
+GMYC$annote<-""
+```
+
+```{r "Formatage des taxons problématique, eval =FALSE}
+#Mise en forme des taxons problématques
+#ici liste 6 = cluster 3
+MPTP.cluster3<-as.data.frame(subset(delimitation$ID,delimitation$MPTP_COI == 3))
+colnames(MPTP.cluster3)<-"label"
+MPTP.cluster3<-dplyr::left_join(MPTP.cluster3,tbl.BEAST,by="label")
+MPTP.cluster3<-MPTP.cluster3["node"]
+colnames(MPTP.cluster3)<-"V1"
+MPTP<-subset(MPTP,MPTP$V1!=MPTP.ancestor[[6]])#Retire le cluster erreur
+MPTP<-dplyr::bind_rows(MPTP.cluster3,MPTP)
+MPTP$annote<-""
+```
+
+```{r "Species delimitation: dataframe"}
+#Mise en forme en 1 seul dataframe option
+rownames(ASAP)<-c(1:length(ASAP$V1))
+ASAP$row<-c(1:length(ASAP$V1))
+colnames(ASAP)<-c("ASAP","annote","row")
+rownames(MPTP)<-c(1:length(MPTP$V1))
+MPTP$row<-c(1:length(MPTP$V1))
+colnames(MPTP)<-c("MPTP","annote","row")
+rownames(GMYC)<-c(1:length(GMYC$V1))
+GMYC$row<-c(1:length(GMYC$V1))
+colnames(GMYC)<-c("GMYC","annote","row")
+node.dt<-dplyr::full_join(ASAP,MPTP, by="row")
+node.dt<-dplyr::full_join(node.dt,GMYC, by="row")
+#Couleurs
+col.cluster<-c("#D73027","#F46D43","#FDAE61","#4575B4","#74ADD1","#ABD9E9")
+```
+
+# Visualisation arbre phylogénétique BEAST
+```{r "Arbre de distance BEAST"}
+p <- ggtree(BEAST,mrsd="2021-01-01", ladderize = TRUE,branch.length = 'rate') +
+      theme_tree2()+
+      geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      #geom_tiplab(aes(label=Species), hjust=-.2) +
+      #geom_tiplab(aes(label=SpBOLD), align=TRUE, linesize=.5) + 
+      geom_tiplab(aes(label=ifelse(ID=="GBMNB10963-20",ID ,"")), align=TRUE, linesize=.5) +
+      geom_point2(aes(subset=isTip, color=Country, shape=Source, rm.na=TRUE)) +
+      col19scale + #, shape=Family, size=Abundance
+      scale_size_continuous(trans=log_trans(5)) +
+      #geom_text(aes(label=node), hjust=-.3)+
+      #geom_hilight(node=401, fill="steelblue", alpha=.6) +
+      #geom_hilight(node=311, fill="darkgreen", alpha=.6)+
+      scale_x_continuous(expand = c(0,.1))+
+      theme(legend.position="right") #+ ggtitle("Phylo-géographie du genre Cirripectes")
+
+plot(p)
+ggplotly(p)
+p.beast<-p
+#ggsave(p,file=here("figures","ArbreR_cirripectes.png"), device ="png",scale=2)
+```
+
+# Graphique comparaison BEAST avec ML Tree
+
+--> Graphique final pour la publie 
+```{r Mise en forme des arbres }
+#Face à face trees
+T1 <- ggtree(BEAST) +    
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm"))+    
+  geom_tiplab()   
+T1<-rotate(T1,440)
+T1<-rotate(T1,414)
+T1<-rotate(T1,382)
+T1<-rotate(T1,316)
+T1<-rotate(T1,317)
+
+
+T2 <- ggtree(ML) +   
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm")) +   
+  geom_tiplab(hjust =1) +   
+  scale_x_reverse() 
+T2<-rotate(T2,299)
+T2<-rotate(T2,443)
+
+d1 = T1$data[T1$data$isTip,]  
+d1$x[] = 1  
+d2 = T2$data[T2$data$isTip,]  
+d2$x[] = 2  
+
+TTcon <- rbind(d1, d2)
+
+# Réccuperation de info posterior pour BEAST
+BEASTtree<-read.beast(here("data/2022-12_REVIEW/MCC_tree.tree"))
+data.BEAST.tree<-BEASTtree@data
+data.BEAST.phylo<-T1$data
+data.BEAST.phylo$node<-as.character(data.BEAST.phylo$node)
+data.BEAST<-dplyr::full_join(data.BEAST.tree,data.BEAST.phylo,by="node")
+data.BEAST.post<-subset(data.BEAST,data.BEAST$posterior >=.90)
+
+#ML tree
+#MLroot<-root(ML.tree,node = 296)#459
+MLroot<-root(ML.tree,outgroup="NC_004411_1")
+MLroot<-merge_phyloseq(phyloseq,MLroot)
+
+MLtest<-read.beast(here("data/2022-12_REVIEW/IQtree","2022-12-06_Algt_Cirripectes_N301_504bp.tree"))
+data.ML.tree<-MLtest@data
+
+T2 <- ggtree(MLroot) +   
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm")) +   
+  geom_tiplab(hjust =1) +   
+  scale_x_reverse()
+T2<-rotate(T2,299)
+T2<-rotate(T2,443)
+T2<-rotate(T2,425)
+
+data.ML.phylo<-T2$data
+data.ML.phylo$node<-as.character(data.ML.phylo$node)
+data.ML<-dplyr::full_join(data.ML.tree,data.ML.phylo,by="node")
+data.ML.print<-subset(data.ML,!is.na(data.ML$label.x)) #label.x
+data.ML.print<-separate(data.ML.print,label.x,sep="/",into = c("label.x1","label.x2"),remove=F)
+```
+
+```{r Plot les arbres }
+T1 <- ggtree(BEAST,size=0.1, ladderize = TRUE,branch.length = 'rate') +
+      #geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      geom_tiplab(aes(label=CorrectedSpecies), align=TRUE, linesize=.5)+
+      #theme_tree2(legend.position='none')+ theme(axis.title.x = element_text(size = 12))+
+      theme(legend.position='none')+
+      geom_treescale(x=0, y=-2, width=.01, color='black',fontsize = 1.5,linesize=0.2)+
+      geom_point2(aes(subset=isTip, color=Country, rm.na=TRUE),size=0.5) +
+      col19scale + #, shape=Family, size=Abundance
+      #scale_size_continuous(trans=log_trans(5)) +
+      #scale_x_continuous(expand = c(0,.1))+
+      #geom_text(aes(label=node), hjust=-.3)+
+      #geom_hilight(node=318, fill="steelblue", alpha=.6) +
+      geom_rootedge(rootedge = 0.001)+
+      geom_text(data=data.BEAST.post,mapping=aes(x=branch,
+      label=ifelse(posterior>=0.90 & branch<0.1108,round(posterior,2) ,"")),vjust=-0.3,size=1.5)+
+  #geom_tiplab(aes(label=ifelse(ID=="GBMNB10963-20",ID ,"")), align=TRUE, linesize=.5) +
+      ggtitle("MCC tree")
+T1<-rotate(T1,440)
+T1<-rotate(T1,414)
+T1<-rotate(T1,382)
+T1<-rotate(T1,316)
+T1<-rotate(T1,317) 
+
+T2<-ggtree(MLroot,size=0.1, ladderize = TRUE,branch.length = 'rate') +
+      geom_treescale(x=0, y=-2, width=.01, color='black',fontsize = 1.5,linesize=0.2)+
+      #geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      geom_tiplab(aes(label=CorrectedSpecies), align=TRUE, linesize=.5)+
+      geom_tiplab(aes(label="",color=Country), align=TRUE, linesize=.4) + 
+      geom_point2(aes(subset=isTip, color=Country, rm.na=TRUE)) +
+      col19scale + #, shape=Family, size=Abundance
+      #scale_size_continuous(trans=log_trans(5)) +
+      #scale_x_continuous(expand = c(0,.1))+
+      #geom_text(aes(label=node), hjust=-.3)+
+      theme(legend.position="none",plot.margin = unit(c(0.2,0,0.2,0),"cm")) +
+      ggtitle("ML tree")+
+      #geom_tiplab(hjust =1, align = TRUE) +   
+      geom_rootedge(rootedge = 0.01)+
+      geom_text(data=data.ML.print,mapping=aes(x=branch,label=x),vjust=-0.5,size=2)+
+      scale_x_reverse() # if required add within scale_x_reverse() -> limits = c(5.2, 0))  
+
+T2<-rotate(T2,299)
+T2<-rotate(T2,443)
+T2<-rotate(T2,425)
+
+
+#Actualisation des données de liaison
+d1 = T1$data[T1$data$isTip,]  
+d1$x[] = 1  
+d2 = T2$data[T2$data$isTip,]  
+d2$x[] = 2  
+
+TTcon <- rbind(d1, d2)
+
+L1<-ggplot(TTcon, aes(x = x, y = y, colour = Country, group = label)) +
+      geom_line() + #ylim(1,197)+
+      col19scale + 
+      theme_void() + 
+      theme(legend.position="none", plot.margin = unit(c(0.1,-0.7,-0.29,-0.5),"cm"))
+      #ajuster les marges pour que ça tombe bien en face
+
+both<-cowplot::plot_grid(T1, L1 ,T2, nrow = 1, align = "none")
+both
+#zm()
+#ggplotly(T2)
+
+#ggsave(both,file=here("figures","2022-03-09_MCC-ML-Tree.png"), device ="png",width = 19.05,height = 17, units = "cm")
+#ggsave(both,file=here("figures","2022-03-09_MCC-ML-Tree.pdf"), device ="pdf",width = 19.05,height = 17, units = "cm")
+```
+
+```{r}
+T1 <- ggtree(BEAST,size=0.1, ladderize = TRUE,branch.length = 'rate') +
+      geom_text(data=data.BEAST.post,mapping=aes(x=branch,
+      label=ifelse(posterior>=0.90 & branch<0.1108,round(posterior,2) ,"")),vjust=-0.3,size=1.5)+
+      geom_treescale(x=0, y=-2, width=.01, color='black',fontsize = 1.5,linesize=0.2)+
+      geom_tiplab(aes(label=ifelse(Country == "Reunion",ID,"")),align=TRUE,size=2) +
+      geom_point2(aes(subset=isTip, color=Country, rm.na=TRUE)) +
+      col18scale +
+      theme(plot.margin = unit(c(0,0,0,0),"cm"),#c(0.8,0,0.5,0)
+          legend.position="none",
+          legend.background=element_rect(fill=NA),
+          legend.title=element_text(size=7), 
+          legend.text=element_text(size=5.5),
+          legend.spacing.y = unit(0.02, "cm"))+ 
+      scale_colour_manual(name="Country labels", values=col18,
+      guide=guide_legend(keywidth=0.5,keyheight=0.5,order=2,override.aes=list(size=2,alpha=1)))+
+       xlim(-0.015,0.15)+ylim(-5,293)
+T1
+ggplotly(T1)
+```
+
+```{r Plot les arbres avec delim sp }
+
+T1 <- ggtree(BEAST,size=0.1, ladderize = TRUE,branch.length = 'rate') +
+      geom_text(data=data.BEAST.post,mapping=aes(x=branch,
+      label=ifelse(posterior>=0.90 & branch<0.1108,round(posterior,2) ,"")),vjust=-0.3,size=1)+
+      ##geom_text_repel(data=data.BEAST.post,mapping=aes(x=branch,
+      #label=ifelse(posterior>=0.90 & branch<0.1108,round(posterior,2) ,"")),size=1)+
+      #geom_label_repel(data=data.BEAST.post,mapping=aes(x=branch,
+      #label=ifelse(posterior>=0.90 & branch<0.1108,round(posterior,2) ,"")))+
+      geom_treescale(x=0, y=-2, width=.01, color='black',fontsize = 1.5,linesize=0.2)+
+      #geom_tiplab(aes(label=ID),align=TRUE, hjust=-3.5,size=2) +
+      geom_point2(aes(subset=isTip, color=Country, rm.na=TRUE),size=0.5) +
+      #geom_label(aes(label = "", fill = posterior)) + 
+      col19scale +
+          theme(plot.margin = unit(c(-1.1,0,-0.65,-0.5),"cm"),#c(0.8,0,0.5,0)-1.05,0,-0.75,-0.5
+          legend.position="none",
+          legend.background=element_rect(fill=NA),
+          legend.title=element_text(size=7), 
+          legend.text=element_text(size=5.5),
+          legend.spacing.y = unit(0.02, "cm"))+ 
+      scale_colour_manual(name="Localities", values = col19,na.value="#000000",
+      guide=guide_legend(keywidth=0.5,keyheight=0.5,order=2,override.aes=list(size=2,alpha=1)))+
+  geom_tiplab(aes(label=ifelse(ID=="GBMNB10963-20",ID ,"")), align=TRUE, linesize=.5) 
+T1<-rotate(T1,546)
+T1<-rotate(T1,372)
+T1<-rotate(T1,307)
+T1
+
+info<-ggplot_build(T1)
+
+delimtree<-T1+ geom_rootedge(rootedge = 0.005)+
+      geom_cladelab(data=ASAP,mapping=aes(node=ASAP,label=annote),barsize=3,align=TRUE,horizontal=FALSE,angle=90,barcolor="black",extend=0.2,offset=0.005)+
+      geom_cladelab(data=GMYC,mapping=aes(node=GMYC,label=annote),barsize=3,align=TRUE,horizontal=FALSE,angle=90,barcolor="black",extend=0.2,offset=0.015)+
+      geom_cladelab(data=MPTP,mapping=aes(node=MPTP,label=annote),barsize=3,align=TRUE,horizontal=FALSE,angle=90,barcolor="black",extend=0.2,offset=0.025)
+
+info.delimtree<-ggplot_build(delimtree)
+
+delimtree<-delimtree+
+      annotate("text", x=max(info.delimtree$data[[9]]$x)+0.0005, y=max(info.delimtree$data[[1]]$y)+8, label= "ASAP",angle = 70,size=2.5)+ #0.1280
+      annotate("text", x=max(info.delimtree$data[[11]]$x)+0.0005, y=max(info.delimtree$data[[1]]$y)+8, label= "GMYC",angle = 70,size=2.5)+
+      annotate("text", x=max(info.delimtree$data[[13]]$x)+0.0005, y=max(info.delimtree$data[[1]]$y)+8, label= "MPTP",angle = 70, size=2.5)+
+      annotate("text", x=max(info.delimtree$data[[9]]$x), y=-1, label= length(ASAP$row), size=2)+
+      annotate("text", x=max(info.delimtree$data[[11]]$x), y=-1, label= length(GMYC$row), size=2)+
+      annotate("text", x=max(info.delimtree$data[[13]]$x), y=-1, label= length(MPTP$row), size=2)+
+      ggtitle("MCC tree")+
+      ylim(-3,max(info.delimtree$data[[1]]$y)+10)
+delimtree
+
+
+
+T2<-ggtree(MLroot,size=0.1, ladderize = TRUE,branch.length = 'rate') +
+      geom_treescale(x=0, y=-2, width=.01, color='black',fontsize = 1.5,linesize=0.2)+
+      #geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      geom_tiplab(aes(label="",color=Country), align=TRUE, linesize=.4) + 
+      geom_point2(aes(subset=isTip, color=Country, rm.na=TRUE),size=0.5) +
+      col19scale + #, shape=Family, size=Abundance
+      #scale_size_continuous(trans=log_trans(5)) +
+      #scale_x_continuous(expand = c(0,.1))+
+      #geom_text(aes(label=node), hjust=-.3,size=1)+
+      theme(legend.position="none",plot.margin = unit(c(0.25,0,0.2,0),"cm")) +
+      ggtitle("")+
+      #geom_tiplab(hjust =1, align = TRUE) +   
+      geom_rootedge(rootedge = 0.01)+
+     # geom_text(data=data.ML.print,mapping=aes(x=branch,label=label.x),vjust=-0.5,size=2)+
+      geom_text(data=data.ML.print,mapping=aes(x=branch,label=ifelse(label.x2>80,label.x,"")),vjust=-0.5,size=1)+
+        scale_x_reverse() # if required add within scale_x_reverse() -> limits = c(5.2, 0))  
+T2<-rotate(T2,554)
+T2<-rotate(T2,308)
+T2<-rotate(T2,310)
+T2<-rotate(T2,311)
+T2<-rotate(T2,487)
+T2<-rotate(T2,488)
+
+
+#Recalcul des positions
+d1 = T1$data[T1$data$isTip,]  
+d1$x[] = 1  
+d2 = T2$data[T2$data$isTip,]  
+d2$x[] = 2  
+
+TTcon <- rbind(d1, d2)
+
+L1<-ggplot(TTcon, aes(x = x, y = y, colour = Country, group = label)) +
+      geom_line() + #ylim(1,197)+
+      col19scale + 
+      theme_void() + 
+      theme(legend.position="none", plot.margin = unit(c(0.1,-0.7,-0.29,-0.4),"cm"))
+      #ajuster les marges pour que ça tombe bien en face
+#legend <- get_legend(T1) #activer la légende
+both2<-cowplot::plot_grid(delimtree, L1 ,T2, nrow = 1, align = "none")
+#ggsave(both2,file=here("figures","2022-03-09_MCC-ML-Delim-Tree.png"), device ="png",width = 19.05,height = 17, units = "cm")
+#ggplotly(both2)
+
+
+both2.info<-ggplot_build(both)
+both2leg<-both2+annotation_custom(legend,xmin=-0.85,ymin=0.6)
+both2leg
+
+ggsave(both2,file=here("figures","2022-12_MCC-ML-Delim-Tree.pdf"), device ="pdf",width = 19.05,height = 17, units = "cm")
+#ggsave(both2leg,file=here("figures","2022-03-09_MCC-ML-Delim-Tree_leg.pdf"), device ="pdf",width = 19.05,height = 17, units = "cm")
+#ggsave(both2leg,file=here("figures","2022-03-09_MCC-ML-Delim-Tree_leg.svg"), device ="svg",width = 19.05,height = 17, units = "cm")
+
+```
+
+# Arbre COI final
+```{r}
+#Arbre 1
+T1 <- ggtree(Geneious, ladderize = TRUE,branch.length = 'rate') +
+      geom_treescale()+
+      geom_point2(aes(subset=isTip, color=Country, shape=Source, rm.na=TRUE)) +
+      col17scale +
+      geom_cladelab(node=grp.ancestor[["Cirripectes alboapicalis"]],"C.alboapicalis",align=TRUE)+
+      #geom_cladelab(node=grp.ancestor[["Cirripectes sp. JTW-2010"]],"Cirripectes sp. JTW-2010",align=TRUE)+
+      geom_cladelab(node=grp.ancestor[["Cirripectes variolosus"]],"C. variolosus",align=TRUE)+
+       geom_cladelab(node=grp.ancestor[["Cirripectes fuscoguttatus"]],"C.fuscoguttatus",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes quagga"]],"C. quagga",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes jenningsi"]],"C. jenningsi",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes auritus/sp JTW-2012"]],"C. auritus/sp JTW-2012",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes polyzona"]],"C. polyzona",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes vanderbilti"]],"C. vanderbilti",align=TRUE)+
+   geom_cladelab(node=grp.ancestor[["Cirripectes chelomatus"]],"C. chelomatus",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes obscurus"]],"C. obscurus",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes sp. 1 CC-2019"]],"C. sp. 1 CC-2019",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes castaneus"]],"C. castaneus",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes castaneus/stigmaticus"]]," C. castaneus/stigmaticus",align=TRUE)+
+  geom_cladelab(node=grp.ancestor[["Cirripectes stigmaticus"]],"C. stigmaticus",align=TRUE)+
+      theme(legend.position="none",plot.margin = unit(c(0.8,0,0.5,0),"cm")) + 
+     # scale_x_continuous(expand = c(0,0,0.15,0))+
+      ggtitle("Arbre de distances")+ xlim(-0.005,0.19)
+T1 
+
+T2 <- ggtree(BEAST) +   
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm")) +   
+  geom_tiplab(hjust =1) +   
+  scale_x_reverse() 
+
+d1 = T1$data[T1$data$isTip,]  
+d1$x[] = 1  
+d2 = T2$data[T2$data$isTip,]  
+d2$x[] = 2  
+
+TTcon <- rbind(d1, d2)  
+
+T2<-ggtree(BEAST,mrsd="2021-01-01", ladderize = TRUE,branch.length = 'height') +
+       theme_tree2()+
+       geom_point2(aes(subset=isTip, color=Country, shape=Source, rm.na=TRUE)) +
+       col17scale +
+       theme(legend.position="right",plot.margin = unit(c(0.5,0,0.25,0),"cm")) +
+       ggtitle("Arbre phylogénétique")+
+       scale_x_reverse() # if required add within scale_x_reverse() -> limits = c(5.2, 0))  
+T2
+
+L1<-ggplot(TTcon, aes(x = x, y = y, colour = Country, group = label)) +
+      geom_line() + ylim(1,197)+
+      col17scale + 
+      theme_void() + 
+      theme(legend.position="none", plot.margin = unit(c(0.3,0,-0.1,0),"cm"))
+      #ajuster les marges pour que ça tombe bien en face
+
+p<-cowplot::plot_grid(T1, L1 ,T2, nrow = 1, align = "none")
+
+#ggsave(p,file=here("figures","Arbres_combinees.png"), device ="png",scale=2)
+```
+
+# Arbres phylogénétique sur les mt
+```{r "Importation mt}
+sampledata<-read.csv(here("data","Cirripectes_R_sampledata.csv"), header = T,sep =";",quote="\"")
+table(duplicated(sampledata$ID_tree))["FALSE"]
+sampledata<-subset(sampledata,sampledata$Sample!="")
+
+#Mise en forme du sampledata
+samplename<-sampledata[,1]
+rownames(sampledata)<-samplename
+sampledata<-sampledata[,-1]
+sampledata$Country[sampledata$Country==""]<-NA
+sampledata<-subset(sampledata,sampledata$ID!=is.na(sampledata$ID))
+data<-sample_data(sampledata)
+
+#Mise en forme de la taxonomie
+tax<-read.csv(here("data","Cirripectes_R_taxtable.csv"), header = T,sep =";")
+nameotu<-tax[,1]
+rownames(tax)<-nameotu
+tax<-tax[,-1]
+tax<-tax[,-7]
+tax<-as.matrix(tax)
+tax<-tax_table(tax)
+
+#BEAST
+BEAST.mt.tree<-read.nexus(here("data/MrBayes","2022-04-20_ConsensusTrees_mt.tre"))
+BEAST.mt.tree<-BEAST.mt.tree$con_50_majrule
+BEAST.mt.tree.new <- BEAST.mt.tree
+BEAST.mt.tree.new$tip.label <-sampledata$ID[match(BEAST.mt.tree$tip.label,sampledata$ID_Geneious_tree)]
+BEAST.mt.tree<- BEAST.mt.tree.new ; rm(BEAST.mt.tree.new)
+
+#ML tree
+ML.mt.tree<-read.nexus(here("data/IQ-Tree/220420092132_Mt_GTR_partition","2022-04-16_Cirripectes_mt_N28_14081_rooted.tree"))
+ML.mt.tree$tip.label
+ML.mt.tree$tip.label<-str_replace_all(ML.mt.tree$tip.label,pattern ="-", replacement="_")
+sampledata$ID_Geneious_tree
+ML.mt.tree.new <- ML.mt.tree
+ML.mt.tree.new$tip.label <-sampledata$ID[match(ML.mt.tree$tip.label,sampledata$ID_Geneious_tree)]
+ML.mt.tree<- ML.mt.tree.new ; rm(ML.mt.tree.new)
+```
+
+```{r "Creation phyloseq"}
+#Création du tableau OTU fictif
+nbotu<-length(tax[,1])
+otu<-diag(nbotu)
+rownames(otu)<-nameotu
+colnames(otu)<-samplename
+otu<-as.matrix(otu)
+otu<-otu_table(otu,taxa_are_rows =TRUE)
+class(otu)
+
+#Vérification des match taxa/OTU
+setdiff(taxa_names(otu), taxa_names(tax))
+setdiff(taxa_names(otu), Geneious.tree$tip.label)
+setdiff(taxa_names(otu), BEAST.mt.tree$tip.label)
+setdiff(taxa_names(otu), ML.mt.tree$tip.label)
+
+#Création des objects phyloseq
+phyloseq<-phyloseq(tax,otu,data)
+BEAST.mt<-merge_phyloseq(phyloseq,BEAST.mt.tree)
+ML.mt<-merge_phyloseq(phyloseq,ML.mt.tree)
+```
+```{r Bayesian tree mt}
+p <- ggtree(BEAST.mt,mrsd="2021-01-01", ladderize = TRUE,branch.length = 'rate') +
+      theme_tree2()+
+      geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      geom_tiplab(aes(label=CorrectedSpecies), hjust=-.2) +
+      #geom_tiplab(aes(label=SpBOLD), align=TRUE, linesize=.5) + 
+      geom_point2(aes(subset=isTip, color=Country, shape=Source, rm.na=TRUE)) +
+      col20scale + #, shape=Family, size=Abundance
+      scale_size_continuous(trans=log_trans(5)) +
+      #geom_text(aes(label=node), hjust=-.3)+
+      #geom_hilight(node=401, fill="steelblue", alpha=.6) +
+      #geom_hilight(node=311, fill="darkgreen", alpha=.6)+
+      scale_x_continuous(expand = c(0,.1))+
+      theme(legend.position="right") #+ ggtitle("Phylo-géographie du genre Cirripectes")
+
+plot(p)
+p.beast<-p
+```
+
+--> Graphique final pour la publie 
+```{r}
+BEAST<-BEAST.mt
+ML<-ML.mt
+```
+
+```{r Mise en forme des arbres pour mt  }
+#Face à face trees
+T1 <- ggtree(BEAST) +    
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm"))+    
+  geom_tiplab()   
+
+MLroot<-root(ML.mt.tree,outgroup="NC_004411_1")
+MLroot<-merge_phyloseq(phyloseq,MLroot)
+
+T2 <- ggtree(MLroot) +   
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm")) +   
+  geom_tiplab(hjust =1) +   
+  scale_x_reverse() 
+
+d1 = T1$data[T1$data$isTip,]  
+d1$x[] = 1  
+d2 = T2$data[T2$data$isTip,]  
+d2$x[] = 2  
+
+TTcon <- rbind(d1, d2)
+
+T2 <- ggtree(MLroot) +   
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm")) +   
+  geom_tiplab(hjust =1) +   
+  scale_x_reverse()
+
+data.ML.phylo<-T2$data
+data.ML.phylo$node<-as.character(data.ML.phylo$node)
+data.ML<-dplyr::full_join(data.ML.tree,data.ML.phylo,by="node")
+data.ML.print<-subset(data.ML,!is.na(data.ML$label.x)) #label.x
+data.ML.print<-separate(data.ML.print,label.x,sep="/",into = c("label.x1","label.x2"),remove=F)
+```
+
+
+```{r Plot les arbres mt }
+col2<-c("#C51B7D","#8F7700FF")
+col2scale <- scale_colour_manual(name = "col2",values = col2,na.value="#000000")
+
+T1 <- ggtree(BEAST,size=0.1, ladderize = TRUE,branch.length = 'rate') +
+      #geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      #theme_tree2(legend.position='none')+ theme(axis.title.x = element_text(size = 12))+
+      theme(legend.position='none')+
+      geom_treescale(x=0, y=0, width=.1, color='black',fontsize = 1.5,linesize=0.2)+
+      geom_tiplab(aes(label="",color=Country), align=TRUE, linesize=.4) +
+      geom_point2(aes(subset=isTip, color=Country, rm.na=TRUE)) +
+      col2scale + #, shape=Family, size=Abundance
+      #scale_size_continuous(trans=log_trans(5)) +
+      #scale_x_continuous(expand = c(0,.1))+
+      #geom_text(aes(subset=!isTip,label=node), hjust=-.3)+
+      #geom_hilight(node=318, fill="steelblue", alpha=.6) +
+      geom_rootedge(rootedge = 0.05)+
+      ggtitle("MCC tree")
+T1<-rotate(T1,40)
+T1<-rotate(T1,48)
+#plotly::ggplotly(T1)
+
+T2<-ggtree(MLroot,size=0.1, ladderize = TRUE,branch.length = 'rate') +
+      geom_treescale(x=0, y=0, width=.1, color='black',fontsize = 1.5,linesize=0.2)+
+      geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      geom_tiplab(aes(label="",color=Country), align=TRUE, linesize=.4) + 
+      geom_point2(aes(subset=isTip, color=Country, rm.na=TRUE)) +
+      col2scale + #, shape=Family, size=Abundance
+      #scale_size_continuous(trans=log_trans(5)) +
+      #scale_x_continuous(expand = c(0,.1))+
+      #geom_text(aes(label=node), hjust=-.3)+
+      theme(legend.position="none",plot.margin = unit(c(0.2,0,0.2,0),"cm")) +
+      ggtitle("ML tree")+
+      #geom_tiplab(hjust =1, align = TRUE) +   
+      geom_rootedge(rootedge = 0.05)+
+      scale_x_reverse() # if required add within scale_x_reverse() -> limits = c(5.2, 0))  
+
+T2<-rotate(T2,38)
+T2<-rotate(T2,46)
+T2<-rotate(T2,48)
+T2<-rotate(T2,39)
+#plotly::ggplotly(T2)
+#Actualisation des données de liaison
+d1 = T1$data[T1$data$isTip,]  
+d1$x[] = 1  
+d2 = T2$data[T2$data$isTip,]  
+d2$x[] = 2  
+
+TTcon <- rbind(d1, d2)
+
+L1<-ggplot(TTcon, aes(x = x, y = y, colour = Country, group = label)) +
+      geom_line() + #ylim(1,197)+
+      col2scale + 
+      theme_void() + 
+      theme(legend.position="none", plot.margin = unit(c(0.5,0,0.5,0),"cm"))
+      #theme(legend.position="none", plot.margin = unit(c(0.1,-0.7,-0.29,-0.5),"cm"))
+      #ajuster les marges pour que ça tombe bien en face
+
+both<-cowplot::plot_grid(T1, L1 ,T2, nrow = 1, align = "none")
+both
+#zm()
+#ggplotly(T2)
+
+#ggsave(both,file=here("figures","2022-04-28_MCC-ML-Tree-mt.png"), device ="png",width = 19.05,height = 17, units = "cm")
+#ggsave(both,file=here("figures","22022-04-28_MCC-ML-Tree-mt.pdf"), device ="pdf",width = 19.05,height = 17, units = "cm")
+```
+
+# Arbres phylogénétique sur la Rhodopsin
+```{r "Importation rho}
+sampledata<-read.csv(here("data","Cirripectes_Rho_sampledata.csv"), header = T,sep =";",quote="\"")
+table(duplicated(sampledata$ID_tree))["FALSE"]
+sampledata<-subset(sampledata,sampledata$Sample!="")
+
+#Mise en forme du sampledata
+samplename<-sampledata[,1]
+rownames(sampledata)<-samplename
+sampledata<-sampledata[,-1]
+sampledata$Localities[sampledata$ID=="HQ168927_1_Omobranchus_obliquus"]<-NA
+sampledata$Localities[sampledata$ID=="HQ168928_Ophioblennius_macclurei"]<-NA
+sampledata$Localities[sampledata$ID=="HQ168942_1_Salarias_fasciatus"]<-NA
+sampledata$Localities[sampledata$ID=="KF265117_1_Petroscirtes_breviceps"]<-NA
+
+sampledata$Sp_corrige[sampledata$ID=="HQ168927_1_Omobranchus_obliquus"]<-NA
+sampledata$Sp_corrige[sampledata$ID=="HQ168928_Ophioblennius_macclurei"]<-NA
+sampledata$Sp_corrige[sampledata$ID=="HQ168942_1_Salarias_fasciatus"]<-NA
+sampledata$Sp_corrige[sampledata$ID=="KF265117_1_Petroscirtes_breviceps"]<-NA
+
+sampledata<-subset(sampledata,sampledata$ID!=is.na(sampledata$ID))
+data<-sample_data(sampledata)
+
+#Mise en forme de la taxonomie
+tax<-read.csv(here("data","Cirripectes_Rho_taxatable.csv"), header = T,sep =";")
+nameotu<-tax[,1]
+rownames(tax)<-nameotu
+tax<-tax[,-1]
+tax<-tax[,-7]
+tax<-as.matrix(tax)
+tax<-tax_table(tax)
+
+#BEAST
+BEAST.rho.tree<-read.nexus(here("data/MrBayes","2022-04-20_ConsensusTrees_rho.tre"))
+BEAST.rho.tree<-BEAST.rho.tree[1]
+BEAST.rho.tree<-BEAST.rho.tree$con_50_majrule
+BEAST.rho.tree<-read.nexus(here("data/BEAST/2022-04-80_Rho_outgroup_relaxedBirth","1stpos.tree"))
+
+#ML tree
+ML.rho.tree<-read.nexus(here("data/IQ-Tree/220429081306_Rho_partition","2022-04-14_Cirripectes_Rho_N57_737b_contree.nex"))
+ML.rho.tree$tip.label
+```
+
+```{r "Creation phyloseq"}
+#Création du tableau OTU fictif
+nbotu<-length(tax[,1])
+otu<-diag(nbotu)
+rownames(otu)<-nameotu
+colnames(otu)<-samplename
+otu<-as.matrix(otu)
+otu<-otu_table(otu,taxa_are_rows =TRUE)
+class(otu)
+
+#Vérification des match taxa/OTU
+setdiff(taxa_names(otu), taxa_names(tax))
+#setdiff(taxa_names(otu), Geneious.tree$tip.label)
+setdiff(taxa_names(otu), BEAST.rho.tree$tip.label)
+setdiff(taxa_names(otu), ML.rho.tree$tip.label)
+
+#Création des objects phyloseq
+phyloseq<-phyloseq(tax,otu,data)
+BEAST.rho<-merge_phyloseq(phyloseq,BEAST.rho.tree)
+ML.rho<-merge_phyloseq(phyloseq,ML.rho.tree)
+```
+
+```{r Bayesian tree rho}
+p <- ggtree(BEAST.rho,mrsd="2021-01-01", ladderize = TRUE,branch.length = 'rate') +
+      theme_tree2()+
+      geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      geom_tiplab(aes(label=Sp_corrige), hjust=-.2) +
+      #geom_tiplab(aes(label=SpBOLD), align=TRUE, linesize=.5) + 
+      geom_point2(aes(subset=isTip, color=Localities, rm.na=TRUE)) +
+      col20scale + #, shape=Family, size=Abundance
+      scale_size_continuous(trans=log_trans(5)) +
+      #geom_text(aes(label=node), hjust=-.3)+
+      #geom_hilight(node=401, fill="steelblue", alpha=.6) +
+      #geom_hilight(node=311, fill="darkgreen", alpha=.6)+
+      scale_x_continuous(expand = c(0,.1))+
+      theme(legend.position="right") #+ ggtitle("Phylo-géographie du genre Cirripectes")
+
+plot(p)
+p.beast<-p
+```
+
+
+--> Graphique final pour la publie 
+```{r}
+BEAST<-BEAST.rho
+ML<-ML.rho
+```
+
+```{r Mise en forme des arbres pour rho  }
+#Face à face trees
+T1 <- ggtree(BEAST) +    
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm"))+    
+  geom_tiplab()  
+
+T1<-rotate(T1,73)
+T1<-rotate(T1,74)
+T1<-rotate(T1,102)
+T1<-rotate(T1,104)
+T1<-rotate(T1,75)
+T1<-rotate(T1,87)
+T1<-rotate(T1,90)
+
+# Réccuperation de info posterior pour BEAST
+BEASTtree<-read.beast(here("data/BEAST/2022-04-80_Rho_outgroup_relaxedBirth","1stpos.tree"))
+data.BEAST.tree<-BEASTtree@data
+data.BEAST.phylo<-T1$data
+data.BEAST.phylo$node<-as.character(data.BEAST.phylo$node)
+data.BEAST<-dplyr::full_join(data.BEAST.tree,data.BEAST.phylo,by="node")
+data.BEAST.post<-subset(data.BEAST,data.BEAST$posterior >=.50)
+
+
+MLroot<-root(ML.rho.tree,outgroup="KF265117_1_Petroscirtes_breviceps")
+MLroot<-merge_phyloseq(phyloseq,MLroot)
+
+MLtest<-read.beast(here("data/IQ-Tree/220429081306_Rho_partition","2022-04-14_Cirripectes_Rho_N57_737b_contree.nex"))
+data.ML.tree<-MLtest@data
+
+
+T2 <- ggtree(MLroot) +   
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm")) +   
+  geom_tiplab(hjust =1) +   
+  scale_x_reverse() 
+
+d1 = T1$data[T1$data$isTip,]  
+d1$x[] = 1  
+d2 = T2$data[T2$data$isTip,]  
+d2$x[] = 2  
+
+TTcon <- rbind(d1, d2)
+
+T2 <- ggtree(MLroot) +   
+  theme_tree2(legend.position='none', plot.margin = unit(c(0,0,0,0),"cm")) +   
+  geom_tiplab(hjust =1) +   
+  scale_x_reverse()
+
+data.ML.phylo<-T2$data
+data.ML.phylo$node<-as.character(data.ML.phylo$node)
+data.ML<-dplyr::full_join(data.ML.tree,data.ML.phylo,by="node")
+data.ML.print<-subset(data.ML,!is.na(data.ML$label.x)) #label.x
+data.ML.print<-separate(data.ML.print,label.x,sep="/",into = c("label.x1","label.x2"),remove=F)
+data.BEAST.post<-subset(data.BEAST,data.BEAST$posterior >=.50)
+```
+
+
+```{r Plot les arbres rho }
+col.sp.rho<-c("#C51B7D","#c13ac9","#003C67FF","#7AA6DCFF","#276419","#861d39")
+colscale.sp.rho <- scale_colour_manual(name = "col.sp.rho",values = col.sp.rho,na.value="#000000")
+
+T1 <- ggtree(BEAST,size=0.1, ladderize = TRUE,branch.length = 'rate') +
+      geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      #theme_tree2(legend.position='none')+ theme(axis.title.x = element_text(size = 12))+
+      theme(legend.position='none')+
+      geom_treescale(x=0, y=0, width=.0001, color='black',fontsize = 1.5,linesize=0.2)+
+      geom_tiplab(aes(label="",color=Sp_corrige), align=TRUE, linesize=.4) +
+      geom_point2(aes(subset=isTip, color=Sp_corrige, rm.na=TRUE)) +
+      colscale.sp.rho + #, shape=Family, size=Abundance
+      #scale_size_continuous(trans=log_trans(5)) +
+      #scale_x_continuous(expand = c(0,.1))+
+      #geom_text(aes(subset=!isTip,label=node), hjust=-.3)+
+      #geom_hilight(node=318, fill="steelblue", alpha=.6) +
+      geom_rootedge(rootedge = 0.00001)+
+      geom_text(data=data.BEAST.post,mapping=aes(x=branch,
+      label=ifelse(posterior>=0.50,round(posterior,2) ,"")),vjust=-0.3,size=2)+
+      ggtitle("MCC tree")
+T1<-rotate(T1,73)
+T1<-rotate(T1,74)
+T1<-rotate(T1,102)
+T1<-rotate(T1,104)
+T1<-rotate(T1,75)
+T1<-rotate(T1,87)
+T1<-rotate(T1,90)
+#plotly::ggplotly(T1)
+
+T2<-ggtree(MLroot,size=0.1, ladderize = TRUE,branch.length = 'rate') +
+      geom_treescale(x=0, y=0, width=.001, color='black',fontsize = 1.5,linesize=0.2)+
+      geom_text2(aes(subset=!isTip, label=label), hjust=-.2, size=2) +
+      geom_tiplab(aes(label="",color=Sp_corrige), align=TRUE, linesize=.4) + 
+      geom_point2(aes(subset=isTip, color=Sp_corrige, rm.na=TRUE)) +
+      colscale.sp.rho + #, shape=Family, size=Abundance
+      #scale_size_continuous(trans=log_trans(5)) +
+      #scale_x_continuous(expand = c(0,.1))+
+      #geom_text(aes(label=node), hjust=-.3)+
+      theme(legend.position="none",plot.margin = unit(c(0.2,0,0.2,0),"cm")) +
+      ggtitle("ML tree")+
+      #geom_tiplab(hjust =1, align = TRUE) +   
+      geom_rootedge(rootedge = 0.001)+
+      geom_text(data=data.ML.print,mapping=aes(x=branch,label=label.x),vjust=-0.5,size=2)+
+      scale_x_reverse() # if required add within scale_x_reverse() -> limits = c(5.2, 0))  
+
+#plotly::ggplotly(T2)
+#Actualisation des données de liaison
+d1 = T1$data[T1$data$isTip,]  
+d1$x[] = 1  
+d2 = T2$data[T2$data$isTip,]  
+d2$x[] = 2  
+
+TTcon <- rbind(d1, d2)
+
+L1<-ggplot(TTcon, aes(x = x, y = y, colour = Sp_corrige, group = label)) +
+      geom_line() + #ylim(1,197)+
+      colscale.sp.rho + 
+      theme_void() + 
+      theme(legend.position="none", plot.margin = unit(c(0.2,0,0,0),"cm"))
+      #ajuster les marges pour que ça tombe bien en face
+
+both<-cowplot::plot_grid(T1, L1 ,T2, nrow = 1, align = "none")
+both
+
+#legend <- get_legend(T1) #activer la légende
+both.info<-ggplot_build(both)
+bothleg<-both+annotation_custom(legend,xmin=-0.85,ymin=0.6)
+bothleg
+
+#ggsave(both,file=here("figures","2022-04-28_MCC-ML-Tree-rho.png"), device ="png",width = 19.05,height = 17, units = "cm")
+#ggsave(both,file=here("figures","22022-04-28_MCC-ML-Tree-rho.pdf"), device ="pdf",width = 19.05,height = 17, units = "cm")
+```

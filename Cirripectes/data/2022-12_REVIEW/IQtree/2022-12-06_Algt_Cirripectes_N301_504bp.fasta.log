@@ -1,0 +1,716 @@
+IQ-TREE multicore version 1.6.12 for Linux 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    woese (AVX, FMA3, 504 GB RAM)
+Command: ../../iqtree -s 2022-12-06_Algt_Cirripectes_N301_504bp.fasta -st DNA -spp Partition.nex -pre 2022-12-06_Algt_Cirripectes_N301_504bp.fasta -m GTR+I+G4+F -bb 1000 -alrt 1000
+Seed:    414264 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Dec  6 14:31:50 2022
+Kernel:  AVX+FMA - 1 threads (48 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 48 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading partition model file Partition.nex ...
+Reading alignment file 2022-12-06_Algt_Cirripectes_N301_504bp.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 301 sequences with 504 columns, 195 distinct patterns
+179 parsimony-informative, 10 singleton sites, 315 constant sites
+                                     Gap/Ambiguity  Composition  p-value
+   1  KT284893_1_Omobranchus_elegans         0.00%    passed     62.77%
+   2  NC_004411_1_Petroscirtes_breviceps     0.00%    passed     68.06%
+   3  NC_028295_1_Ecsenius_bicolor           0.00%    passed     33.37%
+   4  NC_004412_1_Salarias_fasciatus         0.00%    failed      0.69%
+   5  KU136_Ophioblennius_macclurei_         0.00%    passed     58.51%
+   6  AUSTR545_13_Cirripectes                0.00%    passed     81.82%
+   7  AUSTR546_13_Cirripectes                0.00%    passed     62.09%
+   8  AUSTR398_13_Cirripectes                0.00%    passed     92.03%
+   9  AUSTR547_13_Cirripectes                0.00%    passed     92.03%
+  10  AUSTR548_13_Cirripectes                0.00%    passed     92.03%
+  11  GAMBA640_12_Cirripectes                0.00%    passed     92.03%
+  12  GAMBA637_12_Cirripectes                0.00%    passed     95.66%
+  13  AUSTR544_13_Cirripectes                0.00%    passed     79.16%
+  14  MH932008_1_Cirripectes_alboapicalis    0.00%    passed     91.98%
+  15  MH932009_1_Cirripectes_alboapicalis    0.00%    passed     91.98%
+  16  MH932004_1_Cirripectes_patuki          0.00%    passed     52.43%
+  17  MH932006_1_Cirripectes_patuki          0.00%    passed     62.09%
+  18  MH932005_1_Cirripectes_patuki          0.00%    passed     71.59%
+  19  MH932003_1_Cirripectes_patuki          0.00%    passed     67.60%
+  20  MH932007_1_Cirripectes_patuki          0.00%    passed     73.37%
+  21  AUSTR166_13_Cirripectes                0.00%    passed     85.22%
+  22  FPFLB369_12_Cirripectes                0.00%    passed     85.22%
+  23  FPFLB371_12_Cirripectes                0.00%    passed     85.22%
+  24  FUT165_18_Cirripectes                  0.00%    passed     91.54%
+  25  ANGBF32332_19_Cirripectes              0.00%    passed     88.57%
+  26  AUSTR163_13_Cirripectes                0.00%    passed     88.57%
+  27  AUSTR533_13_Cirripectes                0.00%    passed     88.57%
+  28  SCILL193_15_Cirripectes                0.00%    passed     88.57%
+  29  UKFBI168_08_Cirripectes                0.00%    passed     88.57%
+  30  FPFLB304_12_Cirripectes                0.00%    passed     88.57%
+  31  FPFLB317_12_Cirripectes                0.00%    passed     88.57%
+  32  GAMBA246_12_Cirripectes                0.00%    passed     88.31%
+  33  AUSTR400_13_Cirripectes                0.00%    passed     85.22%
+  34  AUSTR401_13_Cirripectes                0.00%    passed     85.22%
+  35  AUSTR534_13_Cirripectes                0.00%    passed     85.22%
+  36  AUSTR535_13_Cirripectes                0.00%    passed     85.22%
+  37  FPFLB318_12_Cirripectes                0.00%    passed     85.22%
+  38  FPFLB321_12_Cirripectes                0.00%    passed     85.22%
+  39  GAMBA236_12_Cirripectes                0.00%    passed     85.22%
+  40  GAMBA247_12_Cirripectes                0.00%    passed     85.22%
+  41  MBFA178_07_Cirripectes                 0.00%    passed     85.22%
+  42  MBFA179_07_Cirripectes                 0.00%    passed     85.22%
+  43  SBF750_11_Cirripectes                  0.00%    passed     94.03%
+  44  COLOR408_15_Cirripectes                0.00%    passed     99.04%
+  45  SBF751_11_Cirripectes                  0.00%    passed     96.67%
+  46  SBF706_11_Cirripectes                  0.00%    passed     99.36%
+  47  SBF707_11_Cirripectes                  0.00%    passed     98.36%
+  48  COLOR413_15_Cirripectes                0.00%    passed     99.04%
+  49  ORCIE1990_Cirripectes_randalli         0.00%    passed     99.04%
+  50  SBF493_11_Cirripectes                  0.00%    passed     99.04%
+  51  SBF680_11_Cirripectes                  0.00%    passed     99.04%
+  52  SBF681_11_Cirripectes                  0.00%    passed     99.04%
+  53  AUSTR154_13_Cirripectes                0.00%    passed     83.19%
+  54  MBFA979_07_Cirripectes                 0.00%    passed     87.69%
+  55  AUSTR155_13_Cirripectes                0.00%    passed     85.18%
+  56  AUSTR395_13_Cirripectes                0.00%    passed     85.18%
+  57  FUT160_18_Cirripectes                  0.00%    passed     85.18%
+  58  MBFA978_07_Cirripectes                 0.00%    passed     85.18%
+  59  ANGBF9231_12_Cirripectes               0.00%    passed     54.48%
+  60  DSFSG737_11_Cirripectes                0.00%    passed     61.15%
+  61  ANGBF9244_12_Cirripectes               0.00%    passed     61.38%
+  62  DSFSG709_11_Cirripectes                0.00%    passed     61.38%
+  63  DSLAG1745_12_Cirripectes               0.00%    passed     61.38%
+  64  DSLAG1786_12_Cirripectes               0.00%    passed     61.38%
+  65  DSLAG1798_12_Cirripectes               0.00%    passed     61.38%
+  66  RESIC057_11_Cirripectes                0.00%    passed     76.07%
+  67  RESIC484_11_Cirripectes                0.00%    passed     76.07%
+  68  RESIC148_11_Cirripectes                0.00%    passed     79.49%
+  69  ZOSKT1161_16_Cirripectes               0.00%    passed     62.76%
+  70  ANGBF32328_19_Cirripectes              0.00%    passed     86.34%
+  71  ANGBF32329_19_Cirripectes              0.00%    passed     82.08%
+  72  ANGBF32330_19_Cirripectes              0.00%    passed     82.08%
+  73  SAIAB026_06_Cirripectes                0.00%    passed     70.69%
+  74  GBMIN96357_17_Cirripectes              0.00%    passed     73.03%
+  75  SAIAB187_06_Cirripectes                0.20%    passed     79.30%
+  76  ANGBF26357_19_Cirripectes              0.00%    passed     77.68%
+  77  ANGBF32331_19_Cirripectes              0.00%    passed     99.98%
+  78  UKFBJ563_08_Cirripectes                0.00%    passed     99.98%
+  79  FUT163_18_Cirripectes                  0.00%    passed     99.68%
+  80  GBMNB11037_20_Cirripectes              0.00%    passed     85.52%
+  81  GBMNB11060_20_Cirripectes              0.00%    passed     96.56%
+  82  GBMNB11049_20_Cirripectes              0.00%    passed     94.53%
+  83  GBMNB11023_20_Cirripectes              0.00%    passed     86.37%
+  84  GBMNB11002_20_Cirripectes              0.00%    passed     85.62%
+  85  GBMNB11045_20_Cirripectes              0.00%    passed     89.64%
+  86  GBMNB11068_20_Cirripectes              0.00%    passed     89.55%
+  87  GBMNB11012_20_Cirripectes              0.00%    passed     94.70%
+  88  GBMNB11059_20_Cirripectes              0.00%    passed     94.70%
+  89  GBMNB11069_20_Cirripectes              0.00%    passed     94.70%
+  90  GBMNB10997_20_Cirripectes              0.00%    passed     91.74%
+  91  GBMNB11062_20_Cirripectes              0.00%    passed     91.74%
+  92  GBMNB10994_20_Cirripectes              0.00%    passed     92.99%
+  93  GBMNB11003_20_Cirripectes              0.00%    passed     95.83%
+  94  GBMNB11025_20_Cirripectes              0.00%    passed     95.83%
+  95  GBMNB11010_20_Cirripectes              0.00%    passed     94.70%
+  96  GBMNB11018_20_Cirripectes              0.00%    passed     94.70%
+  97  GBMNB11058_20_Cirripectes              0.00%    passed     94.70%
+  98  GBMNB11008_20_Cirripectes              0.00%    passed     91.74%
+  99  GBMNB11032_20_Cirripectes              0.00%    passed     91.74%
+ 100  GBMNB11027_20_Cirripectes              0.00%    passed     95.00%
+ 101  GBMNB11036_20_Cirripectes              0.00%    passed     95.00%
+ 102  GBMNB11048_20_Cirripectes              0.00%    passed     95.00%
+ 103  GBMNB11050_20_Cirripectes              0.00%    passed     95.00%
+ 104  GBMNB11016_20_Cirripectes              0.00%    passed     92.67%
+ 105  GBMNB11057_20_Cirripectes              0.00%    passed     95.00%
+ 106  GBMNB11005_20_Cirripectes              0.00%    passed     96.83%
+ 107  GBMNB11039_20_Cirripectes              0.00%    passed     89.18%
+ 108  GBMNB11052_20_Cirripectes              0.00%    passed     92.67%
+ 109  GBMNB10995_20_Cirripectes              0.00%    passed     91.74%
+ 110  GBMNB11000_20_Cirripectes              0.00%    passed     91.74%
+ 111  GBMNB11043_20_Cirripectes              0.00%    passed     91.74%
+ 112  GBMNB10996_20_Cirripectes              0.00%    passed     92.67%
+ 113  GBMNB10998_20_Cirripectes              0.00%    passed     91.74%
+ 114  GBMNB11015_20_Cirripectes              0.00%    passed     91.74%
+ 115  GBMNB11066_20_Cirripectes              0.00%    passed     91.74%
+ 116  GBMNB10999_20_Cirripectes              0.00%    passed     95.83%
+ 117  GBMNB11001_20_Cirripectes              0.00%    passed     95.83%
+ 118  GBMNB11004_20_Cirripectes              0.00%    passed     92.67%
+ 119  GBMNB11034_20_Cirripectes              0.00%    passed     92.67%
+ 120  GBMNB11007_20_Cirripectes              0.00%    passed     96.83%
+ 121  GBMNB11011_20_Cirripectes              0.00%    passed     92.67%
+ 122  GBMNB11017_20_Cirripectes              0.00%    passed     95.83%
+ 123  GBMNB11019_20_Cirripectes              0.00%    passed     92.67%
+ 124  GBMNB11021_20_Cirripectes              0.00%    passed     91.74%
+ 125  GBMNB11024_20_Cirripectes              0.00%    passed     91.74%
+ 126  GBMNB11028_20_Cirripectes              0.00%    passed     96.83%
+ 127  GBMNB11029_20_Cirripectes              0.00%    passed     95.83%
+ 128  GBMNB11051_20_Cirripectes              0.00%    passed     95.83%
+ 129  GBMNB11040_20_Cirripectes              0.00%    passed     96.83%
+ 130  GBMNB11042_20_Cirripectes              0.00%    passed     93.64%
+ 131  GBMNB11047_20_Cirripectes              0.00%    passed     96.11%
+ 132  GBMNB11055_20_Cirripectes              0.00%    passed     92.67%
+ 133  GBMNB11064_20_Cirripectes              0.00%    passed     92.67%
+ 134  GBMNB11065_20_Cirripectes              0.00%    passed     96.83%
+ 135  GBMNB11006_20_Cirripectes              0.00%    passed     94.70%
+ 136  GBMNB11009_20_Cirripectes              0.00%    passed     94.70%
+ 137  GBMNB11013_20_Cirripectes              0.00%    passed     94.70%
+ 138  GBMNB11014_20_Cirripectes              0.00%    passed     94.70%
+ 139  GBMNB11020_20_Cirripectes              0.00%    passed     94.70%
+ 140  GBMNB11022_20_Cirripectes              0.00%    passed     94.70%
+ 141  GBMNB11026_20_Cirripectes              0.00%    passed     94.70%
+ 142  GBMNB11030_20_Cirripectes              0.00%    passed     94.70%
+ 143  GBMNB11031_20_Cirripectes              0.00%    passed     94.70%
+ 144  GBMNB11033_20_Cirripectes              0.00%    passed     94.70%
+ 145  GBMNB11035_20_Cirripectes              0.00%    passed     94.70%
+ 146  GBMNB11038_20_Cirripectes              0.00%    passed     94.70%
+ 147  GBMNB11041_20_Cirripectes              0.00%    passed     94.70%
+ 148  GBMNB11044_20_Cirripectes              0.00%    passed     94.70%
+ 149  GBMNB11046_20_Cirripectes              0.00%    passed     94.70%
+ 150  GBMNB11053_20_Cirripectes              0.00%    passed     94.70%
+ 151  GBMNB11054_20_Cirripectes              0.00%    passed     94.70%
+ 152  GBMNB11056_20_Cirripectes              0.00%    passed     94.70%
+ 153  GBMNB11061_20_Cirripectes              0.00%    passed     94.70%
+ 154  GBMNB11063_20_Cirripectes              0.00%    passed     94.70%
+ 155  GBMNB11067_20_Cirripectes              0.00%    passed     94.70%
+ 156  GAMBA023_12_Cirripectes                0.00%    passed     99.01%
+ 157  GAMBA024_12_Cirripectes                0.00%    passed     99.65%
+ 158  GBMNB10945_20_Cirripectes              0.00%    passed     99.04%
+ 159  GBMNB10955_20_Cirripectes              0.00%    passed     99.21%
+ 160  GBMNB10958_20_Cirripectes              0.00%    passed     99.30%
+ 161  GBMNB10951_20_Cirripectes              0.00%    passed     99.98%
+ 162  GBMNB10938_20_Cirripectes              0.00%    passed     99.82%
+ 163  GBMNB10941_20_Cirripectes              0.00%    passed     99.82%
+ 164  GBMNB10947_20_Cirripectes              0.00%    passed     99.82%
+ 165  GBMNB10948_20_Cirripectes              0.00%    passed     99.82%
+ 166  GBMNB10954_20_Cirripectes              0.00%    passed     99.08%
+ 167  AUSTR240_13_Cirripectes                0.00%    passed     99.88%
+ 168  GBMNB10937_20_Cirripectes              0.00%    passed     99.04%
+ 169  GBMNB10944_20_Cirripectes              0.00%    passed     99.04%
+ 170  GBMNB10942_20_Cirripectes              0.00%    passed     99.88%
+ 171  GBMNB10956_20_Cirripectes              0.00%    passed     99.04%
+ 172  GBMNB10957_20_Cirripectes              0.00%    passed     99.30%
+ 173  GBMNB10934_20_Cirripectes              0.00%    passed     99.67%
+ 174  GBMNB10935_20_Cirripectes              0.00%    passed     99.67%
+ 175  GBMNB10936_20_Cirripectes              0.00%    passed     99.67%
+ 176  GBMNB10939_20_Cirripectes              0.00%    passed     99.67%
+ 177  GBMNB10940_20_Cirripectes              0.00%    passed     99.67%
+ 178  GBMNB10943_20_Cirripectes              0.00%    passed     99.67%
+ 179  GBMNB10946_20_Cirripectes              0.00%    passed     99.67%
+ 180  GBMNB10949_20_Cirripectes              0.00%    passed     99.67%
+ 181  GBMNB10950_20_Cirripectes              0.00%    passed     99.67%
+ 182  GBMNB10952_20_Cirripectes              0.00%    passed     99.67%
+ 183  GBMNB10953_20_Cirripectes              0.00%    passed     99.67%
+ 184  GBMNB10959_20_Cirripectes              0.00%    passed     99.67%
+ 185  MARQ139_12_Cirripectes                 0.00%    passed     99.67%
+ 186  MARQ140_12_Cirripectes                 0.00%    passed     99.67%
+ 187  GBMNB10963_20_Cirripectes              0.00%    passed     98.78%
+ 188  GBMNB10960_20_Cirripectes              0.00%    passed     99.06%
+ 189  AUSTR160_13_Cirripectes                0.00%    passed     99.05%
+ 190  FPFLB403_12_Cirripectes                0.00%    passed     99.05%
+ 191  AUSTR052_13_Cirripectes                0.00%    passed     97.45%
+ 192  GAMBA281_12_Cirripectes                0.00%    passed     97.45%
+ 193  GBMNB10991_20_Cirripectes              0.00%    passed     97.45%
+ 194  AUSTR161_13_Cirripectes                0.00%    passed     97.05%
+ 195  FUT004_18_Cirripectes                  0.00%    passed     97.05%
+ 196  SCILL194_15_Cirripectes                0.00%    passed     97.05%
+ 197  SCILL252_15_Cirripectes                0.00%    passed     97.05%
+ 198  GAMBA025_12_Cirripectes                0.00%    passed     99.77%
+ 199  GAMBA282_12_Cirripectes                0.00%    passed     98.99%
+ 200  GBMNB10966_20_Cirripectes              0.00%    passed     97.67%
+ 201  GBMNB10970_20_Cirripectes              0.00%    passed     97.67%
+ 202  GBMNB10971_20_Cirripectes              0.00%    passed     97.67%
+ 203  GBMNB10983_20_Cirripectes              0.00%    passed     97.67%
+ 204  GBMNB10986_20_Cirripectes              0.00%    passed     97.67%
+ 205  GBMNB10987_20_Cirripectes              0.00%    passed     97.67%
+ 206  MARQ074_12_Cirripectes                 0.00%    passed     97.67%
+ 207  GBMNB10974_20_Cirripectes              0.00%    passed     97.05%
+ 208  GBMNB10962_20_Cirripectes              0.00%    passed     98.74%
+ 209  GBMNB10982_20_Cirripectes              0.00%    passed     96.12%
+ 210  MARQ071_12_Cirripectes                 0.00%    passed     97.07%
+ 211  GBMNB10973_20_Cirripectes              0.00%    passed     97.05%
+ 212  GBMNB10985_20_Cirripectes              0.00%    passed     97.05%
+ 213  AUSTR162_13_Cirripectes                0.00%    passed     97.45%
+ 214  GAMBA280_12_Cirripectes                0.00%    passed     99.77%
+ 215  MBFA186_07_Cirripectes                 0.00%    passed     99.77%
+ 216  GBMNB10992_20_Cirripectes              0.00%    passed     98.99%
+ 217  GBMNB10989_20_Cirripectes              0.00%    passed     99.05%
+ 218  GBMNB10978_20_Cirripectes              0.00%    passed     96.84%
+ 219  GBMNB10968_20_Cirripectes              0.00%    passed     96.12%
+ 220  GBMNB10984_20_Cirripectes              0.00%    passed     96.12%
+ 221  GBMNB10993_20_Cirripectes              0.00%    passed     99.05%
+ 222  GAMBA026_12_Cirripectes                0.00%    passed     97.45%
+ 223  GAMBA862_12_Cirripectes                0.00%    passed     97.45%
+ 224  GBMNB10990_20_Cirripectes              0.00%    passed     97.45%
+ 225  MBFA187_07_Cirripectes                 0.00%    passed     97.45%
+ 226  GBMNB10976_20_Cirripectes              0.00%    passed     97.45%
+ 227  GBMNB10969_20_Cirripectes              0.00%    passed     98.74%
+ 228  GBMNB10975_20_Cirripectes              0.00%    passed     99.77%
+ 229  GBMNB10961_20_Cirripectes              0.00%    passed     99.05%
+ 230  GBMNB10980_20_Cirripectes              0.00%    passed     99.05%
+ 231  GBMNB10981_20_Cirripectes              0.00%    passed     99.05%
+ 232  GBMNB10988_20_Cirripectes              0.00%    passed     99.05%
+ 233  MARQ073_12_Cirripectes                 0.00%    passed     99.05%
+ 234  FPFLB356_12_Cirripectes                0.00%    passed     97.45%
+ 235  GBMNB10964_20_Cirripectes              0.00%    passed     98.74%
+ 236  GBMNB10979_20_Cirripectes              0.00%    passed     98.74%
+ 237  GBMNB10967_20_Cirripectes              0.00%    passed     97.45%
+ 238  AUSTR056_13_Cirripectes                0.00%    passed     97.05%
+ 239  GBMNB10965_20_Cirripectes              0.00%    passed     97.05%
+ 240  GBMNB10972_20_Cirripectes              0.00%    passed     97.05%
+ 241  GBMNB10977_20_Cirripectes              0.00%    passed     97.05%
+ 242  RUNA_4002_Cirripectes_castaneus        0.00%    passed     99.68%
+ 243  SBF598_11_Cirripectes                  0.00%    passed     99.68%
+ 244  ORCIE_1027_Cirripectes_castaneus       0.00%    passed     97.96%
+ 245  RUNA_3256_Cirripectes_castaneus        0.00%    passed     96.54%
+ 246  RUNA_2899_Cirripectes_castaneus        0.00%    passed     96.54%
+ 247  SBF752_11_Cirripectes                  0.00%    passed     96.54%
+ 248  RUNA_2449_Cirripectes_castaneus        0.00%    passed     97.05%
+ 249  ANGBF32322_19_Cirripectes              0.00%    passed     99.93%
+ 250  RESIC180_11_Cirripectes                0.00%    passed     99.93%
+ 251  RUNA_1208_Cirripectes_castaneus        0.00%    passed     99.93%
+ 252  SBF725_11_Cirripectes                  0.00%    passed     99.93%
+ 253  ORCIE_1125_Cirripectes_castaneus       0.00%    passed     99.95%
+ 254  RUNA_2346_Cirripectes_castaneus        0.00%    passed     99.90%
+ 255  RUNA_2168_cirripectes_castaneus        0.00%    passed     97.92%
+ 256  GBMIN131289_17_Cirripectes             0.00%    passed    100.00%
+ 257  ANGBF32323_19_Cirripectes              9.13%    passed     94.10%
+ 258  ANGBF32324_19_Cirripectes              9.13%    passed     94.10%
+ 259  ANGBF32325_19_Cirripectes              9.13%    passed     94.10%
+ 260  ANGBF32326_19_Cirripectes              9.13%    passed     94.10%
+ 261  ANGBF32327_19_Cirripectes              0.00%    passed     98.55%
+ 262  GBMIN97243_17_Cirripectes              0.00%    passed     98.55%
+ 263  GBMIN121923_17_Cirripectes             0.00%    passed     98.55%
+ 264  RUNA_0272_Cirripectes_castaneus        0.00%    passed     99.87%
+ 265  ORCIE1808_Cirripectes_castaneus        0.00%    passed     99.87%
+ 266  RUNA_0370_Cirripectes_castaneus        0.00%    passed     99.87%
+ 267  RUNA_2347_Cirripectes_castaneus        0.00%    passed     98.98%
+ 268  RUNA_3176_Cirripectes_castaneus        0.00%    passed     98.98%
+ 269  RUNA_3154_Cirripectes_castaneus        0.00%    passed     99.30%
+ 270  RUNA_0022_Cirripectes_castaneus        0.00%    passed     98.98%
+ 271  RUNA_0737_Cirripectes_castaneus        0.00%    passed     98.98%
+ 272  COLOR469_15_Cirripectes                0.00%    passed     99.31%
+ 273  RUNA_2379_Cirripectes_castaneus        0.00%    passed     99.31%
+ 274  SAIAB1074_08_Cirripectes               0.00%    passed     99.31%
+ 275  SBF724_11_Cirripectes                  0.00%    passed     99.31%
+ 276  RUNA_2344_Cirripectes_castaneus        0.00%    passed     98.48%
+ 277  RUNA_4001_Cirripectes_castaneus        0.00%    passed     98.55%
+ 278  LIFS794_08_Cirripectes                 0.00%    passed     98.71%
+ 279  RUNA_3895_Cirripectes_castaneus        0.00%    passed     98.71%
+ 280  SAIAB025_06_Cirripectes                0.00%    passed     99.58%
+ 281  LIFS795_08_Cirripectes                 0.00%    passed     99.58%
+ 282  RUNA_3155_Cirripectes_castaneus        0.00%    passed     99.77%
+ 283  SAIAB024_06_Cirripectes                0.00%    passed     99.53%
+ 284  LIFS793_08_Cirripectes                 0.00%    passed     99.98%
+ 285  RUNA_0854_Cirripectes_castaneus        0.00%    passed     99.98%
+ 286  RUNA_2450_Cirripectes_castaneus        0.00%    passed     99.98%
+ 287  RESIC179_11_Cirripectes                0.00%    passed     99.68%
+ 288  RESIC181_11_Cirripectes                0.00%    passed     99.68%
+ 289  RUNA_2717_Cirripectes_castaneus        0.00%    passed     99.68%
+ 290  RUNA_2718_Cirripectes_castaneus        0.00%    passed     99.68%
+ 291  RUNA_3214_Cirripectes_castaneus        0.00%    passed     99.68%
+ 292  RUNA_2348_Cirripectes_castaneus        0.00%    passed     99.68%
+ 293  RUNA_2719_Cirripectes_castaneus        0.00%    passed     99.68%
+ 294  UKFBK089_08_Cirripectes                0.00%    passed     95.37%
+ 295  FUT003_18_Cirripectes                  0.00%    passed     99.06%
+ 296  FUT115_18_Cirripectes                  0.00%    passed     99.06%
+ 297  ORCIE1889_Cirripectes_stigmaticus      0.00%    passed     99.06%
+ 298  RUNA_3262_Cirripectes_stigmaticus      0.00%    passed     99.06%
+ 299  UKFBI528_08_Cirripectes                0.00%    passed     99.06%
+ 300  ORCIE1890_Cirripectes_stigmaticus      0.00%    passed     98.60%
+ 301  1583_Cirripectes_stigmaticus           0.00%    passed     99.30%
+****  TOTAL                                  0.12%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: No CharPartition defined, use all CharSets
+
+Loading 3 partitions...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1	DNA	301	168	20	145	GTR+I+G4+F	1stpos
+2	DNA	301	168	0	168	GTR+I+G4+F	2ndpos
+WARNING: No parsimony-informative sites in partition 2ndpos
+3	DNA	301	168	159	2	GTR+I+G4+F	3rdpos
+Degree of missing data: 0.000
+Info: multi-threading strategy over partitions
+
+NOTE: AUSTR547_13_Cirripectes is identical to AUSTR398_13_Cirripectes but kept for subsequent analysis
+NOTE: MH932009_1_Cirripectes_alboapicalis is identical to MH932008_1_Cirripectes_alboapicalis but kept for subsequent analysis
+NOTE: FPFLB369_12_Cirripectes is identical to AUSTR166_13_Cirripectes but kept for subsequent analysis
+NOTE: AUSTR163_13_Cirripectes is identical to ANGBF32332_19_Cirripectes but kept for subsequent analysis
+NOTE: AUSTR401_13_Cirripectes is identical to AUSTR400_13_Cirripectes but kept for subsequent analysis
+NOTE: ORCIE1990_Cirripectes_randalli is identical to COLOR413_15_Cirripectes but kept for subsequent analysis
+NOTE: AUSTR395_13_Cirripectes is identical to AUSTR155_13_Cirripectes but kept for subsequent analysis
+NOTE: DSFSG709_11_Cirripectes is identical to ANGBF9244_12_Cirripectes but kept for subsequent analysis
+NOTE: RESIC484_11_Cirripectes is identical to RESIC057_11_Cirripectes but kept for subsequent analysis
+NOTE: ANGBF32330_19_Cirripectes is identical to ANGBF32329_19_Cirripectes but kept for subsequent analysis
+NOTE: UKFBJ563_08_Cirripectes is identical to ANGBF32331_19_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11059_20_Cirripectes is identical to GBMNB11012_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11062_20_Cirripectes is identical to GBMNB10997_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11025_20_Cirripectes is identical to GBMNB11003_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11018_20_Cirripectes is identical to GBMNB11010_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11032_20_Cirripectes is identical to GBMNB11008_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11036_20_Cirripectes is identical to GBMNB11027_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11000_20_Cirripectes is identical to GBMNB10995_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11015_20_Cirripectes is identical to GBMNB10998_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11034_20_Cirripectes is identical to GBMNB11004_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11051_20_Cirripectes is identical to GBMNB11029_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB11009_20_Cirripectes is identical to GBMNB11006_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB10941_20_Cirripectes is identical to GBMNB10938_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB10944_20_Cirripectes is identical to GBMNB10937_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB10935_20_Cirripectes is identical to GBMNB10934_20_Cirripectes but kept for subsequent analysis
+NOTE: FPFLB403_12_Cirripectes is identical to AUSTR160_13_Cirripectes but kept for subsequent analysis
+NOTE: GAMBA281_12_Cirripectes is identical to AUSTR052_13_Cirripectes but kept for subsequent analysis
+NOTE: FUT004_18_Cirripectes is identical to AUSTR161_13_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB10970_20_Cirripectes is identical to GBMNB10966_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB10985_20_Cirripectes is identical to GBMNB10973_20_Cirripectes but kept for subsequent analysis
+NOTE: MBFA186_07_Cirripectes is identical to GAMBA280_12_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB10984_20_Cirripectes is identical to GBMNB10968_20_Cirripectes but kept for subsequent analysis
+NOTE: GAMBA862_12_Cirripectes is identical to GAMBA026_12_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB10980_20_Cirripectes is identical to GBMNB10961_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB10979_20_Cirripectes is identical to GBMNB10964_20_Cirripectes but kept for subsequent analysis
+NOTE: GBMNB10965_20_Cirripectes is identical to AUSTR056_13_Cirripectes but kept for subsequent analysis
+NOTE: RUNA_2899_Cirripectes_castaneus is identical to RUNA_3256_Cirripectes_castaneus but kept for subsequent analysis
+NOTE: RESIC180_11_Cirripectes is identical to ANGBF32322_19_Cirripectes but kept for subsequent analysis
+NOTE: ANGBF32324_19_Cirripectes is identical to ANGBF32323_19_Cirripectes but kept for subsequent analysis
+NOTE: GBMIN97243_17_Cirripectes is identical to ANGBF32327_19_Cirripectes but kept for subsequent analysis
+NOTE: RUNA_0370_Cirripectes_castaneus is identical to ORCIE1808_Cirripectes_castaneus but kept for subsequent analysis
+NOTE: RUNA_3176_Cirripectes_castaneus is identical to RUNA_2347_Cirripectes_castaneus but kept for subsequent analysis
+NOTE: RUNA_2379_Cirripectes_castaneus is identical to COLOR469_15_Cirripectes but kept for subsequent analysis
+NOTE: RUNA_3895_Cirripectes_castaneus is identical to LIFS794_08_Cirripectes but kept for subsequent analysis
+NOTE: RESIC181_11_Cirripectes is identical to RESIC179_11_Cirripectes but kept for subsequent analysis
+NOTE: FUT115_18_Cirripectes is identical to FUT003_18_Cirripectes but kept for subsequent analysis
+NOTE: 91 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: AUSTR548_13_Cirripectes (identical to AUSTR398_13_Cirripectes) is ignored but added at the end
+NOTE: GAMBA640_12_Cirripectes (identical to AUSTR398_13_Cirripectes) is ignored but added at the end
+NOTE: FPFLB371_12_Cirripectes (identical to AUSTR166_13_Cirripectes) is ignored but added at the end
+NOTE: AUSTR533_13_Cirripectes (identical to ANGBF32332_19_Cirripectes) is ignored but added at the end
+NOTE: SCILL193_15_Cirripectes (identical to ANGBF32332_19_Cirripectes) is ignored but added at the end
+NOTE: UKFBI168_08_Cirripectes (identical to ANGBF32332_19_Cirripectes) is ignored but added at the end
+NOTE: AUSTR534_13_Cirripectes (identical to AUSTR400_13_Cirripectes) is ignored but added at the end
+NOTE: AUSTR535_13_Cirripectes (identical to AUSTR400_13_Cirripectes) is ignored but added at the end
+NOTE: FPFLB318_12_Cirripectes (identical to AUSTR400_13_Cirripectes) is ignored but added at the end
+NOTE: FPFLB321_12_Cirripectes (identical to AUSTR400_13_Cirripectes) is ignored but added at the end
+NOTE: GAMBA236_12_Cirripectes (identical to AUSTR400_13_Cirripectes) is ignored but added at the end
+NOTE: GAMBA247_12_Cirripectes (identical to AUSTR400_13_Cirripectes) is ignored but added at the end
+NOTE: MBFA178_07_Cirripectes (identical to AUSTR400_13_Cirripectes) is ignored but added at the end
+NOTE: MBFA179_07_Cirripectes (identical to AUSTR400_13_Cirripectes) is ignored but added at the end
+NOTE: SBF493_11_Cirripectes (identical to COLOR413_15_Cirripectes) is ignored but added at the end
+NOTE: SBF680_11_Cirripectes (identical to COLOR413_15_Cirripectes) is ignored but added at the end
+NOTE: SBF681_11_Cirripectes (identical to COLOR413_15_Cirripectes) is ignored but added at the end
+NOTE: FUT160_18_Cirripectes (identical to AUSTR155_13_Cirripectes) is ignored but added at the end
+NOTE: DSLAG1745_12_Cirripectes (identical to ANGBF9244_12_Cirripectes) is ignored but added at the end
+NOTE: DSLAG1786_12_Cirripectes (identical to ANGBF9244_12_Cirripectes) is ignored but added at the end
+NOTE: DSLAG1798_12_Cirripectes (identical to ANGBF9244_12_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11069_20_Cirripectes (identical to GBMNB11012_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11058_20_Cirripectes (identical to GBMNB11010_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11048_20_Cirripectes (identical to GBMNB11027_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11050_20_Cirripectes (identical to GBMNB11027_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11043_20_Cirripectes (identical to GBMNB10995_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11066_20_Cirripectes (identical to GBMNB10998_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11013_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11014_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11020_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11022_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11026_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11030_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11031_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11033_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11035_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11038_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11041_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11044_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11046_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11053_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11054_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11056_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11061_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11063_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB11067_20_Cirripectes (identical to GBMNB11006_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10947_20_Cirripectes (identical to GBMNB10938_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10948_20_Cirripectes (identical to GBMNB10938_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10936_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10939_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10940_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10943_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10946_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10949_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10950_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10952_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10953_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10959_20_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: MARQ139_12_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: MARQ140_12_Cirripectes (identical to GBMNB10934_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10991_20_Cirripectes (identical to AUSTR052_13_Cirripectes) is ignored but added at the end
+NOTE: SCILL194_15_Cirripectes (identical to AUSTR161_13_Cirripectes) is ignored but added at the end
+NOTE: SCILL252_15_Cirripectes (identical to AUSTR161_13_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10971_20_Cirripectes (identical to GBMNB10966_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10983_20_Cirripectes (identical to GBMNB10966_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10986_20_Cirripectes (identical to GBMNB10966_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10987_20_Cirripectes (identical to GBMNB10966_20_Cirripectes) is ignored but added at the end
+NOTE: MARQ074_12_Cirripectes (identical to GBMNB10966_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10990_20_Cirripectes (identical to GAMBA026_12_Cirripectes) is ignored but added at the end
+NOTE: MBFA187_07_Cirripectes (identical to GAMBA026_12_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10981_20_Cirripectes (identical to GBMNB10961_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10988_20_Cirripectes (identical to GBMNB10961_20_Cirripectes) is ignored but added at the end
+NOTE: MARQ073_12_Cirripectes (identical to GBMNB10961_20_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10972_20_Cirripectes (identical to AUSTR056_13_Cirripectes) is ignored but added at the end
+NOTE: GBMNB10977_20_Cirripectes (identical to AUSTR056_13_Cirripectes) is ignored but added at the end
+NOTE: SBF752_11_Cirripectes (identical to RUNA_3256_Cirripectes_castaneus) is ignored but added at the end
+NOTE: RUNA_1208_Cirripectes_castaneus (identical to ANGBF32322_19_Cirripectes) is ignored but added at the end
+NOTE: SBF725_11_Cirripectes (identical to ANGBF32322_19_Cirripectes) is ignored but added at the end
+NOTE: ANGBF32325_19_Cirripectes (identical to ANGBF32323_19_Cirripectes) is ignored but added at the end
+NOTE: ANGBF32326_19_Cirripectes (identical to ANGBF32323_19_Cirripectes) is ignored but added at the end
+NOTE: GBMIN121923_17_Cirripectes (identical to ANGBF32327_19_Cirripectes) is ignored but added at the end
+NOTE: SAIAB1074_08_Cirripectes (identical to COLOR469_15_Cirripectes) is ignored but added at the end
+NOTE: SBF724_11_Cirripectes (identical to COLOR469_15_Cirripectes) is ignored but added at the end
+NOTE: RUNA_2717_Cirripectes_castaneus (identical to RESIC179_11_Cirripectes) is ignored but added at the end
+NOTE: RUNA_2718_Cirripectes_castaneus (identical to RESIC179_11_Cirripectes) is ignored but added at the end
+NOTE: RUNA_3214_Cirripectes_castaneus (identical to RESIC179_11_Cirripectes) is ignored but added at the end
+NOTE: RUNA_2348_Cirripectes_castaneus (identical to RESIC179_11_Cirripectes) is ignored but added at the end
+NOTE: RUNA_2719_Cirripectes_castaneus (identical to RESIC179_11_Cirripectes) is ignored but added at the end
+NOTE: ORCIE1889_Cirripectes_stigmaticus (identical to FUT003_18_Cirripectes) is ignored but added at the end
+NOTE: RUNA_3262_Cirripectes_stigmaticus (identical to FUT003_18_Cirripectes) is ignored but added at the end
+NOTE: UKFBI528_08_Cirripectes (identical to FUT003_18_Cirripectes) is ignored but added at the end
+Concatenated alignment was printed to 2022-12-06_Algt_Cirripectes_N301_504bp.fasta.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to 2022-12-06_Algt_Cirripectes_N301_504bp.fasta.uniqueseq.phy
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.026 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 414264)...
+
+NOTE: 6 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -5380.499
+Current log-likelihood at step 1: -4672.372
+Current log-likelihood at step 2: -4653.400
+Current log-likelihood at step 3: -4646.484
+Current log-likelihood at step 4: -4643.207
+Current log-likelihood at step 5: -4640.748
+Current log-likelihood at step 6: -4638.774
+Current log-likelihood at step 7: -4637.190
+Current log-likelihood at step 8: -4635.935
+Current log-likelihood at step 9: -4634.950
+Current log-likelihood at step 10: -4634.181
+Current log-likelihood at step 11: -4633.583
+Current log-likelihood at step 12: -4633.118
+Current log-likelihood at step 13: -4632.756
+Current log-likelihood at step 14: -4632.473
+Current log-likelihood at step 15: -4632.250
+Current log-likelihood at step 16: -4632.072
+Current log-likelihood at step 17: -4631.929
+Current log-likelihood at step 18: -4631.811
+Current log-likelihood at step 19: -4631.714
+Partition-specific rates:  0.603 0.007 2.391
+Parameters optimization took 18 rounds (5.253 sec)
+
+Computing ML distances based on estimated model parameters... 0.992 sec
+Computing BIONJ tree...
+0.105 seconds
+Log-likelihood of BIONJ tree: -4677.666
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 4.389 second
+Computing log-likelihood of 98 initial trees ... 10.715 seconds
+Current best score: -4624.560
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -4604.850
+Current log-likelihood at step 1: -4604.284
+Current log-likelihood at step 2: -4604.124
+Current log-likelihood at step 3: -4604.014
+Current log-likelihood at step 4: -4603.915
+Parameters optimization took 3 rounds (1.020 sec)
+
+BETTER TREE FOUND at iteration 1: -4603.915
+Iteration 10 / LogL: -4611.856 / Time: 0h:0m:42s
+Iteration 20 / LogL: -4610.741 / Time: 0h:1m:2s
+Finish initializing candidate tree set (20)
+Current best tree score: -4603.915 / CPU time: 55.647
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -4599.790
+Current log-likelihood at step 1: -4599.652
+Current log-likelihood at step 2: -4599.557
+Parameters optimization took 1 rounds (0.366 sec)
+
+BETTER TREE FOUND at iteration 21: -4599.557
+Iteration 30 / LogL: -4624.072 / Time: 0h:1m:21s (0h:4m:16s left)
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -4599.038
+Current log-likelihood at step 1: -4597.967
+Current log-likelihood at step 2: -4597.528
+Current log-likelihood at step 3: -4597.142
+Current log-likelihood at step 4: -4596.794
+Current log-likelihood at step 5: -4596.446
+Current log-likelihood at step 6: -4596.097
+Current log-likelihood at step 7: -4595.744
+Current log-likelihood at step 8: -4595.388
+Current log-likelihood at step 9: -4594.942
+Current log-likelihood at step 10: -4594.565
+Current log-likelihood at step 11: -4594.178
+Current log-likelihood at step 12: -4593.786
+Current log-likelihood at step 13: -4593.380
+Current log-likelihood at step 14: -4592.971
+Current log-likelihood at step 15: -4592.557
+Current log-likelihood at step 16: -4592.139
+Current log-likelihood at step 17: -4591.719
+Current log-likelihood at step 18: -4591.296
+Current log-likelihood at step 19: -4590.876
+Current log-likelihood at step 20: -4590.462
+Current log-likelihood at step 21: -4589.966
+Current log-likelihood at step 22: -4589.559
+Current log-likelihood at step 23: -4589.166
+Current log-likelihood at step 24: -4588.781
+Current log-likelihood at step 25: -4588.413
+Current log-likelihood at step 26: -4588.070
+Current log-likelihood at step 27: -4587.753
+Current log-likelihood at step 28: -4587.461
+Current log-likelihood at step 29: -4587.194
+Current log-likelihood at step 30: -4586.950
+Current log-likelihood at step 31: -4586.750
+Current log-likelihood at step 32: -4586.604
+Current log-likelihood at step 33: -4586.475
+Current log-likelihood at step 34: -4586.359
+Current log-likelihood at step 35: -4586.255
+Current log-likelihood at step 36: -4586.161
+Parameters optimization took 35 rounds (8.413 sec)
+
+BETTER TREE FOUND at iteration 34: -4586.161
+Iteration 40 / LogL: -4587.272 / Time: 0h:1m:48s (0h:4m:21s left)
+Iteration 50 / LogL: -4587.745 / Time: 0h:2m:7s (0h:3m:38s left)
+Log-likelihood cutoff on original alignment: -4639.820
+Iteration 60 / LogL: -4588.220 / Time: 0h:2m:27s (0h:3m:4s left)
+Iteration 70 / LogL: -4592.766 / Time: 0h:2m:45s (0h:2m:33s left)
+Iteration 80 / LogL: -4586.561 / Time: 0h:3m:5s (0h:2m:6s left)
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -4586.014
+Current log-likelihood at step 1: -4585.825
+Current log-likelihood at step 2: -4585.719
+Current log-likelihood at step 3: -4585.655
+Parameters optimization took 2 rounds (0.844 sec)
+
+BETTER TREE FOUND at iteration 90: -4585.655
+Iteration 90 / LogL: -4585.655 / Time: 0h:3m:27s (0h:3m:53s left)
+BETTER TREE FOUND at iteration 93: -4585.650
+Iteration 100 / LogL: -4589.534 / Time: 0h:3m:47s (0h:3m:33s left)
+Log-likelihood cutoff on original alignment: -4639.820
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.985
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 110 / LogL: -4628.077 / Time: 0h:4m:7s (0h:3m:23s left)
+Iteration 120 / LogL: -4611.843 / Time: 0h:4m:25s (0h:2m:58s left)
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -4585.303
+Current log-likelihood at step 1: -4585.225
+Parameters optimization took 0 rounds (0.180 sec)
+
+BETTER TREE FOUND at iteration 122: -4585.225
+BETTER TREE FOUND at iteration 125: -4585.220
+Iteration 130 / LogL: -4586.096 / Time: 0h:4m:44s (0h:3m:29s left)
+Iteration 140 / LogL: -4586.308 / Time: 0h:5m:3s (0h:3m:5s left)
+Iteration 150 / LogL: -4595.084 / Time: 0h:5m:22s (0h:2m:42s left)
+Log-likelihood cutoff on original alignment: -4639.820
+Iteration 160 / LogL: -4591.454 / Time: 0h:5m:42s (0h:2m:20s left)
+Iteration 170 / LogL: -4611.846 / Time: 0h:6m:0s (0h:1m:57s left)
+BETTER TREE FOUND at iteration 172: -4585.218
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -4583.756
+Current log-likelihood at step 1: -4583.680
+Parameters optimization took 0 rounds (0.200 sec)
+
+BETTER TREE FOUND at iteration 174: -4583.680
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -4582.652
+Current log-likelihood at step 1: -4582.598
+Parameters optimization took 0 rounds (0.175 sec)
+
+BETTER TREE FOUND at iteration 177: -4582.598
+Iteration 180 / LogL: -4611.330 / Time: 0h:6m:21s (0h:3m:26s left)
+Iteration 190 / LogL: -4585.086 / Time: 0h:6m:40s (0h:3m:4s left)
+Iteration 200 / LogL: -4603.338 / Time: 0h:7m:0s (0h:2m:42s left)
+Log-likelihood cutoff on original alignment: -4639.820
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.981
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 210 / LogL: -4583.617 / Time: 0h:7m:21s (0h:3m:10s left)
+Iteration 220 / LogL: -4583.632 / Time: 0h:7m:41s (0h:2m:48s left)
+Iteration 230 / LogL: -4593.083 / Time: 0h:7m:59s (0h:2m:26s left)
+BETTER TREE FOUND at iteration 238: -4582.595
+Iteration 240 / LogL: -4586.182 / Time: 0h:8m:18s (0h:3m:24s left)
+BETTER TREE FOUND at iteration 247: -4582.593
+Iteration 250 / LogL: -4599.642 / Time: 0h:8m:37s (0h:3m:21s left)
+Log-likelihood cutoff on original alignment: -4639.820
+Iteration 260 / LogL: -4582.594 / Time: 0h:8m:57s (0h:3m:0s left)
+Iteration 270 / LogL: -4582.963 / Time: 0h:9m:17s (0h:2m:39s left)
+Iteration 280 / LogL: -4583.606 / Time: 0h:9m:36s (0h:2m:18s left)
+Iteration 290 / LogL: -4592.482 / Time: 0h:9m:56s (0h:1m:57s left)
+Iteration 300 / LogL: -4582.961 / Time: 0h:10m:17s (0h:1m:37s left)
+Log-likelihood cutoff on original alignment: -4639.820
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.987
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+BETTER TREE FOUND at iteration 301: -4582.592
+Iteration 310 / LogL: -4589.317 / Time: 0h:10m:37s (0h:3m:7s left)
+Iteration 320 / LogL: -4583.474 / Time: 0h:10m:56s (0h:2m:46s left)
+Iteration 330 / LogL: -4587.077 / Time: 0h:11m:16s (0h:2m:26s left)
+Iteration 340 / LogL: -4597.098 / Time: 0h:11m:37s (0h:2m:5s left)
+Iteration 350 / LogL: -4588.116 / Time: 0h:11m:57s (0h:1m:44s left)
+Log-likelihood cutoff on original alignment: -4639.820
+Iteration 360 / LogL: -4584.149 / Time: 0h:12m:18s (0h:1m:24s left)
+Iteration 370 / LogL: -4582.594 / Time: 0h:12m:36s (0h:1m:3s left)
+Iteration 380 / LogL: -4609.124 / Time: 0h:12m:57s (0h:0m:43s left)
+Iteration 390 / LogL: -4582.595 / Time: 0h:13m:18s (0h:0m:22s left)
+Iteration 400 / LogL: -4711.121 / Time: 0h:13m:37s (0h:0m:2s left)
+Log-likelihood cutoff on original alignment: -4639.820
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.993
+TREE SEARCH COMPLETED AFTER 402 ITERATIONS / Time: 0h:13m:42s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -4582.592
+Current log-likelihood at step 1: -4582.545
+Current log-likelihood at step 2: -4582.506
+Current log-likelihood at step 3: -4582.472
+Current log-likelihood at step 4: -4582.441
+Current log-likelihood at step 5: -4582.419
+Current log-likelihood at step 6: -4582.403
+Current log-likelihood at step 7: -4582.390
+Current log-likelihood at step 8: -4582.379
+Current log-likelihood at step 9: -4582.370
+Partition-specific rates:  0.140 0.000 2.860
+Parameters optimization took 8 rounds (1.779 sec)
+
+BEST SCORE FOUND : -4582.370
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+2.315 sec.
+Creating bootstrap support values...
+Split supports printed to NEXUS file 2022-12-06_Algt_Cirripectes_N301_504bp.fasta.splits.nex
+Total tree length: 3.871
+
+Total number of iterations: 402
+CPU time used for tree search: 812.756 sec (0h:13m:32s)
+Wall-clock time used for tree search: 815.370 sec (0h:13m:35s)
+Total CPU time used: 824.524 sec (0h:13m:44s)
+Total wall-clock time used: 827.418 sec (0h:13m:47s)
+
+Computing bootstrap consensus tree...
+Reading input file 2022-12-06_Algt_Cirripectes_N301_504bp.fasta.splits.nex...
+210 taxa and 5561 splits.
+Consensus tree written to 2022-12-06_Algt_Cirripectes_N301_504bp.fasta.contree
+Reading input trees file 2022-12-06_Algt_Cirripectes_N301_504bp.fasta.contree
+Log-likelihood of consensus tree: -4584.788
+
+Analysis results written to: 
+  IQ-TREE report:                2022-12-06_Algt_Cirripectes_N301_504bp.fasta.iqtree
+  Maximum-likelihood tree:       2022-12-06_Algt_Cirripectes_N301_504bp.fasta.treefile
+  Likelihood distances:          2022-12-06_Algt_Cirripectes_N301_504bp.fasta.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          2022-12-06_Algt_Cirripectes_N301_504bp.fasta.splits.nex
+  Consensus tree:                2022-12-06_Algt_Cirripectes_N301_504bp.fasta.contree
+  Screen log file:               2022-12-06_Algt_Cirripectes_N301_504bp.fasta.log
+
+Date and Time: Tue Dec  6 14:45:39 2022

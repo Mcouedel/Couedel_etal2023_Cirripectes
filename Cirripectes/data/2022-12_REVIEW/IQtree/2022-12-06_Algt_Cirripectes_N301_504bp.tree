@@ -1,0 +1,403 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=301;
+	taxlabels
+	1583_Cirripectes_stigmaticus
+	ANGBF26357_19_Cirripectes
+	ANGBF32322_19_Cirripectes
+	ANGBF32323_19_Cirripectes
+	ANGBF32324_19_Cirripectes
+	ANGBF32325_19_Cirripectes
+	ANGBF32326_19_Cirripectes
+	ANGBF32327_19_Cirripectes
+	ANGBF32328_19_Cirripectes
+	ANGBF32329_19_Cirripectes
+	ANGBF32330_19_Cirripectes
+	ANGBF32331_19_Cirripectes
+	ANGBF32332_19_Cirripectes
+	ANGBF9231_12_Cirripectes
+	ANGBF9244_12_Cirripectes
+	AUSTR052_13_Cirripectes
+	AUSTR056_13_Cirripectes
+	AUSTR154_13_Cirripectes
+	AUSTR155_13_Cirripectes
+	AUSTR160_13_Cirripectes
+	AUSTR161_13_Cirripectes
+	AUSTR162_13_Cirripectes
+	AUSTR163_13_Cirripectes
+	AUSTR166_13_Cirripectes
+	AUSTR240_13_Cirripectes
+	AUSTR395_13_Cirripectes
+	AUSTR398_13_Cirripectes
+	AUSTR400_13_Cirripectes
+	AUSTR401_13_Cirripectes
+	AUSTR533_13_Cirripectes
+	AUSTR534_13_Cirripectes
+	AUSTR535_13_Cirripectes
+	AUSTR544_13_Cirripectes
+	AUSTR545_13_Cirripectes
+	AUSTR546_13_Cirripectes
+	AUSTR547_13_Cirripectes
+	AUSTR548_13_Cirripectes
+	COLOR408_15_Cirripectes
+	COLOR413_15_Cirripectes
+	COLOR469_15_Cirripectes
+	DSFSG709_11_Cirripectes
+	DSFSG737_11_Cirripectes
+	DSLAG1745_12_Cirripectes
+	DSLAG1786_12_Cirripectes
+	DSLAG1798_12_Cirripectes
+	FPFLB304_12_Cirripectes
+	FPFLB317_12_Cirripectes
+	FPFLB318_12_Cirripectes
+	FPFLB321_12_Cirripectes
+	FPFLB356_12_Cirripectes
+	FPFLB369_12_Cirripectes
+	FPFLB371_12_Cirripectes
+	FPFLB403_12_Cirripectes
+	FUT003_18_Cirripectes
+	FUT004_18_Cirripectes
+	FUT115_18_Cirripectes
+	FUT160_18_Cirripectes
+	FUT163_18_Cirripectes
+	FUT165_18_Cirripectes
+	GAMBA023_12_Cirripectes
+	GAMBA024_12_Cirripectes
+	GAMBA025_12_Cirripectes
+	GAMBA026_12_Cirripectes
+	GAMBA236_12_Cirripectes
+	GAMBA246_12_Cirripectes
+	GAMBA247_12_Cirripectes
+	GAMBA280_12_Cirripectes
+	GAMBA281_12_Cirripectes
+	GAMBA282_12_Cirripectes
+	GAMBA637_12_Cirripectes
+	GAMBA640_12_Cirripectes
+	GAMBA862_12_Cirripectes
+	GBMIN121923_17_Cirripectes
+	GBMIN131289_17_Cirripectes
+	GBMIN96357_17_Cirripectes
+	GBMIN97243_17_Cirripectes
+	GBMNB10934_20_Cirripectes
+	GBMNB10935_20_Cirripectes
+	GBMNB10936_20_Cirripectes
+	GBMNB10937_20_Cirripectes
+	GBMNB10938_20_Cirripectes
+	GBMNB10939_20_Cirripectes
+	GBMNB10940_20_Cirripectes
+	GBMNB10941_20_Cirripectes
+	GBMNB10942_20_Cirripectes
+	GBMNB10943_20_Cirripectes
+	GBMNB10944_20_Cirripectes
+	GBMNB10945_20_Cirripectes
+	GBMNB10946_20_Cirripectes
+	GBMNB10947_20_Cirripectes
+	GBMNB10948_20_Cirripectes
+	GBMNB10949_20_Cirripectes
+	GBMNB10950_20_Cirripectes
+	GBMNB10951_20_Cirripectes
+	GBMNB10952_20_Cirripectes
+	GBMNB10953_20_Cirripectes
+	GBMNB10954_20_Cirripectes
+	GBMNB10955_20_Cirripectes
+	GBMNB10956_20_Cirripectes
+	GBMNB10957_20_Cirripectes
+	GBMNB10958_20_Cirripectes
+	GBMNB10959_20_Cirripectes
+	GBMNB10960_20_Cirripectes
+	GBMNB10961_20_Cirripectes
+	GBMNB10962_20_Cirripectes
+	GBMNB10963_20_Cirripectes
+	GBMNB10964_20_Cirripectes
+	GBMNB10965_20_Cirripectes
+	GBMNB10966_20_Cirripectes
+	GBMNB10967_20_Cirripectes
+	GBMNB10968_20_Cirripectes
+	GBMNB10969_20_Cirripectes
+	GBMNB10970_20_Cirripectes
+	GBMNB10971_20_Cirripectes
+	GBMNB10972_20_Cirripectes
+	GBMNB10973_20_Cirripectes
+	GBMNB10974_20_Cirripectes
+	GBMNB10975_20_Cirripectes
+	GBMNB10976_20_Cirripectes
+	GBMNB10977_20_Cirripectes
+	GBMNB10978_20_Cirripectes
+	GBMNB10979_20_Cirripectes
+	GBMNB10980_20_Cirripectes
+	GBMNB10981_20_Cirripectes
+	GBMNB10982_20_Cirripectes
+	GBMNB10983_20_Cirripectes
+	GBMNB10984_20_Cirripectes
+	GBMNB10985_20_Cirripectes
+	GBMNB10986_20_Cirripectes
+	GBMNB10987_20_Cirripectes
+	GBMNB10988_20_Cirripectes
+	GBMNB10989_20_Cirripectes
+	GBMNB10990_20_Cirripectes
+	GBMNB10991_20_Cirripectes
+	GBMNB10992_20_Cirripectes
+	GBMNB10993_20_Cirripectes
+	GBMNB10994_20_Cirripectes
+	GBMNB10995_20_Cirripectes
+	GBMNB10996_20_Cirripectes
+	GBMNB10997_20_Cirripectes
+	GBMNB10998_20_Cirripectes
+	GBMNB10999_20_Cirripectes
+	GBMNB11000_20_Cirripectes
+	GBMNB11001_20_Cirripectes
+	GBMNB11002_20_Cirripectes
+	GBMNB11003_20_Cirripectes
+	GBMNB11004_20_Cirripectes
+	GBMNB11005_20_Cirripectes
+	GBMNB11006_20_Cirripectes
+	GBMNB11007_20_Cirripectes
+	GBMNB11008_20_Cirripectes
+	GBMNB11009_20_Cirripectes
+	GBMNB11010_20_Cirripectes
+	GBMNB11011_20_Cirripectes
+	GBMNB11012_20_Cirripectes
+	GBMNB11013_20_Cirripectes
+	GBMNB11014_20_Cirripectes
+	GBMNB11015_20_Cirripectes
+	GBMNB11016_20_Cirripectes
+	GBMNB11017_20_Cirripectes
+	GBMNB11018_20_Cirripectes
+	GBMNB11019_20_Cirripectes
+	GBMNB11020_20_Cirripectes
+	GBMNB11021_20_Cirripectes
+	GBMNB11022_20_Cirripectes
+	GBMNB11023_20_Cirripectes
+	GBMNB11024_20_Cirripectes
+	GBMNB11025_20_Cirripectes
+	GBMNB11026_20_Cirripectes
+	GBMNB11027_20_Cirripectes
+	GBMNB11028_20_Cirripectes
+	GBMNB11029_20_Cirripectes
+	GBMNB11030_20_Cirripectes
+	GBMNB11031_20_Cirripectes
+	GBMNB11032_20_Cirripectes
+	GBMNB11033_20_Cirripectes
+	GBMNB11034_20_Cirripectes
+	GBMNB11035_20_Cirripectes
+	GBMNB11036_20_Cirripectes
+	GBMNB11037_20_Cirripectes
+	GBMNB11038_20_Cirripectes
+	GBMNB11039_20_Cirripectes
+	GBMNB11040_20_Cirripectes
+	GBMNB11041_20_Cirripectes
+	GBMNB11042_20_Cirripectes
+	GBMNB11043_20_Cirripectes
+	GBMNB11044_20_Cirripectes
+	GBMNB11045_20_Cirripectes
+	GBMNB11046_20_Cirripectes
+	GBMNB11047_20_Cirripectes
+	GBMNB11048_20_Cirripectes
+	GBMNB11049_20_Cirripectes
+	GBMNB11050_20_Cirripectes
+	GBMNB11051_20_Cirripectes
+	GBMNB11052_20_Cirripectes
+	GBMNB11053_20_Cirripectes
+	GBMNB11054_20_Cirripectes
+	GBMNB11055_20_Cirripectes
+	GBMNB11056_20_Cirripectes
+	GBMNB11057_20_Cirripectes
+	GBMNB11058_20_Cirripectes
+	GBMNB11059_20_Cirripectes
+	GBMNB11060_20_Cirripectes
+	GBMNB11061_20_Cirripectes
+	GBMNB11062_20_Cirripectes
+	GBMNB11063_20_Cirripectes
+	GBMNB11064_20_Cirripectes
+	GBMNB11065_20_Cirripectes
+	GBMNB11066_20_Cirripectes
+	GBMNB11067_20_Cirripectes
+	GBMNB11068_20_Cirripectes
+	GBMNB11069_20_Cirripectes
+	KT284893_1_Omobranchus_elegans
+	KU136_Ophioblennius_macclurei_
+	LIFS793_08_Cirripectes
+	LIFS794_08_Cirripectes
+	LIFS795_08_Cirripectes
+	MARQ071_12_Cirripectes
+	MARQ073_12_Cirripectes
+	MARQ074_12_Cirripectes
+	MARQ139_12_Cirripectes
+	MARQ140_12_Cirripectes
+	MBFA178_07_Cirripectes
+	MBFA179_07_Cirripectes
+	MBFA186_07_Cirripectes
+	MBFA187_07_Cirripectes
+	MBFA978_07_Cirripectes
+	MBFA979_07_Cirripectes
+	MH932003_1_Cirripectes_patuki
+	MH932004_1_Cirripectes_patuki
+	MH932005_1_Cirripectes_patuki
+	MH932006_1_Cirripectes_patuki
+	MH932007_1_Cirripectes_patuki
+	MH932008_1_Cirripectes_alboapicalis
+	MH932009_1_Cirripectes_alboapicalis
+	NC_004411_1_Petroscirtes_breviceps
+	NC_004412_1_Salarias_fasciatus
+	NC_028295_1_Ecsenius_bicolor
+	ORCIE1808_Cirripectes_castaneus
+	ORCIE1889_Cirripectes_stigmaticus
+	ORCIE1890_Cirripectes_stigmaticus
+	ORCIE1990_Cirripectes_randalli
+	ORCIE_1027_Cirripectes_castaneus
+	ORCIE_1125_Cirripectes_castaneus
+	RESIC057_11_Cirripectes
+	RESIC148_11_Cirripectes
+	RESIC179_11_Cirripectes
+	RESIC180_11_Cirripectes
+	RESIC181_11_Cirripectes
+	RESIC484_11_Cirripectes
+	RUNA_0022_Cirripectes_castaneus
+	RUNA_0272_Cirripectes_castaneus
+	RUNA_0370_Cirripectes_castaneus
+	RUNA_0737_Cirripectes_castaneus
+	RUNA_0854_Cirripectes_castaneus
+	RUNA_1208_Cirripectes_castaneus
+	RUNA_2168_cirripectes_castaneus
+	RUNA_2344_Cirripectes_castaneus
+	RUNA_2346_Cirripectes_castaneus
+	RUNA_2347_Cirripectes_castaneus
+	RUNA_2348_Cirripectes_castaneus
+	RUNA_2379_Cirripectes_castaneus
+	RUNA_2449_Cirripectes_castaneus
+	RUNA_2450_Cirripectes_castaneus
+	RUNA_2717_Cirripectes_castaneus
+	RUNA_2718_Cirripectes_castaneus
+	RUNA_2719_Cirripectes_castaneus
+	RUNA_2899_Cirripectes_castaneus
+	RUNA_3154_Cirripectes_castaneus
+	RUNA_3155_Cirripectes_castaneus
+	RUNA_3176_Cirripectes_castaneus
+	RUNA_3214_Cirripectes_castaneus
+	RUNA_3256_Cirripectes_castaneus
+	RUNA_3262_Cirripectes_stigmaticus
+	RUNA_3895_Cirripectes_castaneus
+	RUNA_4001_Cirripectes_castaneus
+	RUNA_4002_Cirripectes_castaneus
+	SAIAB024_06_Cirripectes
+	SAIAB025_06_Cirripectes
+	SAIAB026_06_Cirripectes
+	SAIAB1074_08_Cirripectes
+	SAIAB187_06_Cirripectes
+	SBF493_11_Cirripectes
+	SBF598_11_Cirripectes
+	SBF680_11_Cirripectes
+	SBF681_11_Cirripectes
+	SBF706_11_Cirripectes
+	SBF707_11_Cirripectes
+	SBF724_11_Cirripectes
+	SBF725_11_Cirripectes
+	SBF750_11_Cirripectes
+	SBF751_11_Cirripectes
+	SBF752_11_Cirripectes
+	SCILL193_15_Cirripectes
+	SCILL194_15_Cirripectes
+	SCILL252_15_Cirripectes
+	UKFBI168_08_Cirripectes
+	UKFBI528_08_Cirripectes
+	UKFBJ563_08_Cirripectes
+	UKFBK089_08_Cirripectes
+	ZOSKT1161_16_Cirripectes
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (KT284893_1_Omobranchus_elegans:0.258392,NC_004411_1_Petroscirtes_breviceps:0.449139,(((NC_028295_1_Ecsenius_bicolor:0.365703,NC_004412_1_Salarias_fasciatus:0.22653)[&label="80.6/98"]:0.091263,((((AUSTR545_13_Cirripectes:2.0E-6,AUSTR546_13_Cirripectes:0.013604)[&label="99.6/100"]:0.136804,((((((AUSTR398_13_Cirripectes:0.0,AUSTR548_13_Cirripectes:0.0):0.0,GAMBA640_12_Cirripectes:0.0):2.0E-6,AUSTR547_13_Cirripectes:2.0E-6)[&label="0/89"]:2.0E-6,GAMBA637_12_Cirripectes:0.001925)[&label="99.4/100"]:0.072822,AUSTR544_13_Cirripectes:0.033818)[&label="82.6/96"]:0.025904,((MH932008_1_Cirripectes_alboapicalis:2.0E-6,MH932009_1_Cirripectes_alboapicalis:2.0E-6)[&label="96.9/100"]:0.028266,(MH932004_1_Cirripectes_patuki:0.005663,(MH932006_1_Cirripectes_patuki:0.001888,(MH932005_1_Cirripectes_patuki:0.001879,(MH932003_1_Cirripectes_patuki:0.001889,MH932007_1_Cirripectes_patuki:3.0E-6)[&label="90.8/95"]:0.00189)[&label="0/51"]:3.0E-6)[&label="0/56"]:2.0E-6)[&label="89.6/98"]:0.018201)[&label="80.1/94"]:0.027262)[&label="92/99"]:0.064057)[&label="34.3/88"]:0.038736,((((((((AUSTR166_13_Cirripectes:0.0,FPFLB371_12_Cirripectes:0.0):2.0E-6,FPFLB369_12_Cirripectes:2.0E-6)[&label="89.2/100"]:0.004319,FPFLB304_12_Cirripectes:0.002135)[&label="0/21"]:2.0E-6,FPFLB317_12_Cirripectes:0.002136)[&label="0/5"]:2.0E-6,(((((((((AUSTR400_13_Cirripectes:0.0,FPFLB321_12_Cirripectes:0.0):0.0,MBFA179_07_Cirripectes:0.0):0.0,GAMBA236_12_Cirripectes:0.0):0.0,AUSTR535_13_Cirripectes:0.0):0.0,FPFLB318_12_Cirripectes:0.0):0.0,AUSTR534_13_Cirripectes:0.0):0.0,MBFA178_07_Cirripectes:0.0):0.0,GAMBA247_12_Cirripectes:0.0):2.0E-6,AUSTR401_13_Cirripectes:2.0E-6)[&label="0/85"]:2.0E-6)[&label="0/17"]:3.0E-6,GAMBA246_12_Cirripectes:0.002127)[&label="90.7/78"]:0.002136,((((ANGBF32332_19_Cirripectes:0.0,AUSTR533_13_Cirripectes:0.0):0.0,UKFBI168_08_Cirripectes:0.0):0.0,SCILL193_15_Cirripectes:0.0):2.0E-6,AUSTR163_13_Cirripectes:2.0E-6)[&label="0/86"]:3.0E-6)[&label="66.7/76"]:0.002116,FUT165_18_Cirripectes:3.0E-6)[&label="99.4/100"]:0.148327)[&label="88.2/98"]:0.070601,(((((((SBF750_11_Cirripectes:0.004025,COLOR408_15_Cirripectes:0.002049)[&label="80.9/99"]:0.002045,SBF751_11_Cirripectes:0.004073)[&label="0/66"]:2.0E-6,((((COLOR413_15_Cirripectes:0.0,SBF680_11_Cirripectes:0.0):0.0,SBF681_11_Cirripectes:0.0):0.0,SBF493_11_Cirripectes:0.0):2.0E-6,ORCIE1990_Cirripectes_randalli:2.0E-6)[&label="0/88"]:3.0E-6)[&label="0/54"]:2.0E-6,SBF706_11_Cirripectes:0.002037)[&label="62.2/92"]:0.002046,SBF707_11_Cirripectes:2.0E-6)[&label="100/100"]:0.097425,(((((AUSTR154_13_Cirripectes:0.001926,MBFA979_07_Cirripectes:0.002059)[&label="80.7/100"]:0.002009,((AUSTR155_13_Cirripectes:0.0,FUT160_18_Cirripectes:0.0):2.0E-6,AUSTR395_13_Cirripectes:2.0E-6)[&label="82.3/100"]:0.00197)[&label="0/74"]:2.0E-6,MBFA978_07_Cirripectes:0.001959)[&label="99.9/100"]:0.08016,((ANGBF32331_19_Cirripectes:2.0E-6,UKFBJ563_08_Cirripectes:2.0E-6)[&label="0/93"]:2.0E-6,FUT163_18_Cirripectes:0.004226)[&label="99.9/100"]:0.067599)[&label="67.1/90"]:0.008106,((((ANGBF9231_12_Cirripectes:0.002105,((((ANGBF9244_12_Cirripectes:0.0,DSLAG1786_12_Cirripectes:0.0):0.0,DSLAG1745_12_Cirripectes:0.0):0.0,DSLAG1798_12_Cirripectes:0.0):2.0E-6,DSFSG709_11_Cirripectes:2.0E-6)[&label="0/93"]:2.0E-6)[&label="0/91"]:3.0E-6,DSFSG737_11_Cirripectes:0.002078)[&label="99.9/100"]:0.099542,(((RESIC057_11_Cirripectes:2.0E-6,RESIC484_11_Cirripectes:2.0E-6)[&label="0/92"]:2.0E-6,(ZOSKT1161_16_Cirripectes:0.005136,((ANGBF32328_19_Cirripectes:0.00663,(GBMIN96357_17_Cirripectes:0.002191,(SAIAB187_06_Cirripectes:2.0E-6,ANGBF26357_19_Cirripectes:2.0E-6)[&label="0/82"]:2.0E-6)[&label="0/55"]:2.0E-6)[&label="86.4/86"]:0.002172,((ANGBF32329_19_Cirripectes:2.0E-6,ANGBF32330_19_Cirripectes:2.0E-6)[&label="92.5/100"]:0.004388,SAIAB026_06_Cirripectes:0.004385)[&label="0/84"]:2.0E-6)[&label="78.3/93"]:0.003914)[&label="100/99"]:0.030697)[&label="87.6/97"]:0.002214,RESIC148_11_Cirripectes:2.0E-6)[&label="99.6/100"]:0.077192)[&label="83.9/98"]:0.026562,((((((((((((GBMNB11037_20_Cirripectes:0.005855,GBMNB11045_20_Cirripectes:0.003919)[&label="0/36"]:2.0E-6,((GBMNB10998_20_Cirripectes:0.0,GBMNB11066_20_Cirripectes:0.0):2.0E-6,GBMNB11015_20_Cirripectes:2.0E-6)[&label="91.6/100"]:0.001959)[&label="0/4"]:3.0E-6,(((GBMNB10994_20_Cirripectes:0.001968,(GBMNB11003_20_Cirripectes:2.0E-6,GBMNB11025_20_Cirripectes:2.0E-6)[&label="0/97"]:2.0E-6)[&label="88.4/95"]:0.001967,((((GBMNB11027_20_Cirripectes:0.0,GBMNB11050_20_Cirripectes:0.0):0.0,GBMNB11048_20_Cirripectes:0.0):2.0E-6,GBMNB11036_20_Cirripectes:2.0E-6)[&label="78.4/100"]:0.001932,GBMNB11016_20_Cirripectes:2.0E-6)[&label="86.4/99"]:0.001946)[&label="0/8"]:3.0E-6,(GBMNB11040_20_Cirripectes:0.001965,GBMNB11064_20_Cirripectes:0.001952)[&label="0/10"]:3.0E-6)[&label="0/5"]:3.0E-6)[&label="0/15"]:2.0E-6,(((((((((((((((((((GBMNB11006_20_Cirripectes:0.0,GBMNB11067_20_Cirripectes:0.0):0.0,GBMNB11014_20_Cirripectes:0.0):0.0,GBMNB11044_20_Cirripectes:0.0):0.0,GBMNB11038_20_Cirripectes:0.0):0.0,GBMNB11046_20_Cirripectes:0.0):0.0,GBMNB11063_20_Cirripectes:0.0):0.0,GBMNB11020_20_Cirripectes:0.0):0.0,GBMNB11026_20_Cirripectes:0.0):0.0,GBMNB11035_20_Cirripectes:0.0):0.0,GBMNB11056_20_Cirripectes:0.0):0.0,GBMNB11061_20_Cirripectes:0.0):0.0,GBMNB11054_20_Cirripectes:0.0):0.0,GBMNB11053_20_Cirripectes:0.0):0.0,GBMNB11013_20_Cirripectes:0.0):0.0,GBMNB11022_20_Cirripectes:0.0):0.0,GBMNB11041_20_Cirripectes:0.0):0.0,GBMNB11033_20_Cirripectes:0.0):0.0,GBMNB11030_20_Cirripectes:0.0):0.0,GBMNB11031_20_Cirripectes:0.0):2.0E-6)[&label="0/2"]:2.0E-6,(((((GBMNB11060_20_Cirripectes:0.006111,(GBMNB11029_20_Cirripectes:2.0E-6,GBMNB11051_20_Cirripectes:2.0E-6)[&label="0/96"]:2.0E-6)[&label="92.6/81"]:0.00198,GBMNB11019_20_Cirripectes:0.001947)[&label="0/30"]:2.0E-6,((((GBMNB11010_20_Cirripectes:0.0,GBMNB11058_20_Cirripectes:0.0):2.0E-6,GBMNB11018_20_Cirripectes:2.0E-6)[&label="78.7/100"]:0.001957,(GBMNB11008_20_Cirripectes:2.0E-6,GBMNB11032_20_Cirripectes:2.0E-6)[&label="0/96"]:2.0E-6)[&label="85.6/98"]:0.00196,GBMNB11028_20_Cirripectes:0.001965)[&label="0/13"]:2.0E-6)[&label="0/3"]:2.0E-6,(((GBMNB11039_20_Cirripectes:0.001955,GBMNB11052_20_Cirripectes:2.0E-6)[&label="82.8/98"]:0.001951,GBMNB10999_20_Cirripectes:0.001967)[&label="0/8"]:2.0E-6,((GBMNB11007_20_Cirripectes:0.001965,GBMNB11055_20_Cirripectes:0.001944)[&label="0/8"]:2.0E-6,GBMNB11065_20_Cirripectes:0.001961)[&label="0/4"]:2.0E-6)[&label="0/2"]:2.0E-6)[&label="0/7"]:2.0E-6,(((GBMNB11068_20_Cirripectes:0.003933,(GBMNB11057_20_Cirripectes:0.001943,GBMNB11005_20_Cirripectes:2.0E-6)[&label="85.9/99"]:0.00196)[&label="0/5"]:2.0E-6,(GBMNB11021_20_Cirripectes:0.001958,GBMNB11024_20_Cirripectes:0.001958)[&label="0/21"]:2.0E-6)[&label="0/5"]:2.0E-6,(GBMNB11001_20_Cirripectes:0.001974,GBMNB11011_20_Cirripectes:0.001955)[&label="0/14"]:2.0E-6)[&label="0/12"]:2.0E-6)[&label="0/2"]:2.0E-6)[&label="0/5"]:2.0E-6,GBMNB11009_20_Cirripectes:2.0E-6)[&label="0/10"]:3.0E-6,(((GBMNB11002_20_Cirripectes:0.003899,((GBMNB10995_20_Cirripectes:0.0,GBMNB11043_20_Cirripectes:0.0):2.0E-6,GBMNB11000_20_Cirripectes:2.0E-6)[&label="0/98"]:2.0E-6)[&label="85.6/94"]:0.001959,GBMNB11042_20_Cirripectes:0.001966)[&label="0/14"]:3.0E-6,GBMNB11047_20_Cirripectes:0.001985)[&label="0/4"]:2.0E-6)[&label="0/3"]:2.0E-6,((GBMNB11049_20_Cirripectes:0.00397,(GBMNB11004_20_Cirripectes:2.0E-6,GBMNB11034_20_Cirripectes:2.0E-6)[&label="0/97"]:2.0E-6)[&label="85.7/71"]:0.001954,GBMNB11017_20_Cirripectes:0.00198)[&label="0/26"]:2.0E-6)[&label="0/24"]:3.0E-6,(((GBMNB11012_20_Cirripectes:0.0,GBMNB11069_20_Cirripectes:0.0):2.0E-6,GBMNB11059_20_Cirripectes:2.0E-6)[&label="80.8/100"]:0.001953,(GBMNB10997_20_Cirripectes:2.0E-6,GBMNB11062_20_Cirripectes:2.0E-6)[&label="0/96"]:3.0E-6)[&label="86.3/97"]:0.001958)[&label="70.8/63"]:0.001958,GBMNB10996_20_Cirripectes:2.0E-6)[&label="0/57"]:3.0E-6,GBMNB11023_20_Cirripectes:0.003891)[&label="95.2/85"]:0.024662,((((GAMBA023_12_Cirripectes:0.002047,GAMBA024_12_Cirripectes:2.0E-6)[&label="99.8/100"]:0.015266,(GBMNB10937_20_Cirripectes:2.0E-6,GBMNB10944_20_Cirripectes:2.0E-6)[&label="75.1/98"]:0.002065)[&label="0/64"]:2.0E-6,((((GBMNB10945_20_Cirripectes:0.004199,(GBMNB10951_20_Cirripectes:0.002109,(((GBMNB10938_20_Cirripectes:0.0,GBMNB10948_20_Cirripectes:0.0):0.0,GBMNB10947_20_Cirripectes:0.0):2.0E-6,GBMNB10941_20_Cirripectes:2.0E-6)[&label="0/88"]:2.0E-6)[&label="0/92"]:3.0E-6)[&label="78.7/92"]:0.002098,(GBMNB10955_20_Cirripectes:0.004249,GBMNB10956_20_Cirripectes:0.002066)[&label="0/78"]:3.0E-6)[&label="0/15"]:2.0E-6,(GBMNB10958_20_Cirripectes:0.004169,GBMNB10957_20_Cirripectes:2.0E-6)[&label="90.9/97"]:0.002099)[&label="0/4"]:3.0E-6,(((GBMNB10954_20_Cirripectes:0.002085,AUSTR240_13_Cirripectes:0.002083)[&label="0/12"]:2.0E-6,GBMNB10935_20_Cirripectes:2.0E-6)[&label="0/2"]:2.0E-6,((((((((((((GBMNB10934_20_Cirripectes:0.0,GBMNB10952_20_Cirripectes:0.0):0.0,MARQ139_12_Cirripectes:0.0):0.0,GBMNB10950_20_Cirripectes:0.0):0.0,GBMNB10959_20_Cirripectes:0.0):0.0,GBMNB10940_20_Cirripectes:0.0):0.0,GBMNB10936_20_Cirripectes:0.0):0.0,GBMNB10953_20_Cirripectes:0.0):0.0,GBMNB10939_20_Cirripectes:0.0):0.0,MARQ140_12_Cirripectes:0.0):0.0,GBMNB10946_20_Cirripectes:0.0):0.0,GBMNB10943_20_Cirripectes:0.0):0.0,GBMNB10949_20_Cirripectes:0.0):2.0E-6)[&label="0/3"]:2.0E-6)[&label="0/20"]:3.0E-6)[&label="86.8/86"]:0.002083,GBMNB10942_20_Cirripectes:2.0E-6)[&label="93.5/99"]:0.018924)[&label="97.2/77"]:0.032352)[&label="64.5/49"]:0.003803)[&label="72.5/49"]:0.009078)[&label="61.7/63"]:0.015583,(((((((((((GBMNB10963_20_Cirripectes:0.012927,GBMNB10960_20_Cirripectes:2.0E-6)[&label="80.6/86"]:0.008782,((((((GBMNB10966_20_Cirripectes:0.0,GBMNB10987_20_Cirripectes:0.0):0.0,GBMNB10983_20_Cirripectes:0.0):0.0,GBMNB10986_20_Cirripectes:0.0):0.0,GBMNB10971_20_Cirripectes:0.0):0.0,MARQ074_12_Cirripectes:0.0):2.0E-6,GBMNB10970_20_Cirripectes:2.0E-6)[&label="0/87"]:2.0E-6)[&label="93.1/88"]:0.004376,GBMNB10962_20_Cirripectes:0.002147)[&label="0/28"]:2.0E-6,((GBMNB10982_20_Cirripectes:0.002169,MARQ071_12_Cirripectes:0.00217)[&label="0/10"]:2.0E-6,(GBMNB10973_20_Cirripectes:2.0E-6,GBMNB10985_20_Cirripectes:2.0E-6)[&label="0/74"]:3.0E-6)[&label="0/8"]:3.0E-6)[&label="0/7"]:3.0E-6,GBMNB10974_20_Cirripectes:0.004375)[&label="86.9/98"]:0.002167,((GBMNB10978_20_Cirripectes:0.00218,GBMNB10968_20_Cirripectes:2.0E-6)[&label="0/17"]:2.0E-6,GBMNB10984_20_Cirripectes:2.0E-6)[&label="0/79"]:3.0E-6)[&label="85.8/98"]:0.002167,((((((((AUSTR160_13_Cirripectes:3.0E-6,FPFLB403_12_Cirripectes:2.0E-6)[&label="93.9/100"]:0.006461,GBMNB10992_20_Cirripectes:3.0E-6)[&label="67.7/26"]:0.00211,((AUSTR162_13_Cirripectes:0.002116,(GAMBA280_12_Cirripectes:2.0E-6,MBFA186_07_Cirripectes:2.0E-6)[&label="79.2/100"]:0.002108)[&label="0/27"]:2.0E-6,GBMNB10989_20_Cirripectes:2.0E-6)[&label="0/41"]:3.0E-6)[&label="85.6/33"]:0.002134,GBMNB10993_20_Cirripectes:0.00215)[&label="0/7"]:2.0E-6,(((GAMBA026_12_Cirripectes:0.0,MBFA187_07_Cirripectes:0.0):0.0,GBMNB10990_20_Cirripectes:0.0):2.0E-6,GAMBA862_12_Cirripectes:2.0E-6)[&label="0/82"]:2.0E-6)[&label="0/1"]:2.0E-6,(((AUSTR052_13_Cirripectes:0.0,GBMNB10991_20_Cirripectes:0.0):2.0E-6,GAMBA281_12_Cirripectes:2.0E-6)[&label="85.7/100"]:0.004354,GAMBA025_12_Cirripectes:0.004305)[&label="0/35"]:2.0E-6)[&label="85.5/30"]:0.00216,(GBMNB10976_20_Cirripectes:3.0E-6,((GBMNB10969_20_Cirripectes:0.002146,GBMNB10975_20_Cirripectes:0.002124)[&label="0/29"]:2.0E-6,((((GBMNB10961_20_Cirripectes:0.0,GBMNB10988_20_Cirripectes:0.0):0.0,MARQ073_12_Cirripectes:0.0):0.0,GBMNB10981_20_Cirripectes:0.0):2.0E-6,GBMNB10980_20_Cirripectes:2.0E-6)[&label="0/85"]:2.0E-6)[&label="77/65"]:0.002148)[&label="92.9/70"]:0.00216)[&label="0/10"]:3.0E-6,(((FPFLB356_12_Cirripectes:0.002163,GBMNB10967_20_Cirripectes:0.002163)[&label="0/19"]:2.0E-6,GBMNB10965_20_Cirripectes:2.0E-6)[&label="0/2"]:2.0E-6,((AUSTR056_13_Cirripectes:0.0,GBMNB10977_20_Cirripectes:0.0):0.0,GBMNB10972_20_Cirripectes:0.0):2.0E-6)[&label="0/7"]:2.0E-6)[&label="0/4"]:2.0E-6)[&label="0/12"]:2.0E-6,(GAMBA282_12_Cirripectes:0.004301,(GBMNB10964_20_Cirripectes:2.0E-6,GBMNB10979_20_Cirripectes:2.0E-6)[&label="0/90"]:2.0E-6)[&label="85.9/77"]:0.002151)[&label="94.8/87"]:0.004365,(((AUSTR161_13_Cirripectes:0.0,SCILL194_15_Cirripectes:0.0):0.0,SCILL252_15_Cirripectes:0.0):2.0E-6,FUT004_18_Cirripectes:2.0E-6)[&label="0/87"]:2.0E-6)[&label="99.8/100"]:0.058476,(((((RUNA_4002_Cirripectes_castaneus:0.006578,RUNA_2344_Cirripectes_castaneus:0.002177)[&label="0/11"]:3.0E-6,(LIFS794_08_Cirripectes:2.0E-6,RUNA_3895_Cirripectes_castaneus:2.0E-6)[&label="0/81"]:2.0E-6)[&label="0/9"]:2.0E-6,((((((((SBF598_11_Cirripectes:0.006527,LIFS795_08_Cirripectes:2.0E-6)[&label="86.8/80"]:0.00214,(((((ANGBF32322_19_Cirripectes:0.0,RUNA_1208_Cirripectes_castaneus:0.0):0.0,SBF725_11_Cirripectes:0.0):2.0E-6,RESIC180_11_Cirripectes:2.0E-6)[&label="0/87"]:2.0E-6,ORCIE_1125_Cirripectes_castaneus:0.00209)[&label="93.9/100"]:0.004271,RUNA_2346_Cirripectes_castaneus:0.004261)[&label="0/36"]:2.0E-6)[&label="0/18"]:2.0E-6,(((((RUNA_2168_cirripectes_castaneus:0.004355,RUNA_3154_Cirripectes_castaneus:0.00214)[&label="0/26"]:2.0E-6,((((((((ANGBF32323_19_Cirripectes:0.0,ANGBF32326_19_Cirripectes:0.0):0.0,ANGBF32325_19_Cirripectes:0.0):2.0E-6,ANGBF32324_19_Cirripectes:2.0E-6)[&label="0/98"]:2.0E-6,((ANGBF32327_19_Cirripectes:0.0,GBMIN121923_17_Cirripectes:0.0):2.0E-6,GBMIN97243_17_Cirripectes:2.0E-6)[&label="0/74"]:2.0E-6)[&label="87.2/99"]:0.002223,RUNA_0272_Cirripectes_castaneus:0.002121)[&label="0/13"]:2.0E-6,((RUNA_2347_Cirripectes_castaneus:2.0E-6,RUNA_3176_Cirripectes_castaneus:2.0E-6)[&label="80.2/99"]:0.002144,RUNA_0737_Cirripectes_castaneus:0.002141)[&label="0/16"]:2.0E-6)[&label="0/4"]:2.0E-6,((COLOR469_15_Cirripectes:0.0,SAIAB1074_08_Cirripectes:0.0):0.0,SBF724_11_Cirripectes:0.0):2.0E-6)[&label="0/2"]:2.0E-6,RUNA_2379_Cirripectes_castaneus:2.0E-6)[&label="0/5"]:2.0E-6)[&label="0/4"]:3.0E-6,((ORCIE1808_Cirripectes_castaneus:2.0E-6,RUNA_0370_Cirripectes_castaneus:2.0E-6)[&label="78.3/99"]:0.002122,RUNA_0022_Cirripectes_castaneus:0.002143)[&label="0/23"]:2.0E-6)[&label="77/98"]:0.002157,RUNA_2450_Cirripectes_castaneus:0.002127)[&label="0/10"]:2.0E-6,(RUNA_3155_Cirripectes_castaneus:0.002146,RUNA_0854_Cirripectes_castaneus:0.002125)[&label="0/5"]:3.0E-6)[&label="0/3"]:2.0E-6)[&label="0/8"]:3.0E-6,RESIC181_11_Cirripectes:2.0E-6)[&label="0/3"]:2.0E-6,(((((RESIC179_11_Cirripectes:0.0,RUNA_2718_Cirripectes_castaneus:0.0):0.0,RUNA_2348_Cirripectes_castaneus:0.0):0.0,RUNA_2717_Cirripectes_castaneus:0.0):0.0,RUNA_3214_Cirripectes_castaneus:0.0):0.0,RUNA_2719_Cirripectes_castaneus:0.0):2.0E-6)[&label="0/7"]:2.0E-6,((GBMIN131289_17_Cirripectes:0.00424,LIFS793_08_Cirripectes:0.002125)[&label="0/30"]:3.0E-6,SAIAB025_06_Cirripectes:0.002139)[&label="0/5"]:3.0E-6)[&label="0/7"]:3.0E-6,SAIAB024_06_Cirripectes:0.002133)[&label="93.4/67"]:0.002158,RUNA_4001_Cirripectes_castaneus:0.002185)[&label="0/9"]:3.0E-6)[&label="80.6/94"]:0.002197,ORCIE_1027_Cirripectes_castaneus:0.002194)[&label="46.6/94"]:0.002214,(((RUNA_3256_Cirripectes_castaneus:0.0,SBF752_11_Cirripectes:0.0):2.0E-6,RUNA_2899_Cirripectes_castaneus:2.0E-6)[&label="0/82"]:2.0E-6,RUNA_2449_Cirripectes_castaneus:0.00222)[&label="0/82"]:2.0E-6)[&label="95.1/98"]:0.02725)[&label="84.8/90"]:0.017076,(UKFBK089_08_Cirripectes:0.010904,(((((FUT003_18_Cirripectes:0.0,UKFBI528_08_Cirripectes:0.0):0.0,RUNA_3262_Cirripectes_stigmaticus:0.0):0.0,ORCIE1889_Cirripectes_stigmaticus:0.0):2.0E-6,FUT115_18_Cirripectes:2.0E-6)[&label="0/86"]:2.0E-6,(ORCIE1890_Cirripectes_stigmaticus:0.002134,1583_Cirripectes_stigmaticus:2.0E-6)[&label="86.7/99"]:0.002109)[&label="0/86"]:2.0E-6)[&label="92.7/98"]:0.019674)[&label="85.3/90"]:0.021011)[&label="86.4/73"]:0.053776)[&label="52.9/70"]:0.089514)[&label="62.2/76"]:0.097939,KU136_Ophioblennius_macclurei_:0.157072)[&label="96.1/99"]:0.241264);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=146;
+	set legend.attribute=null;
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="Node ages";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=false;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute=null;
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute=null;
+	set nodeShapeInternal.colourAttribute=null;
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute=null;
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=false;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

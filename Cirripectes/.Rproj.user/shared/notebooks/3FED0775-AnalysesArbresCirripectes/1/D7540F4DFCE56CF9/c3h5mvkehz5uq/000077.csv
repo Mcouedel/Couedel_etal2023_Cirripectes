@@ -1,0 +1,4 @@
+"0","ggsave(p,file=here(""figures"",""Arbres_combinees.png""), device =""png"",scale=2)
+"
+"2","Saving 7 x 7 in image
+"

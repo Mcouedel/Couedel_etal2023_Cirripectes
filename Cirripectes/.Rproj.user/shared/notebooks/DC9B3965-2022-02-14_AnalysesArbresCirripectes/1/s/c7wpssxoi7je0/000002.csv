@@ -1,0 +1,8 @@
+"0","#Mise en forme de la taxonomie"
+"0","tax<-read.csv(here(""data"",""Cirripectes_R_taxtable.csv""), header = T,sep ="";"")"
+"0","nameotu<-tax[,1]"
+"0","rownames(tax)<-nameotu"
+"0","tax<-tax[,-1]"
+"0","tax<-tax[,-7]"
+"0","tax<-as.matrix(tax)"
+"0","tax<-tax_table(tax)"

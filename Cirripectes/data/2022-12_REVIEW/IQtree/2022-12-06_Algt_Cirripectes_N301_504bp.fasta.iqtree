@@ -1,0 +1,1125 @@
+IQ-TREE 1.6.12 built Aug 15 2019
+
+Partition file name: Partition.nex
+Input file name: 2022-12-06_Algt_Cirripectes_N301_504bp.fasta
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 414264
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Lam-Tung Nguyen, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh
+(2015) IQ-TREE: A fast and effective stochastic algorithm for estimating
+maximum likelihood phylogenies. Mol Biol Evol, 32:268-274.
+https://doi.org/10.1093/molbev/msu300
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2017) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol Biol Evol, in press.
+https://doi.org/10.1093/molbev/msx281
+
+Since you used partition models please also cite:
+
+Olga Chernomor, Arndt von Haeseler, and Bui Quang Minh (2016)
+Terrace aware data structure for phylogenomic inference from
+supermatrices. Syst Biol, 65:997-1008.
+https://doi.org/10.1093/sysbio/syw037
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 301 taxa with 3 partitions and 504 total sites (0% missing data)
+
+  ID  Name    Type	Seq	Site	Unique	Infor	Invar	Const
+   1  1stpos  DNA	210	168	30	20	145	145
+   2  2ndpos  DNA	210	168	8	0	168	168
+   3  3rdpos  DNA	210	168	166	159	2	2
+
+Column meanings:
+  Unique: Number of unique site patterns
+  Infor:  Number of parsimony-informative sites
+  Invar:  Number of invariant sites
+  Const:  Number of constant sites (can be subset of invariant sites)
+
+SUBSTITUTION PROCESS
+--------------------
+
+Edge-linked-proportional partition model but separate models between partitions
+
+  ID  Model           Speed  Parameters
+   1  GTR+F+I+G4     0.1401  GTR{0.0001,1.45868,0.611316,0.0001,43.0416}+F{0.274638,0.252993,0.29078,0.181589}+I{0.734575}+G4{2.95014}
+   2  GTR+F+I+G4     0.0000  GTR{1.34946,1.2616,0.940745,1.3253,0.142245}+F{0.142865,0.291631,0.124993,0.440511}+I{1}+G4{0.0210973}
+   3  GTR+F+I+G4     2.8599  GTR{1.05657,28.3333,1.50165,1.57433,12.171}+F{0.340171,0.217664,0.088887,0.353278}+I{1.823e-38}+G4{1.97992}
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -4582.3695 (s.e. 262.4520)
+Unconstrained log-likelihood (without tree): -1493.0055
+Number of free parameters (#branches + #model parameters): 449
+Akaike information criterion (AIC) score: 10062.7390
+Corrected Akaike information criterion (AICc) score: 17546.0724
+Bayesian information criterion (BIC) score: 11958.6758
+
+Total tree length (sum of branch lengths): 3.8714
+Sum of internal branch lengths: 1.9391 (50.0871% of tree length)
+
+WARNING: 134 near-zero internal branches (<0.0020) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'KT284893_1_Omobranchus_elegans' is drawn at root
+Numbers in parentheses are SH-aLRT support (%) / ultrafast bootstrap support (%)
+
++------------------KT284893_1_Omobranchus_elegans
+|
++--------------------------------NC_004411_1_Petroscirtes_breviceps
+|
+|                              +--------------------------NC_028295_1_Ecsenius_bicolor
+|                        +-----| (80.6/98)
+|                        |     +----------------NC_004412_1_Salarias_fasciatus
+|                 +------| (62.2/76)
+|                 |      |                       +**AUSTR545_13_Cirripectes
+|                 |      |             +---------| (99.6/100)
+|                 |      |             |         +--AUSTR546_13_Cirripectes
+|                 |      |          +--| (34.3/88)
+|                 |      |          |  |              +**AUSTR398_13_Cirripectes
+|                 |      |          |  |           +**| (0/89)
+|                 |      |          |  |           |  +**AUSTR547_13_Cirripectes
+|                 |      |          |  |      +----| (99.4/100)
+|                 |      |          |  |      |    +**GAMBA637_12_Cirripectes
+|                 |      |          |  |   +--| (82.6/96)
+|                 |      |          |  |   |  +--AUSTR544_13_Cirripectes
+|                 |      |          |  +---| (92/99)
+|                 |      |          |      |     +**MH932008_1_Cirripectes_alboapicalis
+|                 |      |          |      |  +--| (96.9/100)
+|                 |      |          |      |  |  +**MH932009_1_Cirripectes_alboapicalis
+|                 |      |          |      +--| (80.1/94)
+|                 |      |          |         |  +--MH932004_1_Cirripectes_patuki
+|                 |      |          |         +--| (89.6/98)
+|                 |      |          |            |  +**MH932006_1_Cirripectes_patuki
+|                 |      |          |            +**| (0/56)
+|                 |      |          |               |  +**MH932005_1_Cirripectes_patuki
+|                 |      |          |               +**| (0/51)
+|                 |      |          |                  |  +**MH932003_1_Cirripectes_patuki
+|                 |      |          |                  +**| (90.8/95)
+|                 |      |          |                     +**MH932007_1_Cirripectes_patuki
+|                 |      |     +----| (88.2/98)
+|                 |      |     |    |                            +**AUSTR166_13_Cirripectes
+|                 |      |     |    |                         +--| (89.2/100)
+|                 |      |     |    |                         |  +**FPFLB369_12_Cirripectes
+|                 |      |     |    |                      +**| (0/21)
+|                 |      |     |    |                      |  +--FPFLB304_12_Cirripectes
+|                 |      |     |    |                   +**| (0/5)
+|                 |      |     |    |                   |  +--FPFLB317_12_Cirripectes
+|                 |      |     |    |                +**| (0/17)
+|                 |      |     |    |                |  |  +**AUSTR400_13_Cirripectes
+|                 |      |     |    |                |  +**| (0/85)
+|                 |      |     |    |                |     +**AUSTR401_13_Cirripectes
+|                 |      |     |    |             +--| (90.7/78)
+|                 |      |     |    |             |  +--GAMBA246_12_Cirripectes
+|                 |      |     |    |          +--| (66.7/76)
+|                 |      |     |    |          |  |  +**ANGBF32332_19_Cirripectes
+|                 |      |     |    |          |  +**| (0/86)
+|                 |      |     |    |          |     +**AUSTR163_13_Cirripectes
+|                 |      |     |    +----------| (99.4/100)
+|                 |      |     |               +**FUT165_18_Cirripectes
+|                 |      +-----| (52.9/70)
+|                 |            |                         +--SBF750_11_Cirripectes
+|                 |            |                      +--| (80.9/99)
+|                 |            |                      |  +--COLOR408_15_Cirripectes
+|                 |            |                   +**| (0/66)
+|                 |            |                   |  +--SBF751_11_Cirripectes
+|                 |            |                +**| (0/54)
+|                 |            |                |  |  +**COLOR413_15_Cirripectes
+|                 |            |                |  +**| (0/88)
+|                 |            |                |     +**ORCIE1990_Cirripectes_randalli
+|                 |            |             +--| (62.2/92)
+|                 |            |             |  +--SBF706_11_Cirripectes
+|                 |            |      +------| (100/100)
+|                 |            |      |      +**SBF707_11_Cirripectes
+|                 |            |   +--| (61.7/63)
+|                 |            |   |  |                 +**AUSTR154_13_Cirripectes
+|                 |            |   |  |              +--| (80.7/100)
+|                 |            |   |  |              |  +--MBFA979_07_Cirripectes
+|                 |            |   |  |           +**| (0/74)
+|                 |            |   |  |           |  |  +**AUSTR155_13_Cirripectes
+|                 |            |   |  |           |  +**| (82.3/100)
+|                 |            |   |  |           |     +**AUSTR395_13_Cirripectes
+|                 |            |   |  |     +-----| (99.9/100)
+|                 |            |   |  |     |     +**MBFA978_07_Cirripectes
+|                 |            |   |  |  +--| (67.1/90)
+|                 |            |   |  |  |  |       +**ANGBF32331_19_Cirripectes
+|                 |            |   |  |  |  |    +**| (0/93)
+|                 |            |   |  |  |  |    |  +**UKFBJ563_08_Cirripectes
+|                 |            |   |  |  |  +----| (99.9/100)
+|                 |            |   |  |  |       +--FUT163_18_Cirripectes
+|                 |            |   |  +--| (72.5/49)
+|                 |            |   |     |               +--ANGBF9231_12_Cirripectes
+|                 |            |   |     |            +**| (0/91)
+|                 |            |   |     |            |  |  +**ANGBF9244_12_Cirripectes
+|                 |            |   |     |            |  +**| (0/93)
+|                 |            |   |     |            |     +**DSFSG709_11_Cirripectes
+|                 |            |   |     |     +------| (99.9/100)
+|                 |            |   |     |     |      +--DSFSG737_11_Cirripectes
+|                 |            |   |     |  +--| (83.9/98)
+|                 |            |   |     |  |  |          +**RESIC057_11_Cirripectes
+|                 |            |   |     |  |  |       +**| (0/92)
+|                 |            |   |     |  |  |       |  +**RESIC484_11_Cirripectes
+|                 |            |   |     |  |  |    +--| (87.6/97)
+|                 |            |   |     |  |  |    |  |  +--ZOSKT1161_16_Cirripectes
+|                 |            |   |     |  |  |    |  +--| (100/99)
+|                 |            |   |     |  |  |    |     |     +--ANGBF32328_19_Cirripectes
+|                 |            |   |     |  |  |    |     |  +--| (86.4/86)
+|                 |            |   |     |  |  |    |     |  |  |  +--GBMIN96357_17_Cirripectes
+|                 |            |   |     |  |  |    |     |  |  +**| (0/55)
+|                 |            |   |     |  |  |    |     |  |     |  +**SAIAB187_06_Cirripectes
+|                 |            |   |     |  |  |    |     |  |     +**| (0/82)
+|                 |            |   |     |  |  |    |     |  |        +**ANGBF26357_19_Cirripectes
+|                 |            |   |     |  |  |    |     +--| (78.3/93)
+|                 |            |   |     |  |  |    |        |     +**ANGBF32329_19_Cirripectes
+|                 |            |   |     |  |  |    |        |  +--| (92.5/100)
+|                 |            |   |     |  |  |    |        |  |  +**ANGBF32330_19_Cirripectes
+|                 |            |   |     |  |  |    |        +**| (0/84)
+|                 |            |   |     |  |  |    |           +--SAIAB026_06_Cirripectes
+|                 |            |   |     |  |  +----| (99.6/100)
+|                 |            |   |     |  |       +**RESIC148_11_Cirripectes
+|                 |            |   |     +--| (64.5/49)
+|                 |            |   |        |                                   +--GBMNB11037_20_Cirripectes
+|                 |            |   |        |                                +**| (0/36)
+|                 |            |   |        |                                |  +--GBMNB11045_20_Cirripectes
+|                 |            |   |        |                             +**| (0/4)
+|                 |            |   |        |                             |  |  +**GBMNB10998_20_Cirripectes
+|                 |            |   |        |                             |  +**| (91.6/100)
+|                 |            |   |        |                             |     +**GBMNB11015_20_Cirripectes
+|                 |            |   |        |                          +**| (0/15)
+|                 |            |   |        |                          |  |        +**GBMNB10994_20_Cirripectes
+|                 |            |   |        |                          |  |     +**| (88.4/95)
+|                 |            |   |        |                          |  |     |  |  +**GBMNB11003_20_Cirripectes
+|                 |            |   |        |                          |  |     |  +**| (0/97)
+|                 |            |   |        |                          |  |     |     +**GBMNB11025_20_Cirripectes
+|                 |            |   |        |                          |  |  +**| (0/8)
+|                 |            |   |        |                          |  |  |  |     +**GBMNB11027_20_Cirripectes
+|                 |            |   |        |                          |  |  |  |  +**| (78.4/100)
+|                 |            |   |        |                          |  |  |  |  |  +**GBMNB11036_20_Cirripectes
+|                 |            |   |        |                          |  |  |  +**| (86.4/99)
+|                 |            |   |        |                          |  |  |     +**GBMNB11016_20_Cirripectes
+|                 |            |   |        |                          |  +**| (0/5)
+|                 |            |   |        |                          |     |  +**GBMNB11040_20_Cirripectes
+|                 |            |   |        |                          |     +**| (0/10)
+|                 |            |   |        |                          |        +**GBMNB11064_20_Cirripectes
+|                 |            |   |        |                       +**| (0/2)
+|                 |            |   |        |                       |  +**GBMNB11006_20_Cirripectes
+|                 |            |   |        |                    +**| (0/5)
+|                 |            |   |        |                    |  |              +--GBMNB11060_20_Cirripectes
+|                 |            |   |        |                    |  |           +**| (92.6/81)
+|                 |            |   |        |                    |  |           |  |  +**GBMNB11029_20_Cirripectes
+|                 |            |   |        |                    |  |           |  +**| (0/96)
+|                 |            |   |        |                    |  |           |     +**GBMNB11051_20_Cirripectes
+|                 |            |   |        |                    |  |        +**| (0/30)
+|                 |            |   |        |                    |  |        |  +**GBMNB11019_20_Cirripectes
+|                 |            |   |        |                    |  |     +**| (0/3)
+|                 |            |   |        |                    |  |     |  |        +**GBMNB11010_20_Cirripectes
+|                 |            |   |        |                    |  |     |  |     +**| (78.7/100)
+|                 |            |   |        |                    |  |     |  |     |  +**GBMNB11018_20_Cirripectes
+|                 |            |   |        |                    |  |     |  |  +**| (85.6/98)
+|                 |            |   |        |                    |  |     |  |  |  |  +**GBMNB11008_20_Cirripectes
+|                 |            |   |        |                    |  |     |  |  |  +**| (0/96)
+|                 |            |   |        |                    |  |     |  |  |     +**GBMNB11032_20_Cirripectes
+|                 |            |   |        |                    |  |     |  +**| (0/13)
+|                 |            |   |        |                    |  |     |     +**GBMNB11028_20_Cirripectes
+|                 |            |   |        |                    |  |  +**| (0/7)
+|                 |            |   |        |                    |  |  |  |        +**GBMNB11039_20_Cirripectes
+|                 |            |   |        |                    |  |  |  |     +**| (82.8/98)
+|                 |            |   |        |                    |  |  |  |     |  +**GBMNB11052_20_Cirripectes
+|                 |            |   |        |                    |  |  |  |  +**| (0/8)
+|                 |            |   |        |                    |  |  |  |  |  +**GBMNB10999_20_Cirripectes
+|                 |            |   |        |                    |  |  |  +**| (0/2)
+|                 |            |   |        |                    |  |  |     |     +**GBMNB11007_20_Cirripectes
+|                 |            |   |        |                    |  |  |     |  +**| (0/8)
+|                 |            |   |        |                    |  |  |     |  |  +**GBMNB11055_20_Cirripectes
+|                 |            |   |        |                    |  |  |     +**| (0/4)
+|                 |            |   |        |                    |  |  |        +**GBMNB11065_20_Cirripectes
+|                 |            |   |        |                    |  +**| (0/2)
+|                 |            |   |        |                    |     |        +--GBMNB11068_20_Cirripectes
+|                 |            |   |        |                    |     |     +**| (0/5)
+|                 |            |   |        |                    |     |     |  |  +**GBMNB11057_20_Cirripectes
+|                 |            |   |        |                    |     |     |  +**| (85.9/99)
+|                 |            |   |        |                    |     |     |     +**GBMNB11005_20_Cirripectes
+|                 |            |   |        |                    |     |  +**| (0/5)
+|                 |            |   |        |                    |     |  |  |  +**GBMNB11021_20_Cirripectes
+|                 |            |   |        |                    |     |  |  +**| (0/21)
+|                 |            |   |        |                    |     |  |     +**GBMNB11024_20_Cirripectes
+|                 |            |   |        |                    |     +**| (0/12)
+|                 |            |   |        |                    |        |  +**GBMNB11001_20_Cirripectes
+|                 |            |   |        |                    |        +**| (0/14)
+|                 |            |   |        |                    |           +**GBMNB11011_20_Cirripectes
+|                 |            |   |        |                 +**| (0/10)
+|                 |            |   |        |                 |  +**GBMNB11009_20_Cirripectes
+|                 |            |   |        |              +**| (0/3)
+|                 |            |   |        |              |  |        +--GBMNB11002_20_Cirripectes
+|                 |            |   |        |              |  |     +**| (85.6/94)
+|                 |            |   |        |              |  |     |  |  +**GBMNB10995_20_Cirripectes
+|                 |            |   |        |              |  |     |  +**| (0/98)
+|                 |            |   |        |              |  |     |     +**GBMNB11000_20_Cirripectes
+|                 |            |   |        |              |  |  +**| (0/14)
+|                 |            |   |        |              |  |  |  +**GBMNB11042_20_Cirripectes
+|                 |            |   |        |              |  +**| (0/4)
+|                 |            |   |        |              |     +--GBMNB11047_20_Cirripectes
+|                 |            |   |        |           +**| (0/24)
+|                 |            |   |        |           |  |     +--GBMNB11049_20_Cirripectes
+|                 |            |   |        |           |  |  +**| (85.7/71)
+|                 |            |   |        |           |  |  |  |  +**GBMNB11004_20_Cirripectes
+|                 |            |   |        |           |  |  |  +**| (0/97)
+|                 |            |   |        |           |  |  |     +**GBMNB11034_20_Cirripectes
+|                 |            |   |        |           |  +**| (0/26)
+|                 |            |   |        |           |     +**GBMNB11017_20_Cirripectes
+|                 |            |   |        |        +**| (70.8/63)
+|                 |            |   |        |        |  |     +**GBMNB11012_20_Cirripectes
+|                 |            |   |        |        |  |  +**| (80.8/100)
+|                 |            |   |        |        |  |  |  +**GBMNB11059_20_Cirripectes
+|                 |            |   |        |        |  +**| (86.3/97)
+|                 |            |   |        |        |     |  +**GBMNB10997_20_Cirripectes
+|                 |            |   |        |        |     +**| (0/96)
+|                 |            |   |        |        |        +**GBMNB11062_20_Cirripectes
+|                 |            |   |        |     +**| (0/57)
+|                 |            |   |        |     |  +**GBMNB10996_20_Cirripectes
+|                 |            |   |        |  +--| (95.2/85)
+|                 |            |   |        |  |  +--GBMNB11023_20_Cirripectes
+|                 |            |   |        +--| (97.2/77)
+|                 |            |   |           |           +--GAMBA023_12_Cirripectes
+|                 |            |   |           |        +--| (99.8/100)
+|                 |            |   |           |        |  +**GAMBA024_12_Cirripectes
+|                 |            |   |           |     +**| (0/64)
+|                 |            |   |           |     |  |  +**GBMNB10937_20_Cirripectes
+|                 |            |   |           |     |  +--| (75.1/98)
+|                 |            |   |           |     |     +**GBMNB10944_20_Cirripectes
+|                 |            |   |           |  +--| (86.8/86)
+|                 |            |   |           |  |  |           +--GBMNB10945_20_Cirripectes
+|                 |            |   |           |  |  |        +--| (78.7/92)
+|                 |            |   |           |  |  |        |  |  +--GBMNB10951_20_Cirripectes
+|                 |            |   |           |  |  |        |  +**| (0/92)
+|                 |            |   |           |  |  |        |     |  +**GBMNB10938_20_Cirripectes
+|                 |            |   |           |  |  |        |     +**| (0/88)
+|                 |            |   |           |  |  |        |        +**GBMNB10941_20_Cirripectes
+|                 |            |   |           |  |  |     +**| (0/15)
+|                 |            |   |           |  |  |     |  |  +--GBMNB10955_20_Cirripectes
+|                 |            |   |           |  |  |     |  +**| (0/78)
+|                 |            |   |           |  |  |     |     +--GBMNB10956_20_Cirripectes
+|                 |            |   |           |  |  |  +**| (0/4)
+|                 |            |   |           |  |  |  |  |  +--GBMNB10958_20_Cirripectes
+|                 |            |   |           |  |  |  |  +--| (90.9/97)
+|                 |            |   |           |  |  |  |     +**GBMNB10957_20_Cirripectes
+|                 |            |   |           |  |  +**| (0/20)
+|                 |            |   |           |  |     |        +--GBMNB10954_20_Cirripectes
+|                 |            |   |           |  |     |     +**| (0/12)
+|                 |            |   |           |  |     |     |  +--AUSTR240_13_Cirripectes
+|                 |            |   |           |  |     |  +**| (0/2)
+|                 |            |   |           |  |     |  |  +**GBMNB10935_20_Cirripectes
+|                 |            |   |           |  |     +**| (0/3)
+|                 |            |   |           |  |        +**GBMNB10934_20_Cirripectes
+|                 |            |   |           +--| (93.5/99)
+|                 |            |   |              +**GBMNB10942_20_Cirripectes
+|                 |            +---| (86.4/73)
+|                 |                |                                 +--GBMNB10963_20_Cirripectes
+|                 |                |                              +--| (80.6/86)
+|                 |                |                              |  +**GBMNB10960_20_Cirripectes
+|                 |                |                           +--| (93.1/88)
+|                 |                |                           |  |  +**GBMNB10966_20_Cirripectes
+|                 |                |                           |  +**| (0/87)
+|                 |                |                           |     +**GBMNB10970_20_Cirripectes
+|                 |                |                        +**| (0/28)
+|                 |                |                        |  +--GBMNB10962_20_Cirripectes
+|                 |                |                     +**| (0/7)
+|                 |                |                     |  |     +--GBMNB10982_20_Cirripectes
+|                 |                |                     |  |  +**| (0/10)
+|                 |                |                     |  |  |  +--MARQ071_12_Cirripectes
+|                 |                |                     |  +**| (0/8)
+|                 |                |                     |     |  +**GBMNB10973_20_Cirripectes
+|                 |                |                     |     +**| (0/74)
+|                 |                |                     |        +**GBMNB10985_20_Cirripectes
+|                 |                |                  +--| (86.9/98)
+|                 |                |                  |  +--GBMNB10974_20_Cirripectes
+|                 |                |               +--| (85.8/98)
+|                 |                |               |  |     +--GBMNB10978_20_Cirripectes
+|                 |                |               |  |  +**| (0/17)
+|                 |                |               |  |  |  +**GBMNB10968_20_Cirripectes
+|                 |                |               |  +**| (0/79)
+|                 |                |               |     +**GBMNB10984_20_Cirripectes
+|                 |                |            +**| (0/12)
+|                 |                |            |  |                       +**AUSTR160_13_Cirripectes
+|                 |                |            |  |                    +--| (93.9/100)
+|                 |                |            |  |                    |  +**FPFLB403_12_Cirripectes
+|                 |                |            |  |                 +--| (67.7/26)
+|                 |                |            |  |                 |  +**GBMNB10992_20_Cirripectes
+|                 |                |            |  |              +--| (85.6/33)
+|                 |                |            |  |              |  |     +--AUSTR162_13_Cirripectes
+|                 |                |            |  |              |  |  +**| (0/27)
+|                 |                |            |  |              |  |  |  |  +**GAMBA280_12_Cirripectes
+|                 |                |            |  |              |  |  |  +--| (79.2/100)
+|                 |                |            |  |              |  |  |     +**MBFA186_07_Cirripectes
+|                 |                |            |  |              |  +**| (0/41)
+|                 |                |            |  |              |     +**GBMNB10989_20_Cirripectes
+|                 |                |            |  |           +**| (0/7)
+|                 |                |            |  |           |  +--GBMNB10993_20_Cirripectes
+|                 |                |            |  |        +**| (0/1)
+|                 |                |            |  |        |  |  +**GAMBA026_12_Cirripectes
+|                 |                |            |  |        |  +**| (0/82)
+|                 |                |            |  |        |     +**GAMBA862_12_Cirripectes
+|                 |                |            |  |     +--| (85.5/30)
+|                 |                |            |  |     |  |     +**AUSTR052_13_Cirripectes
+|                 |                |            |  |     |  |  +--| (85.7/100)
+|                 |                |            |  |     |  |  |  +**GAMBA281_12_Cirripectes
+|                 |                |            |  |     |  +**| (0/35)
+|                 |                |            |  |     |     +--GAMBA025_12_Cirripectes
+|                 |                |            |  |  +**| (0/10)
+|                 |                |            |  |  |  |  +**GBMNB10976_20_Cirripectes
+|                 |                |            |  |  |  +--| (92.9/70)
+|                 |                |            |  |  |     |     +--GBMNB10969_20_Cirripectes
+|                 |                |            |  |  |     |  +**| (0/29)
+|                 |                |            |  |  |     |  |  +--GBMNB10975_20_Cirripectes
+|                 |                |            |  |  |     +--| (77/65)
+|                 |                |            |  |  |        |  +**GBMNB10961_20_Cirripectes
+|                 |                |            |  |  |        +**| (0/85)
+|                 |                |            |  |  |           +**GBMNB10980_20_Cirripectes
+|                 |                |            |  +**| (0/4)
+|                 |                |            |     |        +--FPFLB356_12_Cirripectes
+|                 |                |            |     |     +**| (0/19)
+|                 |                |            |     |     |  +--GBMNB10967_20_Cirripectes
+|                 |                |            |     |  +**| (0/2)
+|                 |                |            |     |  |  +**GBMNB10965_20_Cirripectes
+|                 |                |            |     +**| (0/7)
+|                 |                |            |        +**AUSTR056_13_Cirripectes
+|                 |                |         +--| (94.8/87)
+|                 |                |         |  |  +--GAMBA282_12_Cirripectes
+|                 |                |         |  +--| (85.9/77)
+|                 |                |         |     |  +**GBMNB10964_20_Cirripectes
+|                 |                |         |     +**| (0/90)
+|                 |                |         |        +**GBMNB10979_20_Cirripectes
+|                 |                |     +---| (99.8/100)
+|                 |                |     |   |  +**AUSTR161_13_Cirripectes
+|                 |                |     |   +**| (0/87)
+|                 |                |     |      +**FUT004_18_Cirripectes
+|                 |                |  +--| (84.8/90)
+|                 |                |  |  |              +--RUNA_4002_Cirripectes_castaneus
+|                 |                |  |  |           +**| (0/11)
+|                 |                |  |  |           |  +--RUNA_2344_Cirripectes_castaneus
+|                 |                |  |  |        +**| (0/9)
+|                 |                |  |  |        |  |  +**LIFS794_08_Cirripectes
+|                 |                |  |  |        |  +**| (0/81)
+|                 |                |  |  |        |     +**RUNA_3895_Cirripectes_castaneus
+|                 |                |  |  |     +--| (80.6/94)
+|                 |                |  |  |     |  |                       +--SBF598_11_Cirripectes
+|                 |                |  |  |     |  |                    +--| (86.8/80)
+|                 |                |  |  |     |  |                    |  +**LIFS795_08_Cirripectes
+|                 |                |  |  |     |  |                 +**| (0/18)
+|                 |                |  |  |     |  |                 |  |        +**ANGBF32322_19_Cirripectes
+|                 |                |  |  |     |  |                 |  |     +**| (0/87)
+|                 |                |  |  |     |  |                 |  |     |  +**RESIC180_11_Cirripectes
+|                 |                |  |  |     |  |                 |  |  +--| (93.9/100)
+|                 |                |  |  |     |  |                 |  |  |  +--ORCIE_1125_Cirripectes_castaneus
+|                 |                |  |  |     |  |                 |  +**| (0/36)
+|                 |                |  |  |     |  |                 |     +--RUNA_2346_Cirripectes_castaneus
+|                 |                |  |  |     |  |              +**| (0/8)
+|                 |                |  |  |     |  |              |  |              +--RUNA_2168_cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |           +**| (0/26)
+|                 |                |  |  |     |  |              |  |           |  +--RUNA_3154_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |        +**| (0/4)
+|                 |                |  |  |     |  |              |  |        |  |                 +**ANGBF32323_19_Cirripectes
+|                 |                |  |  |     |  |              |  |        |  |              +**| (0/98)
+|                 |                |  |  |     |  |              |  |        |  |              |  +**ANGBF32324_19_Cirripectes
+|                 |                |  |  |     |  |              |  |        |  |           +--| (87.2/99)
+|                 |                |  |  |     |  |              |  |        |  |           |  |  +**ANGBF32327_19_Cirripectes
+|                 |                |  |  |     |  |              |  |        |  |           |  +**| (0/74)
+|                 |                |  |  |     |  |              |  |        |  |           |     +**GBMIN97243_17_Cirripectes
+|                 |                |  |  |     |  |              |  |        |  |        +**| (0/13)
+|                 |                |  |  |     |  |              |  |        |  |        |  +--RUNA_0272_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |        |  |     +**| (0/4)
+|                 |                |  |  |     |  |              |  |        |  |     |  |     +**RUNA_2347_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |        |  |     |  |  +--| (80.2/99)
+|                 |                |  |  |     |  |              |  |        |  |     |  |  |  +**RUNA_3176_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |        |  |     |  +**| (0/16)
+|                 |                |  |  |     |  |              |  |        |  |     |     +--RUNA_0737_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |        |  |  +**| (0/2)
+|                 |                |  |  |     |  |              |  |        |  |  |  +**COLOR469_15_Cirripectes
+|                 |                |  |  |     |  |              |  |        |  +**| (0/5)
+|                 |                |  |  |     |  |              |  |        |     +**RUNA_2379_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |     +--| (77/98)
+|                 |                |  |  |     |  |              |  |     |  |     +**ORCIE1808_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |     |  |  +--| (78.3/99)
+|                 |                |  |  |     |  |              |  |     |  |  |  +**RUNA_0370_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |     |  +**| (0/23)
+|                 |                |  |  |     |  |              |  |     |     +--RUNA_0022_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  |  +**| (0/10)
+|                 |                |  |  |     |  |              |  |  |  +--RUNA_2450_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |  +**| (0/3)
+|                 |                |  |  |     |  |              |     |  +--RUNA_3155_Cirripectes_castaneus
+|                 |                |  |  |     |  |              |     +**| (0/5)
+|                 |                |  |  |     |  |              |        +--RUNA_0854_Cirripectes_castaneus
+|                 |                |  |  |     |  |           +**| (0/3)
+|                 |                |  |  |     |  |           |  +**RESIC181_11_Cirripectes
+|                 |                |  |  |     |  |        +**| (0/7)
+|                 |                |  |  |     |  |        |  +**RESIC179_11_Cirripectes
+|                 |                |  |  |     |  |     +**| (0/7)
+|                 |                |  |  |     |  |     |  |     +--GBMIN131289_17_Cirripectes
+|                 |                |  |  |     |  |     |  |  +**| (0/30)
+|                 |                |  |  |     |  |     |  |  |  +--LIFS793_08_Cirripectes
+|                 |                |  |  |     |  |     |  +**| (0/5)
+|                 |                |  |  |     |  |     |     +--SAIAB025_06_Cirripectes
+|                 |                |  |  |     |  |  +--| (93.4/67)
+|                 |                |  |  |     |  |  |  +--SAIAB024_06_Cirripectes
+|                 |                |  |  |     |  +**| (0/9)
+|                 |                |  |  |     |     +--RUNA_4001_Cirripectes_castaneus
+|                 |                |  |  |  +--| (46.6/94)
+|                 |                |  |  |  |  +--ORCIE_1027_Cirripectes_castaneus
+|                 |                |  |  +--| (95.1/98)
+|                 |                |  |     |     +**RUNA_3256_Cirripectes_castaneus
+|                 |                |  |     |  +**| (0/82)
+|                 |                |  |     |  |  +**RUNA_2899_Cirripectes_castaneus
+|                 |                |  |     +**| (0/82)
+|                 |                |  |        +--RUNA_2449_Cirripectes_castaneus
+|                 |                +--| (85.3/90)
+|                 |                   |  +--UKFBK089_08_Cirripectes
+|                 |                   +--| (92.7/98)
+|                 |                      |     +**FUT003_18_Cirripectes
+|                 |                      |  +**| (0/86)
+|                 |                      |  |  +**FUT115_18_Cirripectes
+|                 |                      +**| (0/86)
+|                 |                         |  +--ORCIE1890_Cirripectes_stigmaticus
+|                 |                         +--| (86.7/99)
+|                 |                            +**1583_Cirripectes_stigmaticus
++-----------------| (96.1/99)
+                  +----------KU136_Ophioblennius_macclurei_
+
+Tree in newick format:
+
+(KT284893_1_Omobranchus_elegans:0.2583916622,NC_004411_1_Petroscirtes_breviceps:0.4491386615,(((NC_028295_1_Ecsenius_bicolor:0.3657028571,NC_004412_1_Salarias_fasciatus:0.2265304597)80.6/98:0.0912634837,((((AUSTR545_13_Cirripectes:0.0000022594,AUSTR546_13_Cirripectes:0.0136037743)99.6/100:0.1368039156,((((AUSTR398_13_Cirripectes:0.0000023134,AUSTR547_13_Cirripectes:0.0000023134)0/89:0.0000023134,GAMBA637_12_Cirripectes:0.0019254803)99.4/100:0.0728217974,AUSTR544_13_Cirripectes:0.0338182874)82.6/96:0.0259037827,((MH932008_1_Cirripectes_alboapicalis:0.0000022009,MH932009_1_Cirripectes_alboapicalis:0.0000023134)96.9/100:0.0282656775,(MH932004_1_Cirripectes_patuki:0.0056625350,(MH932006_1_Cirripectes_patuki:0.0018879929,(MH932005_1_Cirripectes_patuki:0.0018790688,(MH932003_1_Cirripectes_patuki:0.0018889476,MH932007_1_Cirripectes_patuki:0.0000027142)90.8/95:0.0018901654)0/51:0.0000027527)0/56:0.0000020753)89.6/98:0.0182010365)80.1/94:0.0272619814)92/99:0.0640572436)34.3/88:0.0387364200,(((((((AUSTR166_13_Cirripectes:0.0000023134,FPFLB369_12_Cirripectes:0.0000023134)89.2/100:0.0043193016,FPFLB304_12_Cirripectes:0.0021354642)0/21:0.0000020389,FPFLB317_12_Cirripectes:0.0021357710)0/5:0.0000020693,(AUSTR400_13_Cirripectes:0.0000023134,AUSTR401_13_Cirripectes:0.0000023134)0/85:0.0000023134)0/17:0.0000029196,GAMBA246_12_Cirripectes:0.0021268993)90.7/78:0.0021355255,(ANGBF32332_19_Cirripectes:0.0000023134,AUSTR163_13_Cirripectes:0.0000023134)0/86:0.0000025726)66.7/76:0.0021164936,FUT165_18_Cirripectes:0.0000026636)99.4/100:0.1483266385)88.2/98:0.0706012149,(((((((SBF750_11_Cirripectes:0.0040254169,COLOR408_15_Cirripectes:0.0020494487)80.9/99:0.0020451979,SBF751_11_Cirripectes:0.0040729088)0/66:0.0000022159,(COLOR413_15_Cirripectes:0.0000023134,ORCIE1990_Cirripectes_randalli:0.0000023134)0/88:0.0000025823)0/54:0.0000023940,SBF706_11_Cirripectes:0.0020370322)62.2/92:0.0020461477,SBF707_11_Cirripectes:0.0000023738)100/100:0.0974252329,(((((AUSTR154_13_Cirripectes:0.0019264181,MBFA979_07_Cirripectes:0.0020587153)80.7/100:0.0020092916,(AUSTR155_13_Cirripectes:0.0000023923,AUSTR395_13_Cirripectes:0.0000021133)82.3/100:0.0019702175)0/74:0.0000021415,MBFA978_07_Cirripectes:0.0019592618)99.9/100:0.0801601848,((ANGBF32331_19_Cirripectes:0.0000023134,UKFBJ563_08_Cirripectes:0.0000023134)0/93:0.0000022929,FUT163_18_Cirripectes:0.0042263550)99.9/100:0.0675986519)67.1/90:0.0081064841,((((ANGBF9231_12_Cirripectes:0.0021045026,(ANGBF9244_12_Cirripectes:0.0000023134,DSFSG709_11_Cirripectes:0.0000023134)0/93:0.0000023799)0/91:0.0000029823,DSFSG737_11_Cirripectes:0.0020778042)99.9/100:0.0995420830,(((RESIC057_11_Cirripectes:0.0000024431,RESIC484_11_Cirripectes:0.0000023134)0/92:0.0000024137,(ZOSKT1161_16_Cirripectes:0.0051355485,((ANGBF32328_19_Cirripectes:0.0066295252,(GBMIN96357_17_Cirripectes:0.0021909416,(SAIAB187_06_Cirripectes:0.0000023134,ANGBF26357_19_Cirripectes:0.0000023134)0/82:0.0000023134)0/55:0.0000021568)86.4/86:0.0021721626,((ANGBF32329_19_Cirripectes:0.0000023134,ANGBF32330_19_Cirripectes:0.0000023134)92.5/100:0.0043875001,SAIAB026_06_Cirripectes:0.0043849308)0/84:0.0000022412)78.3/93:0.0039137761)100/99:0.0306970915)87.6/97:0.0022136043,RESIC148_11_Cirripectes:0.0000023095)99.6/100:0.0771915867)83.9/98:0.0265624535,((((((((((((GBMNB11037_20_Cirripectes:0.0058549090,GBMNB11045_20_Cirripectes:0.0039193391)0/36:0.0000021082,(GBMNB10998_20_Cirripectes:0.0000021064,GBMNB11015_20_Cirripectes:0.0000021064)91.6/100:0.0019591281)0/4:0.0000028130,(((GBMNB10994_20_Cirripectes:0.0019678687,(GBMNB11003_20_Cirripectes:0.0000023134,GBMNB11025_20_Cirripectes:0.0000023134)0/97:0.0000022738)88.4/95:0.0019668951,((GBMNB11027_20_Cirripectes:0.0000023134,GBMNB11036_20_Cirripectes:0.0000023134)78.4/100:0.0019323392,GBMNB11016_20_Cirripectes:0.0000022439)86.4/99:0.0019458679)0/8:0.0000027754,(GBMNB11040_20_Cirripectes:0.0019645595,GBMNB11064_20_Cirripectes:0.0019524890)0/10:0.0000029110)0/5:0.0000028486)0/15:0.0000023096,GBMNB11006_20_Cirripectes:0.0000023134)0/2:0.0000023134,(((((GBMNB11060_20_Cirripectes:0.0061106155,(GBMNB11029_20_Cirripectes:0.0000023134,GBMNB11051_20_Cirripectes:0.0000023134)0/96:0.0000022484)92.6/81:0.0019796547,GBMNB11019_20_Cirripectes:0.0019466201)0/30:0.0000021738,(((GBMNB11010_20_Cirripectes:0.0000023134,GBMNB11018_20_Cirripectes:0.0000023134)78.7/100:0.0019571645,(GBMNB11008_20_Cirripectes:0.0000023134,GBMNB11032_20_Cirripectes:0.0000023134)0/96:0.0000023134)85.6/98:0.0019600353,GBMNB11028_20_Cirripectes:0.0019653942)0/13:0.0000024058)0/3:0.0000023134,(((GBMNB11039_20_Cirripectes:0.0019554802,GBMNB11052_20_Cirripectes:0.0000021867)82.8/98:0.0019505428,GBMNB10999_20_Cirripectes:0.0019673411)0/8:0.0000020761,((GBMNB11007_20_Cirripectes:0.0019651342,GBMNB11055_20_Cirripectes:0.0019439604)0/8:0.0000023134,GBMNB11065_20_Cirripectes:0.0019609654)0/4:0.0000021474)0/2:0.0000023134)0/7:0.0000023134,(((GBMNB11068_20_Cirripectes:0.0039326966,(GBMNB11057_20_Cirripectes:0.0019429967,GBMNB11005_20_Cirripectes:0.0000023134)85.9/99:0.0019604554)0/5:0.0000022720,(GBMNB11021_20_Cirripectes:0.0019583432,GBMNB11024_20_Cirripectes:0.0019578718)0/21:0.0000023134)0/5:0.0000023134,(GBMNB11001_20_Cirripectes:0.0019738007,GBMNB11011_20_Cirripectes:0.0019550592)0/14:0.0000022584)0/12:0.0000023134)0/2:0.0000023134)0/5:0.0000022639,GBMNB11009_20_Cirripectes:0.0000023134)0/10:0.0000025705,(((GBMNB11002_20_Cirripectes:0.0038990327,(GBMNB10995_20_Cirripectes:0.0000023134,GBMNB11000_20_Cirripectes:0.0000023134)0/98:0.0000022279)85.6/94:0.0019588703,GBMNB11042_20_Cirripectes:0.0019663632)0/14:0.0000027179,GBMNB11047_20_Cirripectes:0.0019849714)0/4:0.0000023117)0/3:0.0000022691,((GBMNB11049_20_Cirripectes:0.0039700269,(GBMNB11004_20_Cirripectes:0.0000023134,GBMNB11034_20_Cirripectes:0.0000023134)0/97:0.0000020825)85.7/71:0.0019535199,GBMNB11017_20_Cirripectes:0.0019803737)0/26:0.0000020691)0/24:0.0000026304,((GBMNB11012_20_Cirripectes:0.0000022455,GBMNB11059_20_Cirripectes:0.0000022455)80.8/100:0.0019531957,(GBMNB10997_20_Cirripectes:0.0000023134,GBMNB11062_20_Cirripectes:0.0000023134)0/96:0.0000029672)86.3/97:0.0019580344)70.8/63:0.0019577555,GBMNB10996_20_Cirripectes:0.0000021578)0/57:0.0000026364,GBMNB11023_20_Cirripectes:0.0038913471)95.2/85:0.0246620375,((((GAMBA023_12_Cirripectes:0.0020467656,GAMBA024_12_Cirripectes:0.0000023134)99.8/100:0.0152663237,(GBMNB10937_20_Cirripectes:0.0000023134,GBMNB10944_20_Cirripectes:0.0000023134)75.1/98:0.0020647296)0/64:0.0000021741,((((GBMNB10945_20_Cirripectes:0.0041993033,(GBMNB10951_20_Cirripectes:0.0021085928,(GBMNB10938_20_Cirripectes:0.0000023134,GBMNB10941_20_Cirripectes:0.0000023134)0/88:0.0000023134)0/92:0.0000029094)78.7/92:0.0020984436,(GBMNB10955_20_Cirripectes:0.0042492441,GBMNB10956_20_Cirripectes:0.0020658702)0/78:0.0000025876)0/15:0.0000023038,(GBMNB10958_20_Cirripectes:0.0041692769,GBMNB10957_20_Cirripectes:0.0000023134)90.9/97:0.0020992976)0/4:0.0000025164,(((GBMNB10954_20_Cirripectes:0.0020845326,AUSTR240_13_Cirripectes:0.0020834253)0/12:0.0000023134,GBMNB10935_20_Cirripectes:0.0000023134)0/2:0.0000022008,GBMNB10934_20_Cirripectes:0.0000023134)0/3:0.0000021948)0/20:0.0000027818)86.8/86:0.0020832964,GBMNB10942_20_Cirripectes:0.0000023409)93.5/99:0.0189240308)97.2/77:0.0323524766)64.5/49:0.0038032637)72.5/49:0.0090778689)61.7/63:0.0155831487,(((((((((((GBMNB10963_20_Cirripectes:0.0129272757,GBMNB10960_20_Cirripectes:0.0000022498)80.6/86:0.0087819986,(GBMNB10966_20_Cirripectes:0.0000022169,GBMNB10970_20_Cirripectes:0.0000022166)0/87:0.0000022245)93.1/88:0.0043756269,GBMNB10962_20_Cirripectes:0.0021466128)0/28:0.0000020164,((GBMNB10982_20_Cirripectes:0.0021687641,MARQ071_12_Cirripectes:0.0021697952)0/10:0.0000021617,(GBMNB10973_20_Cirripectes:0.0000023134,GBMNB10985_20_Cirripectes:0.0000023134)0/74:0.0000029204)0/8:0.0000028659)0/7:0.0000028006,GBMNB10974_20_Cirripectes:0.0043746337)86.9/98:0.0021668537,((GBMNB10978_20_Cirripectes:0.0021797045,GBMNB10968_20_Cirripectes:0.0000023134)0/17:0.0000020624,GBMNB10984_20_Cirripectes:0.0000023134)0/79:0.0000027100)85.8/98:0.0021670379,((((((((AUSTR160_13_Cirripectes:0.0000026735,FPFLB403_12_Cirripectes:0.0000024616)93.9/100:0.0064611844,GBMNB10992_20_Cirripectes:0.0000028278)67.7/26:0.0021097688,((AUSTR162_13_Cirripectes:0.0021164974,(GAMBA280_12_Cirripectes:0.0000023134,MBFA186_07_Cirripectes:0.0000023108)79.2/100:0.0021079862)0/27:0.0000021927,GBMNB10989_20_Cirripectes:0.0000023134)0/41:0.0000027338)85.6/33:0.0021343355,GBMNB10993_20_Cirripectes:0.0021501455)0/7:0.0000021998,(GAMBA026_12_Cirripectes:0.0000023134,GAMBA862_12_Cirripectes:0.0000023134)0/82:0.0000023134)0/1:0.0000022669,((AUSTR052_13_Cirripectes:0.0000024163,GAMBA281_12_Cirripectes:0.0000024165)85.7/100:0.0043542138,GAMBA025_12_Cirripectes:0.0043047334)0/35:0.0000024786)85.5/30:0.0021603786,(GBMNB10976_20_Cirripectes:0.0000027567,((GBMNB10969_20_Cirripectes:0.0021463483,GBMNB10975_20_Cirripectes:0.0021240884)0/29:0.0000024177,(GBMNB10961_20_Cirripectes:0.0000022088,GBMNB10980_20_Cirripectes:0.0000023134)0/85:0.0000022075)77/65:0.0021481090)92.9/70:0.0021597130)0/10:0.0000028112,(((FPFLB356_12_Cirripectes:0.0021628989,GBMNB10967_20_Cirripectes:0.0021631143)0/19:0.0000024844,GBMNB10965_20_Cirripectes:0.0000023134)0/2:0.0000024074,AUSTR056_13_Cirripectes:0.0000023134)0/7:0.0000022635)0/4:0.0000023937)0/12:0.0000021051,(GAMBA282_12_Cirripectes:0.0043012122,(GBMNB10964_20_Cirripectes:0.0000023134,GBMNB10979_20_Cirripectes:0.0000023134)0/90:0.0000023782)85.9/77:0.0021510912)94.8/87:0.0043647505,(AUSTR161_13_Cirripectes:0.0000023134,FUT004_18_Cirripectes:0.0000023134)0/87:0.0000021951)99.8/100:0.0584756926,(((((RUNA_4002_Cirripectes_castaneus:0.0065780938,RUNA_2344_Cirripectes_castaneus:0.0021773018)0/11:0.0000028588,(LIFS794_08_Cirripectes:0.0000023134,RUNA_3895_Cirripectes_castaneus:0.0000023134)0/81:0.0000023134)0/9:0.0000023134,((((((((SBF598_11_Cirripectes:0.0065271709,LIFS795_08_Cirripectes:0.0000021639)86.8/80:0.0021398936,(((ANGBF32322_19_Cirripectes:0.0000023134,RESIC180_11_Cirripectes:0.0000023134)0/87:0.0000023752,ORCIE_1125_Cirripectes_castaneus:0.0020898793)93.9/100:0.0042708225,RUNA_2346_Cirripectes_castaneus:0.0042607014)0/36:0.0000021947)0/18:0.0000023134,(((((RUNA_2168_cirripectes_castaneus:0.0043550200,RUNA_3154_Cirripectes_castaneus:0.0021398109)0/26:0.0000023134,((((((ANGBF32323_19_Cirripectes:0.0000023134,ANGBF32324_19_Cirripectes:0.0000023134)0/98:0.0000023134,(ANGBF32327_19_Cirripectes:0.0000023134,GBMIN97243_17_Cirripectes:0.0000023134)0/74:0.0000021064)87.2/99:0.0022234227,RUNA_0272_Cirripectes_castaneus:0.0021205907)0/13:0.0000021690,((RUNA_2347_Cirripectes_castaneus:0.0000023134,RUNA_3176_Cirripectes_castaneus:0.0000023134)80.2/99:0.0021436688,RUNA_0737_Cirripectes_castaneus:0.0021405928)0/16:0.0000021783)0/4:0.0000022648,COLOR469_15_Cirripectes:0.0000023134)0/2:0.0000020968,RUNA_2379_Cirripectes_castaneus:0.0000023134)0/5:0.0000023653)0/4:0.0000027956,((ORCIE1808_Cirripectes_castaneus:0.0000022916,RUNA_0370_Cirripectes_castaneus:0.0000022886)78.3/99:0.0021218171,RUNA_0022_Cirripectes_castaneus:0.0021432566)0/23:0.0000022952)77/98:0.0021569051,RUNA_2450_Cirripectes_castaneus:0.0021266160)0/10:0.0000022100,(RUNA_3155_Cirripectes_castaneus:0.0021463533,RUNA_0854_Cirripectes_castaneus:0.0021245853)0/5:0.0000025770)0/3:0.0000023629)0/8:0.0000026625,RESIC181_11_Cirripectes:0.0000023134)0/3:0.0000023134,RESIC179_11_Cirripectes:0.0000023134)0/7:0.0000021908,((GBMIN131289_17_Cirripectes:0.0042395991,LIFS793_08_Cirripectes:0.0021248942)0/30:0.0000027912,SAIAB025_06_Cirripectes:0.0021389325)0/5:0.0000027741)0/7:0.0000028203,SAIAB024_06_Cirripectes:0.0021332828)93.4/67:0.0021575768,RUNA_4001_Cirripectes_castaneus:0.0021845994)0/9:0.0000028528)80.6/94:0.0021972013,ORCIE_1027_Cirripectes_castaneus:0.0021937992)46.6/94:0.0022142519,((RUNA_3256_Cirripectes_castaneus:0.0000023134,RUNA_2899_Cirripectes_castaneus:0.0000023134)0/82:0.0000023134,RUNA_2449_Cirripectes_castaneus:0.0022198668)0/82:0.0000024227)95.1/98:0.0272496961)84.8/90:0.0170762491,(UKFBK089_08_Cirripectes:0.0109043411,((FUT003_18_Cirripectes:0.0000023134,FUT115_18_Cirripectes:0.0000023134)0/86:0.0000023134,(ORCIE1890_Cirripectes_stigmaticus:0.0021342044,1583_Cirripectes_stigmaticus:0.0000022719)86.7/99:0.0021094979)0/86:0.0000021931)92.7/98:0.0196737832)85.3/90:0.0210108833)86.4/73:0.0537763716)52.9/70:0.0895144051)62.2/76:0.0979387197,KU136_Ophioblennius_macclurei_:0.1570723988)96.1/99:0.2412641797);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000bootstrap trees
+Log-likelihood of consensus tree: -4584.787929
+Robinson-Foulds distance between ML tree and consensus tree: 112
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++------------------KT284893_1_Omobranchus_elegans
+|
++--------------------------------NC_004411_1_Petroscirtes_breviceps
+|
+|                              +--------------------------NC_028295_1_Ecsenius_bicolor
+|                        +-----| (98)
+|                        |     +----------------NC_004412_1_Salarias_fasciatus
+|                 +------| (76)
+|                 |      |                       +--AUSTR545_13_Cirripectes
+|                 |      |             +---------| (100)
+|                 |      |             |         +--AUSTR546_13_Cirripectes
+|                 |      |          +--| (88)
+|                 |      |          |  |                    +**AUSTR398_13_Cirripectes
+|                 |      |          |  |                 +**|
+|                 |      |          |  |                 |  +**AUSTR548_13_Cirripectes
+|                 |      |          |  |              +--|
+|                 |      |          |  |              |  +**GAMBA640_12_Cirripectes
+|                 |      |          |  |           +--| (89)
+|                 |      |          |  |           |  +--AUSTR547_13_Cirripectes
+|                 |      |          |  |      +----| (100)
+|                 |      |          |  |      |    +--GAMBA637_12_Cirripectes
+|                 |      |          |  |   +--| (96)
+|                 |      |          |  |   |  +--AUSTR544_13_Cirripectes
+|                 |      |          |  +---| (99)
+|                 |      |          |      |     +--MH932008_1_Cirripectes_alboapicalis
+|                 |      |          |      |  +--| (100)
+|                 |      |          |      |  |  +--MH932009_1_Cirripectes_alboapicalis
+|                 |      |          |      +--| (94)
+|                 |      |          |         |  +--MH932004_1_Cirripectes_patuki
+|                 |      |          |         +--| (98)
+|                 |      |          |            |  +--MH932006_1_Cirripectes_patuki
+|                 |      |          |            +--| (56)
+|                 |      |          |               |  +--MH932005_1_Cirripectes_patuki
+|                 |      |          |               +--| (51)
+|                 |      |          |                  |  +--MH932003_1_Cirripectes_patuki
+|                 |      |          |                  +--| (95)
+|                 |      |          |                     +--MH932007_1_Cirripectes_patuki
+|                 |      |     +----| (98)
+|                 |      |     |    |                               +**AUSTR166_13_Cirripectes
+|                 |      |     |    |                            +--|
+|                 |      |     |    |                            |  +**FPFLB371_12_Cirripectes
+|                 |      |     |    |                         +--| (100)
+|                 |      |     |    |                         |  +--FPFLB369_12_Cirripectes
+|                 |      |     |    |                      +--| (32)
+|                 |      |     |    |                      |  +--GAMBA246_12_Cirripectes
+|                 |      |     |    |                   +--| (20)
+|                 |      |     |    |                   |  +--FPFLB317_12_Cirripectes
+|                 |      |     |    |                +--| (21)
+|                 |      |     |    |                |  |                          +**AUSTR400_13_Cirripectes
+|                 |      |     |    |                |  |                       +**|
+|                 |      |     |    |                |  |                       |  +**GAMBA236_12_Cirripectes
+|                 |      |     |    |                |  |                    +**|
+|                 |      |     |    |                |  |                    |  +**AUSTR535_13_Cirripectes
+|                 |      |     |    |                |  |                 +**|
+|                 |      |     |    |                |  |                 |  +**AUSTR534_13_Cirripectes
+|                 |      |     |    |                |  |              +**|
+|                 |      |     |    |                |  |              |  +**GAMBA247_12_Cirripectes
+|                 |      |     |    |                |  |           +**|
+|                 |      |     |    |                |  |           |  +**MBFA178_07_Cirripectes
+|                 |      |     |    |                |  |        +**|
+|                 |      |     |    |                |  |        |  +**FPFLB321_12_Cirripectes
+|                 |      |     |    |                |  |     +**|
+|                 |      |     |    |                |  |     |  +**FPFLB318_12_Cirripectes
+|                 |      |     |    |                |  |  +--|
+|                 |      |     |    |                |  |  |  +**MBFA179_07_Cirripectes
+|                 |      |     |    |                |  +--| (85)
+|                 |      |     |    |                |     +--AUSTR401_13_Cirripectes
+|                 |      |     |    |             +--| (78)
+|                 |      |     |    |             |  +--FPFLB304_12_Cirripectes
+|                 |      |     |    |          +--| (76)
+|                 |      |     |    |          |  |           +**ANGBF32332_19_Cirripectes
+|                 |      |     |    |          |  |        +**|
+|                 |      |     |    |          |  |        |  +**AUSTR533_13_Cirripectes
+|                 |      |     |    |          |  |     +**|
+|                 |      |     |    |          |  |     |  +**UKFBI168_08_Cirripectes
+|                 |      |     |    |          |  |  +--|
+|                 |      |     |    |          |  |  |  +**SCILL193_15_Cirripectes
+|                 |      |     |    |          |  +--| (86)
+|                 |      |     |    |          |     +--AUSTR163_13_Cirripectes
+|                 |      |     |    +----------| (100)
+|                 |      |     |               +--FUT165_18_Cirripectes
+|                 |      +-----| (70)
+|                 |            |                         +--SBF750_11_Cirripectes
+|                 |            |                      +--| (99)
+|                 |            |                      |  +--COLOR408_15_Cirripectes
+|                 |            |                   +--| (66)
+|                 |            |                   |  +--SBF751_11_Cirripectes
+|                 |            |                +--| (54)
+|                 |            |                |  |           +**COLOR413_15_Cirripectes
+|                 |            |                |  |        +**|
+|                 |            |                |  |        |  +**SBF493_11_Cirripectes
+|                 |            |                |  |     +**|
+|                 |            |                |  |     |  +**SBF680_11_Cirripectes
+|                 |            |                |  |  +--|
+|                 |            |                |  |  |  +**SBF681_11_Cirripectes
+|                 |            |                |  +--| (88)
+|                 |            |                |     +--ORCIE1990_Cirripectes_randalli
+|                 |            |             +--| (92)
+|                 |            |             |  +--SBF706_11_Cirripectes
+|                 |            |      +------| (100)
+|                 |            |      |      +--SBF707_11_Cirripectes
+|                 |            |   +--| (63)
+|                 |            |   |  |                 +--AUSTR154_13_Cirripectes
+|                 |            |   |  |              +--| (100)
+|                 |            |   |  |              |  +--MBFA979_07_Cirripectes
+|                 |            |   |  |           +--| (74)
+|                 |            |   |  |           |  |     +**AUSTR155_13_Cirripectes
+|                 |            |   |  |           |  |  +--|
+|                 |            |   |  |           |  |  |  +**FUT160_18_Cirripectes
+|                 |            |   |  |           |  +--| (100)
+|                 |            |   |  |           |     +--AUSTR395_13_Cirripectes
+|                 |            |   |  |     +-----| (100)
+|                 |            |   |  |     |     +--MBFA978_07_Cirripectes
+|                 |            |   |  |  +--| (90)
+|                 |            |   |  |  |  |       +--ANGBF32331_19_Cirripectes
+|                 |            |   |  |  |  |    +--| (93)
+|                 |            |   |  |  |  |    |  +--UKFBJ563_08_Cirripectes
+|                 |            |   |  |  |  +----| (100)
+|                 |            |   |  |  |       +--FUT163_18_Cirripectes
+|                 |            |   |  +--| (49)
+|                 |            |   |     |               +--ANGBF9231_12_Cirripectes
+|                 |            |   |     |            +--| (91)
+|                 |            |   |     |            |  |           +**ANGBF9244_12_Cirripectes
+|                 |            |   |     |            |  |        +**|
+|                 |            |   |     |            |  |        |  +**DSLAG1786_12_Cirripectes
+|                 |            |   |     |            |  |     +**|
+|                 |            |   |     |            |  |     |  +**DSLAG1798_12_Cirripectes
+|                 |            |   |     |            |  |  +--|
+|                 |            |   |     |            |  |  |  +**DSLAG1745_12_Cirripectes
+|                 |            |   |     |            |  +--| (93)
+|                 |            |   |     |            |     +--DSFSG709_11_Cirripectes
+|                 |            |   |     |     +------| (100)
+|                 |            |   |     |     |      +--DSFSG737_11_Cirripectes
+|                 |            |   |     |  +--| (98)
+|                 |            |   |     |  |  |          +--RESIC057_11_Cirripectes
+|                 |            |   |     |  |  |       +--| (92)
+|                 |            |   |     |  |  |       |  +--RESIC484_11_Cirripectes
+|                 |            |   |     |  |  |    +--| (97)
+|                 |            |   |     |  |  |    |  |  +--ZOSKT1161_16_Cirripectes
+|                 |            |   |     |  |  |    |  +--| (99)
+|                 |            |   |     |  |  |    |     |     +--ANGBF32328_19_Cirripectes
+|                 |            |   |     |  |  |    |     |  +--| (86)
+|                 |            |   |     |  |  |    |     |  |  |  +--GBMIN96357_17_Cirripectes
+|                 |            |   |     |  |  |    |     |  |  +--| (55)
+|                 |            |   |     |  |  |    |     |  |     |  +--SAIAB187_06_Cirripectes
+|                 |            |   |     |  |  |    |     |  |     +--| (82)
+|                 |            |   |     |  |  |    |     |  |        +--ANGBF26357_19_Cirripectes
+|                 |            |   |     |  |  |    |     +--| (93)
+|                 |            |   |     |  |  |    |        |     +--ANGBF32329_19_Cirripectes
+|                 |            |   |     |  |  |    |        |  +--| (100)
+|                 |            |   |     |  |  |    |        |  |  +--ANGBF32330_19_Cirripectes
+|                 |            |   |     |  |  |    |        +--| (84)
+|                 |            |   |     |  |  |    |           +--SAIAB026_06_Cirripectes
+|                 |            |   |     |  |  +----| (100)
+|                 |            |   |     |  |       +--RESIC148_11_Cirripectes
+|                 |            |   |     +--| (49)
+|                 |            |   |        |                             +--GBMNB11037_20_Cirripectes
+|                 |            |   |        |                          +--| (36)
+|                 |            |   |        |                          |  +--GBMNB11045_20_Cirripectes
+|                 |            |   |        |                       +--| (7)
+|                 |            |   |        |                       |  |        +**GBMNB10998_20_Cirripectes
+|                 |            |   |        |                       |  |     +--|
+|                 |            |   |        |                       |  |     |  +**GBMNB11066_20_Cirripectes
+|                 |            |   |        |                       |  |  +--| (100)
+|                 |            |   |        |                       |  |  |  +--GBMNB11015_20_Cirripectes
+|                 |            |   |        |                       |  +--| (13)
+|                 |            |   |        |                       |     +--GBMNB11040_20_Cirripectes
+|                 |            |   |        |                    +--| (15)
+|                 |            |   |        |                    |  |     +--GBMNB10994_20_Cirripectes
+|                 |            |   |        |                    |  |  +--| (95)
+|                 |            |   |        |                    |  |  |  |  +--GBMNB11003_20_Cirripectes
+|                 |            |   |        |                    |  |  |  +--| (97)
+|                 |            |   |        |                    |  |  |     +--GBMNB11025_20_Cirripectes
+|                 |            |   |        |                    |  +--| (11)
+|                 |            |   |        |                    |     |              +**GBMNB11027_20_Cirripectes
+|                 |            |   |        |                    |     |           +**|
+|                 |            |   |        |                    |     |           |  +**GBMNB11048_20_Cirripectes
+|                 |            |   |        |                    |     |        +--|
+|                 |            |   |        |                    |     |        |  +**GBMNB11050_20_Cirripectes
+|                 |            |   |        |                    |     |     +--| (100)
+|                 |            |   |        |                    |     |     |  +--GBMNB11036_20_Cirripectes
+|                 |            |   |        |                    |     |  +--| (99)
+|                 |            |   |        |                    |     |  |  +--GBMNB11016_20_Cirripectes
+|                 |            |   |        |                    |     +--| (32)
+|                 |            |   |        |                    |        +--GBMNB11064_20_Cirripectes
+|                 |            |   |        |                 +--| (6)
+|                 |            |   |        |                 |  +--GBMNB11009_20_Cirripectes
+|                 |            |   |        |              +--| (10)
+|                 |            |   |        |              |  |              +--GBMNB11060_20_Cirripectes
+|                 |            |   |        |              |  |           +--| (81)
+|                 |            |   |        |              |  |           |  |  +--GBMNB11029_20_Cirripectes
+|                 |            |   |        |              |  |           |  +--| (96)
+|                 |            |   |        |              |  |           |     +--GBMNB11051_20_Cirripectes
+|                 |            |   |        |              |  |        +--| (30)
+|                 |            |   |        |              |  |        |  +--GBMNB11019_20_Cirripectes
+|                 |            |   |        |              |  |     +--| (3)
+|                 |            |   |        |              |  |     |  |           +**GBMNB11010_20_Cirripectes
+|                 |            |   |        |              |  |     |  |        +--|
+|                 |            |   |        |              |  |     |  |        |  +**GBMNB11058_20_Cirripectes
+|                 |            |   |        |              |  |     |  |     +--| (100)
+|                 |            |   |        |              |  |     |  |     |  +--GBMNB11018_20_Cirripectes
+|                 |            |   |        |              |  |     |  |  +--| (98)
+|                 |            |   |        |              |  |     |  |  |  |  +--GBMNB11008_20_Cirripectes
+|                 |            |   |        |              |  |     |  |  |  +--| (96)
+|                 |            |   |        |              |  |     |  |  |     +--GBMNB11032_20_Cirripectes
+|                 |            |   |        |              |  |     |  +--| (13)
+|                 |            |   |        |              |  |     |     +--GBMNB11028_20_Cirripectes
+|                 |            |   |        |              |  |  +--| (7)
+|                 |            |   |        |              |  |  |  |     +--GBMNB11039_20_Cirripectes
+|                 |            |   |        |              |  |  |  |  +--| (98)
+|                 |            |   |        |              |  |  |  |  |  +--GBMNB11052_20_Cirripectes
+|                 |            |   |        |              |  |  |  +--| (2)
+|                 |            |   |        |              |  |  |     |     +--GBMNB10999_20_Cirripectes
+|                 |            |   |        |              |  |  |     |  +--| (19)
+|                 |            |   |        |              |  |  |     |  |  +--GBMNB11007_20_Cirripectes
+|                 |            |   |        |              |  |  |     +--| (1)
+|                 |            |   |        |              |  |  |        |  +--GBMNB11055_20_Cirripectes
+|                 |            |   |        |              |  |  |        +--| (10)
+|                 |            |   |        |              |  |  |           +--GBMNB11065_20_Cirripectes
+|                 |            |   |        |              |  +--| (6)
+|                 |            |   |        |              |     |           +--GBMNB11068_20_Cirripectes
+|                 |            |   |        |              |     |        +--| (30)
+|                 |            |   |        |              |     |        |  +--GBMNB11024_20_Cirripectes
+|                 |            |   |        |              |     |     +--| (7)
+|                 |            |   |        |              |     |     |  |     +--GBMNB11057_20_Cirripectes
+|                 |            |   |        |              |     |     |  |  +--| (99)
+|                 |            |   |        |              |     |     |  |  |  +--GBMNB11005_20_Cirripectes
+|                 |            |   |        |              |     |     |  +--| (17)
+|                 |            |   |        |              |     |     |     +--GBMNB11001_20_Cirripectes
+|                 |            |   |        |              |     |  +--| (12)
+|                 |            |   |        |              |     |  |  |  +--GBMNB11011_20_Cirripectes
+|                 |            |   |        |              |     |  |  +--| (20)
+|                 |            |   |        |              |     |  |     +--GBMNB11021_20_Cirripectes
+|                 |            |   |        |              |     +--| (5)
+|                 |            |   |        |              |        |                                                        +**GBMNB11006_20_Cirripectes
+|                 |            |   |        |              |        |                                                     +**|
+|                 |            |   |        |              |        |                                                     |  +**GBMNB11041_20_Cirripectes
+|                 |            |   |        |              |        |                                                  +**|
+|                 |            |   |        |              |        |                                                  |  +**GBMNB11013_20_Cirripectes
+|                 |            |   |        |              |        |                                               +**|
+|                 |            |   |        |              |        |                                               |  +**GBMNB11061_20_Cirripectes
+|                 |            |   |        |              |        |                                            +**|
+|                 |            |   |        |              |        |                                            |  +**GBMNB11020_20_Cirripectes
+|                 |            |   |        |              |        |                                         +**|
+|                 |            |   |        |              |        |                                         |  +**GBMNB11026_20_Cirripectes
+|                 |            |   |        |              |        |                                      +**|
+|                 |            |   |        |              |        |                                      |  +**GBMNB11044_20_Cirripectes
+|                 |            |   |        |              |        |                                   +**|
+|                 |            |   |        |              |        |                                   |  +**GBMNB11033_20_Cirripectes
+|                 |            |   |        |              |        |                                +**|
+|                 |            |   |        |              |        |                                |  +**GBMNB11067_20_Cirripectes
+|                 |            |   |        |              |        |                             +**|
+|                 |            |   |        |              |        |                             |  +**GBMNB11014_20_Cirripectes
+|                 |            |   |        |              |        |                          +**|
+|                 |            |   |        |              |        |                          |  +**GBMNB11035_20_Cirripectes
+|                 |            |   |        |              |        |                       +**|
+|                 |            |   |        |              |        |                       |  +**GBMNB11046_20_Cirripectes
+|                 |            |   |        |              |        |                    +**|
+|                 |            |   |        |              |        |                    |  +**GBMNB11022_20_Cirripectes
+|                 |            |   |        |              |        |                 +**|
+|                 |            |   |        |              |        |                 |  +**GBMNB11063_20_Cirripectes
+|                 |            |   |        |              |        |              +**|
+|                 |            |   |        |              |        |              |  +**GBMNB11054_20_Cirripectes
+|                 |            |   |        |              |        |           +**|
+|                 |            |   |        |              |        |           |  +**GBMNB11053_20_Cirripectes
+|                 |            |   |        |              |        |        +**|
+|                 |            |   |        |              |        |        |  +**GBMNB11031_20_Cirripectes
+|                 |            |   |        |              |        |     +**|
+|                 |            |   |        |              |        |     |  +**GBMNB11030_20_Cirripectes
+|                 |            |   |        |              |        |  +**|
+|                 |            |   |        |              |        |  |  +**GBMNB11056_20_Cirripectes
+|                 |            |   |        |              |        +--|
+|                 |            |   |        |              |           +**GBMNB11038_20_Cirripectes
+|                 |            |   |        |           +--| (24)
+|                 |            |   |        |           |  |           +--GBMNB11049_20_Cirripectes
+|                 |            |   |        |           |  |        +--| (71)
+|                 |            |   |        |           |  |        |  |  +--GBMNB11004_20_Cirripectes
+|                 |            |   |        |           |  |        |  +--| (97)
+|                 |            |   |        |           |  |        |     +--GBMNB11034_20_Cirripectes
+|                 |            |   |        |           |  |     +--| (26)
+|                 |            |   |        |           |  |     |  +--GBMNB11017_20_Cirripectes
+|                 |            |   |        |           |  |  +--| (5)
+|                 |            |   |        |           |  |  |  +--GBMNB11047_20_Cirripectes
+|                 |            |   |        |           |  +--| (3)
+|                 |            |   |        |           |     |     +--GBMNB11002_20_Cirripectes
+|                 |            |   |        |           |     |  +--| (94)
+|                 |            |   |        |           |     |  |  |     +**GBMNB10995_20_Cirripectes
+|                 |            |   |        |           |     |  |  |  +--|
+|                 |            |   |        |           |     |  |  |  |  +**GBMNB11043_20_Cirripectes
+|                 |            |   |        |           |     |  |  +--| (98)
+|                 |            |   |        |           |     |  |     +--GBMNB11000_20_Cirripectes
+|                 |            |   |        |           |     +--| (14)
+|                 |            |   |        |           |        +--GBMNB11042_20_Cirripectes
+|                 |            |   |        |        +--| (63)
+|                 |            |   |        |        |  |        +**GBMNB11012_20_Cirripectes
+|                 |            |   |        |        |  |     +--|
+|                 |            |   |        |        |  |     |  +**GBMNB11069_20_Cirripectes
+|                 |            |   |        |        |  |  +--| (100)
+|                 |            |   |        |        |  |  |  +--GBMNB11059_20_Cirripectes
+|                 |            |   |        |        |  +--| (97)
+|                 |            |   |        |        |     |  +--GBMNB10997_20_Cirripectes
+|                 |            |   |        |        |     +--| (96)
+|                 |            |   |        |        |        +--GBMNB11062_20_Cirripectes
+|                 |            |   |        |     +--| (57)
+|                 |            |   |        |     |  +--GBMNB10996_20_Cirripectes
+|                 |            |   |        |  +--| (85)
+|                 |            |   |        |  |  +--GBMNB11023_20_Cirripectes
+|                 |            |   |        +--| (77)
+|                 |            |   |           |              +--GAMBA023_12_Cirripectes
+|                 |            |   |           |           +--| (100)
+|                 |            |   |           |           |  +--GAMBA024_12_Cirripectes
+|                 |            |   |           |        +--| (64)
+|                 |            |   |           |        |  |  +--GBMNB10937_20_Cirripectes
+|                 |            |   |           |        |  +--| (98)
+|                 |            |   |           |        |     +--GBMNB10944_20_Cirripectes
+|                 |            |   |           |     +--| (26)
+|                 |            |   |           |     |  |     +--GBMNB10945_20_Cirripectes
+|                 |            |   |           |     |  |  +--| (92)
+|                 |            |   |           |     |  |  |  |  +--GBMNB10951_20_Cirripectes
+|                 |            |   |           |     |  |  |  +--| (92)
+|                 |            |   |           |     |  |  |     |        +**GBMNB10938_20_Cirripectes
+|                 |            |   |           |     |  |  |     |     +**|
+|                 |            |   |           |     |  |  |     |     |  +**GBMNB10948_20_Cirripectes
+|                 |            |   |           |     |  |  |     |  +--|
+|                 |            |   |           |     |  |  |     |  |  +**GBMNB10947_20_Cirripectes
+|                 |            |   |           |     |  |  |     +--| (88)
+|                 |            |   |           |     |  |  |        +--GBMNB10941_20_Cirripectes
+|                 |            |   |           |     |  +--| (5)
+|                 |            |   |           |     |     |           +--GBMNB10955_20_Cirripectes
+|                 |            |   |           |     |     |        +--| (78)
+|                 |            |   |           |     |     |        |  +--GBMNB10956_20_Cirripectes
+|                 |            |   |           |     |     |     +--| (34)
+|                 |            |   |           |     |     |     |  |  +--GBMNB10958_20_Cirripectes
+|                 |            |   |           |     |     |     |  +--| (97)
+|                 |            |   |           |     |     |     |     +--GBMNB10957_20_Cirripectes
+|                 |            |   |           |     |     |  +--| (10)
+|                 |            |   |           |     |     |  |  +--GBMNB10954_20_Cirripectes
+|                 |            |   |           |     |     +--| (5)
+|                 |            |   |           |     |        |                                      +**GBMNB10934_20_Cirripectes
+|                 |            |   |           |     |        |                                   +**|
+|                 |            |   |           |     |        |                                   |  +**GBMNB10950_20_Cirripectes
+|                 |            |   |           |     |        |                                +**|
+|                 |            |   |           |     |        |                                |  +**GBMNB10939_20_Cirripectes
+|                 |            |   |           |     |        |                             +**|
+|                 |            |   |           |     |        |                             |  +**GBMNB10959_20_Cirripectes
+|                 |            |   |           |     |        |                          +**|
+|                 |            |   |           |     |        |                          |  +**GBMNB10936_20_Cirripectes
+|                 |            |   |           |     |        |                       +**|
+|                 |            |   |           |     |        |                       |  +**GBMNB10953_20_Cirripectes
+|                 |            |   |           |     |        |                    +**|
+|                 |            |   |           |     |        |                    |  +**GBMNB10949_20_Cirripectes
+|                 |            |   |           |     |        |                 +**|
+|                 |            |   |           |     |        |                 |  +**GBMNB10952_20_Cirripectes
+|                 |            |   |           |     |        |              +**|
+|                 |            |   |           |     |        |              |  +**GBMNB10940_20_Cirripectes
+|                 |            |   |           |     |        |           +**|
+|                 |            |   |           |     |        |           |  +**GBMNB10943_20_Cirripectes
+|                 |            |   |           |     |        |        +**|
+|                 |            |   |           |     |        |        |  +**GBMNB10946_20_Cirripectes
+|                 |            |   |           |     |        |     +**|
+|                 |            |   |           |     |        |     |  +**MARQ140_12_Cirripectes
+|                 |            |   |           |     |        |  +--|
+|                 |            |   |           |     |        |  |  +**MARQ139_12_Cirripectes
+|                 |            |   |           |     |        +--| (39)
+|                 |            |   |           |     |           +--GBMNB10935_20_Cirripectes
+|                 |            |   |           |  +--| (86)
+|                 |            |   |           |  |  +--AUSTR240_13_Cirripectes
+|                 |            |   |           +--| (99)
+|                 |            |   |              +--GBMNB10942_20_Cirripectes
+|                 |            +---| (73)
+|                 |                |                                                      +--GBMNB10963_20_Cirripectes
+|                 |                |                                                   +--| (86)
+|                 |                |                                                   |  +--GBMNB10960_20_Cirripectes
+|                 |                |                                                +--| (88)
+|                 |                |                                                |  |                 +**GBMNB10966_20_Cirripectes
+|                 |                |                                                |  |              +**|
+|                 |                |                                                |  |              |  +**GBMNB10987_20_Cirripectes
+|                 |                |                                                |  |           +**|
+|                 |                |                                                |  |           |  +**GBMNB10986_20_Cirripectes
+|                 |                |                                                |  |        +**|
+|                 |                |                                                |  |        |  +**GBMNB10983_20_Cirripectes
+|                 |                |                                                |  |     +**|
+|                 |                |                                                |  |     |  +**MARQ074_12_Cirripectes
+|                 |                |                                                |  |  +--|
+|                 |                |                                                |  |  |  +**GBMNB10971_20_Cirripectes
+|                 |                |                                                |  +--| (87)
+|                 |                |                                                |     +--GBMNB10970_20_Cirripectes
+|                 |                |                                             +--| (34)
+|                 |                |                                             |  +--GBMNB10982_20_Cirripectes
+|                 |                |                                          +--| (20)
+|                 |                |                                          |  |  +--GBMNB10974_20_Cirripectes
+|                 |                |                                          |  +--| (43)
+|                 |                |                                          |     +--GBMNB10962_20_Cirripectes
+|                 |                |                                       +--| (25)
+|                 |                |                                       |  |  +--GBMNB10973_20_Cirripectes
+|                 |                |                                       |  +--| (74)
+|                 |                |                                       |     +--GBMNB10985_20_Cirripectes
+|                 |                |                                    +--| (98)
+|                 |                |                                    |  +--MARQ071_12_Cirripectes
+|                 |                |                                 +--| (98)
+|                 |                |                                 |  |  +--GBMNB10978_20_Cirripectes
+|                 |                |                                 |  +--| (79)
+|                 |                |                                 |     |  +--GBMNB10968_20_Cirripectes
+|                 |                |                                 |     +--| (75)
+|                 |                |                                 |        +--GBMNB10984_20_Cirripectes
+|                 |                |                              +--| (10)
+|                 |                |                              |  |  +--FPFLB356_12_Cirripectes
+|                 |                |                              |  +--| (19)
+|                 |                |                              |     +--GBMNB10967_20_Cirripectes
+|                 |                |                           +--| (12)
+|                 |                |                           |  |        +**AUSTR056_13_Cirripectes
+|                 |                |                           |  |     +**|
+|                 |                |                           |  |     |  +**GBMNB10977_20_Cirripectes
+|                 |                |                           |  |  +--|
+|                 |                |                           |  |  |  +**GBMNB10972_20_Cirripectes
+|                 |                |                           |  +--| (73)
+|                 |                |                           |     +--GBMNB10965_20_Cirripectes
+|                 |                |                        +--| (31)
+|                 |                |                        |  |  +--GBMNB10976_20_Cirripectes
+|                 |                |                        |  +--| (70)
+|                 |                |                        |     |  +--GBMNB10969_20_Cirripectes
+|                 |                |                        |     +--| (65)
+|                 |                |                        |        |  +--GBMNB10975_20_Cirripectes
+|                 |                |                        |        +--| (31)
+|                 |                |                        |           |           +**GBMNB10961_20_Cirripectes
+|                 |                |                        |           |        +**|
+|                 |                |                        |           |        |  +**GBMNB10988_20_Cirripectes
+|                 |                |                        |           |     +**|
+|                 |                |                        |           |     |  +**GBMNB10981_20_Cirripectes
+|                 |                |                        |           |  +--|
+|                 |                |                        |           |  |  +**MARQ073_12_Cirripectes
+|                 |                |                        |           +--| (85)
+|                 |                |                        |              +--GBMNB10980_20_Cirripectes
+|                 |                |                     +--| (61)
+|                 |                |                     |  |  +--GAMBA282_12_Cirripectes
+|                 |                |                     |  +--| (77)
+|                 |                |                     |     |  +--GBMNB10964_20_Cirripectes
+|                 |                |                     |     +--| (90)
+|                 |                |                     |        +--GBMNB10979_20_Cirripectes
+|                 |                |                  +--| (57)
+|                 |                |                  |  |              +**AUSTR052_13_Cirripectes
+|                 |                |                  |  |           +--|
+|                 |                |                  |  |           |  +**GBMNB10991_20_Cirripectes
+|                 |                |                  |  |        +--| (100)
+|                 |                |                  |  |        |  +--GAMBA281_12_Cirripectes
+|                 |                |                  |  |     +--| (35)
+|                 |                |                  |  |     |  +--GAMBA025_12_Cirripectes
+|                 |                |                  |  |  +--| (22)
+|                 |                |                  |  |  |  |        +**GAMBA026_12_Cirripectes
+|                 |                |                  |  |  |  |     +**|
+|                 |                |                  |  |  |  |     |  +**MBFA187_07_Cirripectes
+|                 |                |                  |  |  |  |  +--|
+|                 |                |                  |  |  |  |  |  +**GBMNB10990_20_Cirripectes
+|                 |                |                  |  |  |  +--| (82)
+|                 |                |                  |  |  |     +--GAMBA862_12_Cirripectes
+|                 |                |                  |  +--| (19)
+|                 |                |                  |     +--GBMNB10993_20_Cirripectes
+|                 |                |               +--| (56)
+|                 |                |               |  |     +--AUSTR162_13_Cirripectes
+|                 |                |               |  |  +--| (27)
+|                 |                |               |  |  |  |  +--GAMBA280_12_Cirripectes
+|                 |                |               |  |  |  +--| (100)
+|                 |                |               |  |  |     +--MBFA186_07_Cirripectes
+|                 |                |               |  +--| (41)
+|                 |                |               |     +--GBMNB10989_20_Cirripectes
+|                 |                |            +--| (58)
+|                 |                |            |  +--GBMNB10992_20_Cirripectes
+|                 |                |         +--| (87)
+|                 |                |         |  |  +--AUSTR160_13_Cirripectes
+|                 |                |         |  +--| (100)
+|                 |                |         |     +--FPFLB403_12_Cirripectes
+|                 |                |     +---| (100)
+|                 |                |     |   |        +**AUSTR161_13_Cirripectes
+|                 |                |     |   |     +**|
+|                 |                |     |   |     |  +**SCILL252_15_Cirripectes
+|                 |                |     |   |  +--|
+|                 |                |     |   |  |  +**SCILL194_15_Cirripectes
+|                 |                |     |   +--| (87)
+|                 |                |     |      +--FUT004_18_Cirripectes
+|                 |                |  +--| (90)
+|                 |                |  |  |           +--RUNA_4002_Cirripectes_castaneus
+|                 |                |  |  |        +--| (69)
+|                 |                |  |  |        |  |                    +--SBF598_11_Cirripectes
+|                 |                |  |  |        |  |                 +--| (80)
+|                 |                |  |  |        |  |                 |  +--LIFS795_08_Cirripectes
+|                 |                |  |  |        |  |              +--| (18)
+|                 |                |  |  |        |  |              |  |              +**ANGBF32322_19_Cirripectes
+|                 |                |  |  |        |  |              |  |           +**|
+|                 |                |  |  |        |  |              |  |           |  +**SBF725_11_Cirripectes
+|                 |                |  |  |        |  |              |  |        +--|
+|                 |                |  |  |        |  |              |  |        |  +**RUNA_1208_Cirripectes_castaneus
+|                 |                |  |  |        |  |              |  |     +--| (87)
+|                 |                |  |  |        |  |              |  |     |  +--RESIC180_11_Cirripectes
+|                 |                |  |  |        |  |              |  |  +--| (100)
+|                 |                |  |  |        |  |              |  |  |  +--ORCIE_1125_Cirripectes_castaneus
+|                 |                |  |  |        |  |              |  +--| (36)
+|                 |                |  |  |        |  |              |     +--RUNA_2346_Cirripectes_castaneus
+|                 |                |  |  |        |  |           +--| (5)
+|                 |                |  |  |        |  |           |  |           +--RUNA_2168_cirripectes_castaneus
+|                 |                |  |  |        |  |           |  |        +--| (30)
+|                 |                |  |  |        |  |           |  |        |  +--RUNA_0272_Cirripectes_castaneus
+|                 |                |  |  |        |  |           |  |     +--| (15)
+|                 |                |  |  |        |  |           |  |     |  |              +**ANGBF32323_19_Cirripectes
+|                 |                |  |  |        |  |           |  |     |  |           +**|
+|                 |                |  |  |        |  |           |  |     |  |           |  +**ANGBF32326_19_Cirripectes
+|                 |                |  |  |        |  |           |  |     |  |        +--|
+|                 |                |  |  |        |  |           |  |     |  |        |  +**ANGBF32325_19_Cirripectes
+|                 |                |  |  |        |  |           |  |     |  |     +--| (98)
+|                 |                |  |  |        |  |           |  |     |  |     |  +--ANGBF32324_19_Cirripectes
+|                 |                |  |  |        |  |           |  |     |  |  +--| (99)
+|                 |                |  |  |        |  |           |  |     |  |  |  |     +**ANGBF32327_19_Cirripectes
+|                 |                |  |  |        |  |           |  |     |  |  |  |  +--|
+|                 |                |  |  |        |  |           |  |     |  |  |  |  |  +**GBMIN121923_17_Cirripectes
+|                 |                |  |  |        |  |           |  |     |  |  |  +--| (74)
+|                 |                |  |  |        |  |           |  |     |  |  |     +--GBMIN97243_17_Cirripectes
+|                 |                |  |  |        |  |           |  |     |  +--| (9)
+|                 |                |  |  |        |  |           |  |     |     |           +--ORCIE1808_Cirripectes_castaneus
+|                 |                |  |  |        |  |           |  |     |     |        +--| (99)
+|                 |                |  |  |        |  |           |  |     |     |        |  +--RUNA_0370_Cirripectes_castaneus
+|                 |                |  |  |        |  |           |  |     |     |     +--| (23)
+|                 |                |  |  |        |  |           |  |     |     |     |  +--RUNA_0022_Cirripectes_castaneus
+|                 |                |  |  |        |  |           |  |     |     |  +--| (14)
+|                 |                |  |  |        |  |           |  |     |     |  |  |     +--RUNA_2347_Cirripectes_castaneus
+|                 |                |  |  |        |  |           |  |     |     |  |  |  +--| (99)
+|                 |                |  |  |        |  |           |  |     |     |  |  |  |  +--RUNA_3176_Cirripectes_castaneus
+|                 |                |  |  |        |  |           |  |     |     |  |  +--| (16)
+|                 |                |  |  |        |  |           |  |     |     |  |     +--RUNA_0737_Cirripectes_castaneus
+|                 |                |  |  |        |  |           |  |     |     +--| (18)
+|                 |                |  |  |        |  |           |  |     |        |        +**COLOR469_15_Cirripectes
+|                 |                |  |  |        |  |           |  |     |        |     +**|
+|                 |                |  |  |        |  |           |  |     |        |     |  +**SAIAB1074_08_Cirripectes
+|                 |                |  |  |        |  |           |  |     |        |  +--|
+|                 |                |  |  |        |  |           |  |     |        |  |  +**SBF724_11_Cirripectes
+|                 |                |  |  |        |  |           |  |     |        +--| (45)
+|                 |                |  |  |        |  |           |  |     |           +--RUNA_2379_Cirripectes_castaneus
+|                 |                |  |  |        |  |           |  |  +--| (98)
+|                 |                |  |  |        |  |           |  |  |  +--RUNA_3154_Cirripectes_castaneus
+|                 |                |  |  |        |  |           |  +--| (11)
+|                 |                |  |  |        |  |           |     +--RUNA_0854_Cirripectes_castaneus
+|                 |                |  |  |        |  |        +--| (8)
+|                 |                |  |  |        |  |        |  |  +--RUNA_3155_Cirripectes_castaneus
+|                 |                |  |  |        |  |        |  +--| (14)
+|                 |                |  |  |        |  |        |     +--RUNA_2450_Cirripectes_castaneus
+|                 |                |  |  |        |  |     +--| (7)
+|                 |                |  |  |        |  |     |  |                 +**RESIC179_11_Cirripectes
+|                 |                |  |  |        |  |     |  |              +**|
+|                 |                |  |  |        |  |     |  |              |  +**RUNA_2719_Cirripectes_castaneus
+|                 |                |  |  |        |  |     |  |           +**|
+|                 |                |  |  |        |  |     |  |           |  +**RUNA_2348_Cirripectes_castaneus
+|                 |                |  |  |        |  |     |  |        +**|
+|                 |                |  |  |        |  |     |  |        |  +**RUNA_3214_Cirripectes_castaneus
+|                 |                |  |  |        |  |     |  |     +**|
+|                 |                |  |  |        |  |     |  |     |  +**RUNA_2717_Cirripectes_castaneus
+|                 |                |  |  |        |  |     |  |  +--|
+|                 |                |  |  |        |  |     |  |  |  +**RUNA_2718_Cirripectes_castaneus
+|                 |                |  |  |        |  |     |  +--| (29)
+|                 |                |  |  |        |  |     |     +--RESIC181_11_Cirripectes
+|                 |                |  |  |        |  |  +--| (8)
+|                 |                |  |  |        |  |  |  |  +--SAIAB025_06_Cirripectes
+|                 |                |  |  |        |  |  |  +--| (28)
+|                 |                |  |  |        |  |  |     +--SAIAB024_06_Cirripectes
+|                 |                |  |  |        |  +--| (67)
+|                 |                |  |  |        |     |  +--GBMIN131289_17_Cirripectes
+|                 |                |  |  |        |     +--| (30)
+|                 |                |  |  |        |        +--LIFS793_08_Cirripectes
+|                 |                |  |  |     +--| (94)
+|                 |                |  |  |     |  |     +--RUNA_2344_Cirripectes_castaneus
+|                 |                |  |  |     |  |  +--| (33)
+|                 |                |  |  |     |  |  |  +--RUNA_4001_Cirripectes_castaneus
+|                 |                |  |  |     |  +--| (32)
+|                 |                |  |  |     |     |  +--LIFS794_08_Cirripectes
+|                 |                |  |  |     |     +--| (81)
+|                 |                |  |  |     |        +--RUNA_3895_Cirripectes_castaneus
+|                 |                |  |  |  +--| (94)
+|                 |                |  |  |  |  +--ORCIE_1027_Cirripectes_castaneus
+|                 |                |  |  +--| (98)
+|                 |                |  |     |        +**RUNA_3256_Cirripectes_castaneus
+|                 |                |  |     |     +--|
+|                 |                |  |     |     |  +**SBF752_11_Cirripectes
+|                 |                |  |     |  +--| (82)
+|                 |                |  |     |  |  +--RUNA_2899_Cirripectes_castaneus
+|                 |                |  |     +--| (82)
+|                 |                |  |        +--RUNA_2449_Cirripectes_castaneus
+|                 |                +--| (90)
+|                 |                   |  +--UKFBK089_08_Cirripectes
+|                 |                   +--| (98)
+|                 |                      |              +**FUT003_18_Cirripectes
+|                 |                      |           +**|
+|                 |                      |           |  +**ORCIE1889_Cirripectes_stigmaticus
+|                 |                      |        +**|
+|                 |                      |        |  +**RUNA_3262_Cirripectes_stigmaticus
+|                 |                      |     +--|
+|                 |                      |     |  +**UKFBI528_08_Cirripectes
+|                 |                      |  +--| (86)
+|                 |                      |  |  +--FUT115_18_Cirripectes
+|                 |                      +--| (86)
+|                 |                         |  +--ORCIE1890_Cirripectes_stigmaticus
+|                 |                         +--| (99)
+|                 |                            +--1583_Cirripectes_stigmaticus
++-----------------| (99)
+                  +----------KU136_Ophioblennius_macclurei_
+
+
+Consensus tree in newick format: 
+
+(KT284893_1_Omobranchus_elegans:0.2581547684,NC_004411_1_Petroscirtes_breviceps:0.4480909325,(((NC_028295_1_Ecsenius_bicolor:0.3661070330,NC_004412_1_Salarias_fasciatus:0.2258858337)98:0.0910204920,((((AUSTR545_13_Cirripectes:0.0000023917,AUSTR546_13_Cirripectes:0.0135877829)100:0.1369024143,((((((AUSTR398_13_Cirripectes:0.0000000000,AUSTR548_13_Cirripectes:0.0000000000):0.0000000000,GAMBA640_12_Cirripectes:0.0000000000):0.0000024588,AUSTR547_13_Cirripectes:0.0000024588)89:0.0000024588,GAMBA637_12_Cirripectes:0.0019239289)100:0.0728917292,AUSTR544_13_Cirripectes:0.0337280405)96:0.0260421410,((MH932008_1_Cirripectes_alboapicalis:0.0000024588,MH932009_1_Cirripectes_alboapicalis:0.0000024588)100:0.0282877764,(MH932004_1_Cirripectes_patuki:0.0056590886,(MH932006_1_Cirripectes_patuki:0.0018868802,(MH932005_1_Cirripectes_patuki:0.0018779678,(MH932003_1_Cirripectes_patuki:0.0018878555,MH932007_1_Cirripectes_patuki:0.0000024588)95:0.0018890658)51:0.0000024588)56:0.0000024588)98:0.0181733424)94:0.0271735854)99:0.0640133522)88:0.0387612546,((((((((AUSTR166_13_Cirripectes:0.0000000000,FPFLB371_12_Cirripectes:0.0000000000):0.0000024588,FPFLB369_12_Cirripectes:0.0000024588)100:0.0043151382,GAMBA246_12_Cirripectes:0.0021249395)32:0.0000024588,FPFLB317_12_Cirripectes:0.0021338802)20:0.0000024588,(((((((((AUSTR400_13_Cirripectes:0.0000000000,GAMBA236_12_Cirripectes:0.0000000000):0.0000000000,AUSTR535_13_Cirripectes:0.0000000000):0.0000000000,AUSTR534_13_Cirripectes:0.0000000000):0.0000000000,GAMBA247_12_Cirripectes:0.0000000000):0.0000000000,MBFA178_07_Cirripectes:0.0000000000):0.0000000000,FPFLB321_12_Cirripectes:0.0000000000):0.0000000000,FPFLB318_12_Cirripectes:0.0000000000):0.0000000000,MBFA179_07_Cirripectes:0.0000000000):0.0000024588,AUSTR401_13_Cirripectes:0.0000024588)85:0.0000024588)21:0.0000024588,FPFLB304_12_Cirripectes:0.0021336240)78:0.0021336056,((((ANGBF32332_19_Cirripectes:0.0000000000,AUSTR533_13_Cirripectes:0.0000000000):0.0000000000,UKFBI168_08_Cirripectes:0.0000000000):0.0000000000,SCILL193_15_Cirripectes:0.0000000000):0.0000024588,AUSTR163_13_Cirripectes:0.0000024588)86:0.0000024588)76:0.0021151714,FUT165_18_Cirripectes:0.0000024588)100:0.1485006330)98:0.0705302293,(((((((SBF750_11_Cirripectes:0.0040249050,COLOR408_15_Cirripectes:0.0020492842)99:0.0020452700,SBF751_11_Cirripectes:0.0040722064)66:0.0000024588,((((COLOR413_15_Cirripectes:0.0000000000,SBF493_11_Cirripectes:0.0000000000):0.0000000000,SBF680_11_Cirripectes:0.0000000000):0.0000000000,SBF681_11_Cirripectes:0.0000000000):0.0000024588,ORCIE1990_Cirripectes_randalli:0.0000024588)88:0.0000024588)54:0.0000024588,SBF706_11_Cirripectes:0.0020368183)92:0.0020459295,SBF707_11_Cirripectes:0.0000024588)100:0.0974623630,(((((AUSTR154_13_Cirripectes:0.0019265839,MBFA979_07_Cirripectes:0.0020587912)100:0.0020094976,((AUSTR155_13_Cirripectes:0.0000000000,FUT160_18_Cirripectes:0.0000000000):0.0000024588,AUSTR395_13_Cirripectes:0.0000024588)100:0.0019702812)74:0.0000024588,MBFA978_07_Cirripectes:0.0019592326)100:0.0801684519,((ANGBF32331_19_Cirripectes:0.0000024588,UKFBJ563_08_Cirripectes:0.0000024588)93:0.0000024588,FUT163_18_Cirripectes:0.0042259138)100:0.0676351071)90:0.0081433878,((((ANGBF9231_12_Cirripectes:0.0021050161,((((ANGBF9244_12_Cirripectes:0.0000000000,DSLAG1786_12_Cirripectes:0.0000000000):0.0000000000,DSLAG1798_12_Cirripectes:0.0000000000):0.0000000000,DSLAG1745_12_Cirripectes:0.0000000000):0.0000024588,DSFSG709_11_Cirripectes:0.0000024588)93:0.0000024588)91:0.0000028974,DSFSG737_11_Cirripectes:0.0020781623)100:0.0995365869,(((RESIC057_11_Cirripectes:0.0000024588,RESIC484_11_Cirripectes:0.0000024588)92:0.0000024588,(ZOSKT1161_16_Cirripectes:0.0051383315,((ANGBF32328_19_Cirripectes:0.0066300544,(GBMIN96357_17_Cirripectes:0.0021916977,(SAIAB187_06_Cirripectes:0.0000024588,ANGBF26357_19_Cirripectes:0.0000024588)82:0.0000024588)55:0.0000024588)86:0.0021728753,((ANGBF32329_19_Cirripectes:0.0000024588,ANGBF32330_19_Cirripectes:0.0000024588)100:0.0043877805,SAIAB026_06_Cirripectes:0.0043851719)84:0.0000024588)93:0.0039121161)99:0.0307100150)97:0.0022152198,RESIC148_11_Cirripectes:0.0000024588)100:0.0772055746)98:0.0266945696,((((((((((GBMNB11037_20_Cirripectes:0.0058542230,GBMNB11045_20_Cirripectes:0.0039189233)36:0.0000024588,(((GBMNB10998_20_Cirripectes:0.0000000000,GBMNB11066_20_Cirripectes:0.0000000000):0.0000024588,GBMNB11015_20_Cirripectes:0.0000024588)100:0.0019594290,GBMNB11040_20_Cirripectes:0.0019648652)13:0.0000024588)7:0.0000024588,((GBMNB10994_20_Cirripectes:0.0019682044,(GBMNB11003_20_Cirripectes:0.0000024588,GBMNB11025_20_Cirripectes:0.0000024588)97:0.0000024588)95:0.0019671745,(((((GBMNB11027_20_Cirripectes:0.0000000000,GBMNB11048_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11050_20_Cirripectes:0.0000000000):0.0000024588,GBMNB11036_20_Cirripectes:0.0000024588)100:0.0019326812,GBMNB11016_20_Cirripectes:0.0000024588)99:0.0019462387,GBMNB11064_20_Cirripectes:0.0019528542)32:0.0000024588)11:0.0000024588)15:0.0000024588,GBMNB11009_20_Cirripectes:0.0000024588)6:0.0000024588,(((((GBMNB11060_20_Cirripectes:0.0061115712,(GBMNB11029_20_Cirripectes:0.0000024588,GBMNB11051_20_Cirripectes:0.0000024588)96:0.0000024588)81:0.0019802384,GBMNB11019_20_Cirripectes:0.0019471654)30:0.0000024588,((((GBMNB11010_20_Cirripectes:0.0000000000,GBMNB11058_20_Cirripectes:0.0000000000):0.0000024588,GBMNB11018_20_Cirripectes:0.0000024588)100:0.0019577572,(GBMNB11008_20_Cirripectes:0.0000024588,GBMNB11032_20_Cirripectes:0.0000024588)96:0.0000024588)98:0.0019606245,GBMNB11028_20_Cirripectes:0.0019659803)13:0.0000024588)3:0.0000024588,((GBMNB11039_20_Cirripectes:0.0019560383,GBMNB11052_20_Cirripectes:0.0000024588)98:0.0019511086,((GBMNB10999_20_Cirripectes:0.0019678410,GBMNB11007_20_Cirripectes:0.0019656340)19:0.0000024588,(GBMNB11055_20_Cirripectes:0.0019444292,GBMNB11065_20_Cirripectes:0.0019615542)10:0.0000024588)1:0.0000024588)2:0.0000024588)7:0.0000024588,((((GBMNB11068_20_Cirripectes:0.0039325439,GBMNB11024_20_Cirripectes:0.0019582644)30:0.0000024588,((GBMNB11057_20_Cirripectes:0.0019434375,GBMNB11005_20_Cirripectes:0.0000024588)99:0.0019609043,GBMNB11001_20_Cirripectes:0.0019741881)17:0.0000024588)7:0.0000024588,(GBMNB11011_20_Cirripectes:0.0019554933,GBMNB11021_20_Cirripectes:0.0019587650)20:0.0000024588)12:0.0000024588,(((((((((((((((((((GBMNB11006_20_Cirripectes:0.0000000000,GBMNB11041_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11013_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11061_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11020_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11026_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11044_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11033_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11067_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11014_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11035_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11046_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11022_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11063_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11054_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11053_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11031_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11030_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11056_20_Cirripectes:0.0000000000):0.0000000000,GBMNB11038_20_Cirripectes:0.0000000000):0.0000024588)5:0.0000024588)6:0.0000024588)10:0.0000024588,((((GBMNB11049_20_Cirripectes:0.0039694767,(GBMNB11004_20_Cirripectes:0.0000024588,GBMNB11034_20_Cirripectes:0.0000024588)97:0.0000024588)71:0.0019538154,GBMNB11017_20_Cirripectes:0.0019806736)26:0.0000024588,GBMNB11047_20_Cirripectes:0.0019852968)5:0.0000024588,((GBMNB11002_20_Cirripectes:0.0039001091,((GBMNB10995_20_Cirripectes:0.0000000000,GBMNB11043_20_Cirripectes:0.0000000000):0.0000024588,GBMNB11000_20_Cirripectes:0.0000024588)98:0.0000024588)94:0.0019596303,GBMNB11042_20_Cirripectes:0.0019667085)14:0.0000024588)3:0.0000024588)24:0.0000024588,(((GBMNB11012_20_Cirripectes:0.0000000000,GBMNB11069_20_Cirripectes:0.0000000000):0.0000024588,GBMNB11059_20_Cirripectes:0.0000024588)100:0.0019534947,(GBMNB10997_20_Cirripectes:0.0000024588,GBMNB11062_20_Cirripectes:0.0000024588)96:0.0000024588)97:0.0019583349)63:0.0019580533,GBMNB10996_20_Cirripectes:0.0000024588)57:0.0000024588,GBMNB11023_20_Cirripectes:0.0038907096)85:0.0246598040,(((((GAMBA023_12_Cirripectes:0.0020483967,GAMBA024_12_Cirripectes:0.0000024588)100:0.0152734727,(GBMNB10937_20_Cirripectes:0.0000024588,GBMNB10944_20_Cirripectes:0.0000024588)98:0.0020664202)64:0.0000024588,((GBMNB10945_20_Cirripectes:0.0042020307,(GBMNB10951_20_Cirripectes:0.0021104737,(((GBMNB10938_20_Cirripectes:0.0000000000,GBMNB10948_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10947_20_Cirripectes:0.0000000000):0.0000024588,GBMNB10941_20_Cirripectes:0.0000024588)88:0.0000024588)92:0.0000024588)92:0.0021002529,((((GBMNB10955_20_Cirripectes:0.0042519030,GBMNB10956_20_Cirripectes:0.0020676839)78:0.0000024588,(GBMNB10958_20_Cirripectes:0.0041717798,GBMNB10957_20_Cirripectes:0.0000024588)97:0.0021010905)34:0.0000024588,GBMNB10954_20_Cirripectes:0.0020862469)10:0.0000024588,(((((((((((((GBMNB10934_20_Cirripectes:0.0000000000,GBMNB10950_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10939_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10959_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10936_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10953_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10949_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10952_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10940_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10943_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10946_20_Cirripectes:0.0000000000):0.0000000000,MARQ140_12_Cirripectes:0.0000000000):0.0000000000,MARQ139_12_Cirripectes:0.0000000000):0.0000024588,GBMNB10935_20_Cirripectes:0.0000024588)39:0.0000024588)5:0.0000024588)5:0.0000024588)26:0.0000024588,AUSTR240_13_Cirripectes:0.0020852134)86:0.0020849664,GBMNB10942_20_Cirripectes:0.0000024588)99:0.0189602206)77:0.0323563431)49:0.0038287250)49:0.0090828507)63:0.0156067873,((((((((((((((((((GBMNB10963_20_Cirripectes:0.0129022744,GBMNB10960_20_Cirripectes:0.0000029490)86:0.0087660061,((((((GBMNB10966_20_Cirripectes:0.0000000000,GBMNB10987_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10986_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10983_20_Cirripectes:0.0000000000):0.0000000000,MARQ074_12_Cirripectes:0.0000000000):0.0000000000,GBMNB10971_20_Cirripectes:0.0000000000):0.0000024588,GBMNB10970_20_Cirripectes:0.0000024588)87:0.0000029490)88:0.0043676312,GBMNB10982_20_Cirripectes:0.0021653167)34:0.0000024588,(GBMNB10974_20_Cirripectes:0.0043666822,GBMNB10962_20_Cirripectes:0.0021432298)43:0.0000024588)20:0.0000024588,(GBMNB10973_20_Cirripectes:0.0000024588,GBMNB10985_20_Cirripectes:0.0000024588)74:0.0000024588)25:0.0000024588,MARQ071_12_Cirripectes:0.0021663826)98:0.0021634119,(GBMNB10978_20_Cirripectes:0.0021762289,(GBMNB10968_20_Cirripectes:0.0000024588,GBMNB10984_20_Cirripectes:0.0000024588)75:0.0000024588)79:0.0000024588)98:0.0021635749,(FPFLB356_12_Cirripectes:0.0021596418,GBMNB10967_20_Cirripectes:0.0021598658)19:0.0000024588)10:0.0000024588,(((AUSTR056_13_Cirripectes:0.0000000000,GBMNB10977_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10972_20_Cirripectes:0.0000000000):0.0000024588,GBMNB10965_20_Cirripectes:0.0000024588)73:0.0000024588)12:0.0000024588,(GBMNB10976_20_Cirripectes:0.0021564889,(GBMNB10969_20_Cirripectes:0.0000024588,(GBMNB10975_20_Cirripectes:0.0021209272,((((GBMNB10961_20_Cirripectes:0.0000000000,GBMNB10988_20_Cirripectes:0.0000000000):0.0000000000,GBMNB10981_20_Cirripectes:0.0000000000):0.0000000000,MARQ073_12_Cirripectes:0.0000000000):0.0000024588,GBMNB10980_20_Cirripectes:0.0000024588)85:0.0000024588)31:0.0021431184)65:0.0021546460)70:0.0000024588)31:0.0021553797,(GAMBA282_12_Cirripectes:0.0021448912,(GBMNB10964_20_Cirripectes:0.0000024588,GBMNB10979_20_Cirripectes:0.0000024588)90:0.0021294654)77:0.0021509713)61:0.0000024588,(((((AUSTR052_13_Cirripectes:0.0000000000,GBMNB10991_20_Cirripectes:0.0000000000):0.0000024588,GAMBA281_12_Cirripectes:0.0000024588)100:0.0043455227,GAMBA025_12_Cirripectes:0.0042961362)35:0.0000024588,(((GAMBA026_12_Cirripectes:0.0000000000,MBFA187_07_Cirripectes:0.0000000000):0.0000000000,GBMNB10990_20_Cirripectes:0.0000000000):0.0000024588,GAMBA862_12_Cirripectes:0.0000024588)82:0.0000024588)22:0.0000024588,GBMNB10993_20_Cirripectes:0.0021464221)19:0.0000024588)57:0.0021307623,((AUSTR162_13_Cirripectes:0.0021129602,(GAMBA280_12_Cirripectes:0.0000024588,MBFA186_07_Cirripectes:0.0000024588)100:0.0021044672)27:0.0000024588,GBMNB10989_20_Cirripectes:0.0000024588)41:0.0000024588)56:0.0021066971,GBMNB10992_20_Cirripectes:0.0000024588)58:0.0019402349,(AUSTR160_13_Cirripectes:0.0000024588,FPFLB403_12_Cirripectes:0.0000024588)100:0.0045346271)87:0.0046130409,(((AUSTR161_13_Cirripectes:0.0000000000,SCILL252_15_Cirripectes:0.0000000000):0.0000000000,SCILL194_15_Cirripectes:0.0000000000):0.0000024588,FUT004_18_Cirripectes:0.0000024588)87:0.0000024588)100:0.0584324087,((((RUNA_4002_Cirripectes_castaneus:0.0065651909,(((((((SBF598_11_Cirripectes:0.0065139909,LIFS795_08_Cirripectes:0.0000024588)80:0.0021360315,(((((ANGBF32322_19_Cirripectes:0.0000000000,SBF725_11_Cirripectes:0.0000000000):0.0000000000,RUNA_1208_Cirripectes_castaneus:0.0000000000):0.0000024588,RESIC180_11_Cirripectes:0.0000024588)87:0.0000024588,ORCIE_1125_Cirripectes_castaneus:0.0020860600)100:0.0042631025,RUNA_2346_Cirripectes_castaneus:0.0042530942)36:0.0000024588)18:0.0000024588,((((RUNA_2168_cirripectes_castaneus:0.0043461045,RUNA_0272_Cirripectes_castaneus:0.0021166476)30:0.0000024588,(((((ANGBF32323_19_Cirripectes:0.0000000000,ANGBF32326_19_Cirripectes:0.0000000000):0.0000000000,ANGBF32325_19_Cirripectes:0.0000000000):0.0000024588,ANGBF32324_19_Cirripectes:0.0000024588)98:0.0000024588,((ANGBF32327_19_Cirripectes:0.0000000000,GBMIN121923_17_Cirripectes:0.0000000000):0.0000024588,GBMIN97243_17_Cirripectes:0.0000024588)74:0.0000024588)99:0.0022191015,((((ORCIE1808_Cirripectes_castaneus:0.0000024588,RUNA_0370_Cirripectes_castaneus:0.0000024588)99:0.0021179972,RUNA_0022_Cirripectes_castaneus:0.0021393756)23:0.0000024588,((RUNA_2347_Cirripectes_castaneus:0.0000024588,RUNA_3176_Cirripectes_castaneus:0.0000024588)99:0.0021397412,RUNA_0737_Cirripectes_castaneus:0.0021366628)16:0.0000024588)14:0.0000024588,(((COLOR469_15_Cirripectes:0.0000000000,SAIAB1074_08_Cirripectes:0.0000000000):0.0000000000,SBF724_11_Cirripectes:0.0000000000):0.0000024588,RUNA_2379_Cirripectes_castaneus:0.0000024588)45:0.0000024588)18:0.0000024588)9:0.0000024588)15:0.0000024588,RUNA_3154_Cirripectes_castaneus:0.0021358987)98:0.0021530221,RUNA_0854_Cirripectes_castaneus:0.0021207266)11:0.0000024588)5:0.0000024588,(RUNA_3155_Cirripectes_castaneus:0.0021424103,RUNA_2450_Cirripectes_castaneus:0.0021227146)14:0.0000024588)8:0.0000024588,((((((RESIC179_11_Cirripectes:0.0000000000,RUNA_2719_Cirripectes_castaneus:0.0000000000):0.0000000000,RUNA_2348_Cirripectes_castaneus:0.0000000000):0.0000000000,RUNA_3214_Cirripectes_castaneus:0.0000000000):0.0000000000,RUNA_2717_Cirripectes_castaneus:0.0000000000):0.0000000000,RUNA_2718_Cirripectes_castaneus:0.0000000000):0.0000024588,RESIC181_11_Cirripectes:0.0000024588)29:0.0000024588)7:0.0000024588,(SAIAB025_06_Cirripectes:0.0021351234,SAIAB024_06_Cirripectes:0.0021295088)28:0.0000024588)8:0.0000024588,(GBMIN131289_17_Cirripectes:0.0042320709,LIFS793_08_Cirripectes:0.0021211180)30:0.0000024588)67:0.0021536157)69:0.0000024588,((RUNA_2344_Cirripectes_castaneus:0.0021734325,RUNA_4001_Cirripectes_castaneus:0.0021808837)33:0.0000024588,(LIFS794_08_Cirripectes:0.0000024588,RUNA_3895_Cirripectes_castaneus:0.0000024588)81:0.0000024588)32:0.0000024588)94:0.0021932208,ORCIE_1027_Cirripectes_castaneus:0.0021898787)94:0.0022106879,(((RUNA_3256_Cirripectes_castaneus:0.0000000000,SBF752_11_Cirripectes:0.0000000000):0.0000024588,RUNA_2899_Cirripectes_castaneus:0.0000024588)82:0.0000024588,RUNA_2449_Cirripectes_castaneus:0.0022165279)82:0.0000025310)98:0.0271645846)90:0.0171403750,(UKFBK089_08_Cirripectes:0.0108894450,(((((FUT003_18_Cirripectes:0.0000000000,ORCIE1889_Cirripectes_stigmaticus:0.0000000000):0.0000000000,RUNA_3262_Cirripectes_stigmaticus:0.0000000000):0.0000000000,UKFBI528_08_Cirripectes:0.0000000000):0.0000024588,FUT115_18_Cirripectes:0.0000024588)86:0.0000024588,(ORCIE1890_Cirripectes_stigmaticus:0.0021321577,1583_Cirripectes_stigmaticus:0.0000024588)99:0.0021074328)86:0.0000024588)98:0.0196449932)90:0.0210012014)73:0.0537011984)70:0.0895779096)76:0.0977285736,KU136_Ophioblennius_macclurei_:0.1577209286)99:0.2411182767);
+
+TIME STAMP
+----------
+
+Date and time: Tue Dec  6 14:45:39 2022
+Total CPU time used: 824.524 seconds (0h:13m:44s)
+Total wall-clock time used: 828.4086151 seconds (0h:13m:48s)
+
